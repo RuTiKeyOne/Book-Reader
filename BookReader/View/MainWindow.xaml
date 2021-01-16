@@ -1,0 +1,26 @@
+﻿<Window x:Class="BookReader.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BookReader"
+        mc:Ignorable="d"
+        MinWidth="800"
+        MinHeight="560"
+        ResizeMode="NoResize"
+        WindowStyle="None"
+        Background="{StaticResource DarkBaseBrush}"
+        WindowStartupLocation="CenterScreen"
+        WindowState="Maximized">
+    <StackPanel>
+        <StackPanel HorizontalAlignment="Right" Orientation="Horizontal" Height="auto">
+
+            <Button Style="{StaticResource Hide}" Content="-"/>
+            <Button Style="{StaticResource Close}" Content="х"/>
+
+        </StackPanel>
+        <Canvas Height="110">
+            <TextBlock Canvas.Left="75" Text="Book Reader" Style="{StaticResource HightTextBlock}"/>
+        </Canvas>
+    </StackPanel>
+</Window>
