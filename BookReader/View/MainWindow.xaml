@@ -19,8 +19,27 @@
             <Button Style="{StaticResource Close}" Content="х"/>
 
         </StackPanel>
-        <Canvas Height="110">
+        
+        <Canvas Height="100">
             <TextBlock Canvas.Left="75" Text="Book Reader" Style="{StaticResource HightTextBlock}"/>
+        </Canvas>
+
+        <Canvas HorizontalAlignment="Right" Height="200" Width="350">
+            <StackPanel Canvas.Right="20">
+                <TextBlock Text="Start read" Style="{StaticResource LowTextBlock}"/>
+                <Button Style="{StaticResource ReadButton}">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="2.5*"/>
+                        </Grid.ColumnDefinitions>
+                        <Image Grid.Column="0" Grid.RowSpan="2"></Image>
+                        <TextBlock Text="Add a book" Grid.Column="1"></TextBlock>
+                        <TextBlock Grid.Column="1"></TextBlock>
+                    </Grid>
+                </Button>
+                <Button Content="Add a shelf" Style="{StaticResource ReadButton}"></Button>
+            </StackPanel>
         </Canvas>
     </StackPanel>
 </Window>

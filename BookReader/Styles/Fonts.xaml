@@ -6,7 +6,7 @@
     <system:Double x:Key="Smal">14</system:Double>
     <system:Double x:Key="Regular">16</system:Double>
     <system:Double x:Key="Big">20</system:Double>
-    <system:Double x:Key="H1">26</system:Double>
+    <system:Double x:Key="H1">32</system:Double>
     <system:Double x:Key="TheBiggers">68</system:Double>
 
 </ResourceDictionary>
