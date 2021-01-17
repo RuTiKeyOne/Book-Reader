@@ -21,24 +21,51 @@
         </StackPanel>
         
         <Canvas Height="100">
-            <TextBlock Canvas.Left="75" Text="Book Reader" Style="{StaticResource HightTextBlock}"/>
+            <TextBlock Canvas.Left="75" Text="Book Reader" Style="{StaticResource BaseTextBlock}" FontSize="{StaticResource TheBiggers}"/>
         </Canvas>
 
-        <Canvas HorizontalAlignment="Right" Height="200" Width="350">
+        <Canvas Height="auto">
             <StackPanel Canvas.Right="20">
-                <TextBlock Text="Start read" Style="{StaticResource LowTextBlock}"/>
+                <TextBlock Text="Start read" Style="{StaticResource BaseTextBlock}" FontSize="{StaticResource H1}"/>
                 <Button Style="{StaticResource ReadButton}">
-                    <Grid>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="*"/>
-                            <ColumnDefinition Width="2.5*"/>
+                    <Grid Width="150">
+                        <Grid.ColumnDefinitions >
+                            <ColumnDefinition Width="30"/>
+                            <ColumnDefinition Width="3*"/>
                         </Grid.ColumnDefinitions>
-                        <Image Grid.Column="0" Grid.RowSpan="2"></Image>
-                        <TextBlock Text="Add a book" Grid.Column="1"></TextBlock>
-                        <TextBlock Grid.Column="1"></TextBlock>
+                        <Image Grid.Column="0" Source="LocalResources/BookIcon.png"></Image>
+                        <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" Text="Add a book" Grid.Column="1"></TextBlock>
                     </Grid>
                 </Button>
-                <Button Content="Add a shelf" Style="{StaticResource ReadButton}"></Button>
+                <Button Style="{StaticResource ReadButton}">
+                    <Grid Width="150">
+                        <Grid.ColumnDefinitions >
+                            <ColumnDefinition Width="30"/>
+                            <ColumnDefinition Width="3*"/>
+                        </Grid.ColumnDefinitions>
+                        <Image Grid.Column="0" Source="LocalResources/ShelfIcon.png"></Image>
+                        <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" Text="Add a shelf" Grid.Column="1"></TextBlock>
+                    </Grid>
+                </Button>
+            </StackPanel>
+            <StackPanel Canvas.Left="75">
+                <TextBlock Text="Open the last one" Style="{StaticResource BaseTextBlock}" FontSize="{StaticResource Big}"/>
+                <DockPanel Margin="0,10">
+                    <ContentControl
+                            Height="35"
+                            Background="{StaticResource LightDarkBaseBrush}"
+                            Content="{StaticResource SearchIcon}"
+                            Style="{StaticResource IconContent}" />
+
+                    <TextBox
+                            Style="{StaticResource BaseTextBox}"
+                            Tag="Search"
+                            />
+                </DockPanel>
+                <UniformGrid Columns="2">
+                    <Button Content="Books" Style="{StaticResource ButtonBar}"></Button>
+                    <Button Content="Shelfs" Style="{StaticResource ButtonBar}"></Button>
+                </UniformGrid>
             </StackPanel>
         </Canvas>
     </StackPanel>

@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NETCOREAPP;NETCOREAPP3_1;
 C:\Users\Rutikeyone\source\repos\BookReader\BookReader\App.xaml
-5-1229219680
+7292427662
 
 3-271172953
 1921654412462
-Styles\Buttons.xaml;Styles\Colors.xaml;Styles\Fonts.xaml;Styles\Texts.xaml;View\MainWindow.xaml;
+Styles\Buttons.xaml;Styles\Colors.xaml;Styles\ContentControl.xaml;Styles\Fonts.xaml;Styles\Icons.xaml;Styles\Texts.xaml;View\MainWindow.xaml;
 
 False
 

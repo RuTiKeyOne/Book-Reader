@@ -1,6 +1,5 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                    xmlns:local="clr-namespace:BookReader.Styles">
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 
     <SolidColorBrush x:Key="WhiteBaseBrush" Color="#F1F1F1" />
     <Color x:Key="WhiteBaseColor">#F1F1F1</Color>
@@ -17,5 +16,7 @@
     <SolidColorBrush x:Key="BlueBaseBrush" Color="#007ACD" />
     <Color x:Key="BlueRedBaseColor">#007ACD</Color>
 
+    <SolidColorBrush x:Key="LightDarkBaseBrush" Color="#333337" />
+    <Color x:Key="LightDarkBaseColor">#333337</Color>
 
 </ResourceDictionary>

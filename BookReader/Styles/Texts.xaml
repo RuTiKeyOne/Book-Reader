@@ -1,16 +1,54 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 
-    <Style x:Key="HightTextBlock" TargetType="TextBlock">
-        <Setter Property="FontSize" Value="{DynamicResource TheBiggers}"/>
+    <Style x:Key="BaseTextBlock" TargetType="TextBlock">
         <Setter Property="Foreground" Value="{DynamicResource WhiteBaseBrush}"/>
         <Setter Property="FontWeight" Value="Light"/>
     </Style>
 
-    <Style x:Key="LowTextBlock" TargetType="TextBlock">
-        <Setter Property="FontSize" Value="{DynamicResource H1}"/>
-        <Setter Property="Foreground" Value="{DynamicResource WhiteBaseBrush}"/>
-        <Setter Property="FontWeight" Value="Light"/>
+    <Style x:Key="BaseTextBox" TargetType="TextBox">
+        <Setter Property="FontSize" Value="{StaticResource Big}"/>
+        <Setter Property="BorderThickness" Value="0" />
+        <Setter Property="Background" Value="{DynamicResource WhiteBaseBrush}" />
+        <Setter Property="Foreground" Value="Black" />
+        <Setter Property="CaretBrush" Value="Black" />
+        <Setter Property="MaxWidth" Value="205"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="TextBox">
+                    <Border
+                        Background="{TemplateBinding Background}"
+                        BorderBrush="{TemplateBinding BorderBrush}"
+                        BorderThickness="{TemplateBinding BorderThickness}">
+
+                        <Grid Margin="5">
+
+                            <ScrollViewer x:Name="PART_ContentHost" Margin="0" />
+
+                            <TextBlock
+                                x:Name="hint"
+                                VerticalAlignment="Center"
+                                Background="Transparent"
+                                FontSize="{TemplateBinding FontSize}"
+                                Foreground="Gray"
+                                Text="{TemplateBinding Tag}"
+                                TextAlignment="{TemplateBinding TextAlignment}"
+                                Visibility="Collapsed"/>
+                        </Grid>
+                    </Border>
+
+                    <ControlTemplate.Triggers>
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="Text" Value="" />
+                            </MultiTrigger.Conditions>
+                            <Setter TargetName="hint" Property="Visibility" Value="Visible" />
+                        </MultiTrigger>
+
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
     </Style>
 
 </ResourceDictionary>

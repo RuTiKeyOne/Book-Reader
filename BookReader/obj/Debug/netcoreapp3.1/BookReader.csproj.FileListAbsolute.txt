@@ -22,3 +22,5 @@ C:\Users\Rutikeyone\source\repos\BookReader\BookReader\obj\Debug\netcoreapp3.1\S
 C:\Users\Rutikeyone\source\repos\BookReader\BookReader\obj\Debug\netcoreapp3.1\Styles\Colors.baml
 C:\Users\Rutikeyone\source\repos\BookReader\BookReader\obj\Debug\netcoreapp3.1\Styles\Fonts.baml
 C:\Users\Rutikeyone\source\repos\BookReader\BookReader\obj\Debug\netcoreapp3.1\Styles\Texts.baml
+C:\Users\Rutikeyone\source\repos\BookReader\BookReader\obj\Debug\netcoreapp3.1\Styles\Icons.baml
+C:\Users\Rutikeyone\source\repos\BookReader\BookReader\obj\Debug\netcoreapp3.1\Styles\ContentControl.baml
