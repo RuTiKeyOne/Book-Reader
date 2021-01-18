@@ -1,8 +1,21 @@
 {
   "version": 2,
-  "dgSpecHash": "XTVrAYKdQv3i6E4UFb2SEqcjq0dP5GOzzEDv2hJioOrtBSRnA+uBwJ6UplKXR2pc8m7t/XtiaZsKO37O8yDGhg==",
+  "dgSpecHash": "/pfWcBQx4TnVFf+RYyCIwpHXsWyql3bByC3Xub7cgKdXbZCjpcQXpDr8SD5Z07i5yYgqJTZywfO2gXax4Xo2Fg==",
   "success": true,
   "projectFilePath": "C:\\Users\\Rutikeyone\\source\\repos\\BookReader\\BookReader\\BookReader.csproj",
-  "expectedPackageFiles": [],
-  "logs": []
+  "expectedPackageFiles": [
+    "C:\\Users\\Rutikeyone\\.nuget\\packages\\mvvmlightlibs\\5.4.1.1\\mvvmlightlibs.5.4.1.1.nupkg.sha512"
+  ],
+  "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Пакет \"MvvmLightLibs 5.4.1.1\" был восстановлен с помощью \".NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8\", а не целевой платформы проекта \".NETCoreApp,Version=v3.1\". Этот пакет может быть не полностью совместим с вашим проектом.",
+      "libraryId": "MvvmLightLibs",
+      "targetGraphs": [
+        ".NETCoreApp,Version=v3.1"
+      ]
+    }
+  ]
 }

@@ -1,10 +1,12 @@
 ﻿<Window x:Class="BookReader.MainWindow"
+        x:Name="Main"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:BookReader"
-        mc:Ignorable="d"
+        xmlns:MainViewmodel="clr-namespace:BookReader.ViewModel"
+    mc:Ignorable="d"
         MinWidth="800"
         MinHeight="560"
         ResizeMode="NoResize"
@@ -12,11 +14,16 @@
         Background="{StaticResource DarkBaseBrush}"
         WindowStartupLocation="CenterScreen"
         WindowState="Maximized">
+    <Window.DataContext>
+        <MainViewmodel:MainViewModel/>
+    </Window.DataContext>
+    
+    
     <StackPanel>
         <StackPanel HorizontalAlignment="Right" Orientation="Horizontal" Height="auto">
 
-            <Button Style="{StaticResource Hide}" Content="-"/>
-            <Button Style="{StaticResource Close}" Content="х"/>
+            <Button Command="{Binding Minimize}" CommandParameter="{Binding ElementName=Main}" Style="{StaticResource Hide}" Content="-"/>
+            <Button Command="{Binding Close}" CommandParameter="{Binding ElementName=Main}" Style="{StaticResource Close}" Content="х"/>
 
         </StackPanel>
         

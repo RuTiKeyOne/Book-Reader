@@ -24,3 +24,11 @@ C:\Users\Rutikeyone\source\repos\BookReader\BookReader\obj\Debug\netcoreapp3.1\S
 C:\Users\Rutikeyone\source\repos\BookReader\BookReader\obj\Debug\netcoreapp3.1\Styles\Texts.baml
 C:\Users\Rutikeyone\source\repos\BookReader\BookReader\obj\Debug\netcoreapp3.1\Styles\Icons.baml
 C:\Users\Rutikeyone\source\repos\BookReader\BookReader\obj\Debug\netcoreapp3.1\Styles\ContentControl.baml
+C:\Users\Rutikeyone\source\repos\BookReader\BookReader\bin\Debug\netcoreapp3.1\GalaSoft.MvvmLight.Extras.dll
+C:\Users\Rutikeyone\source\repos\BookReader\BookReader\bin\Debug\netcoreapp3.1\GalaSoft.MvvmLight.Platform.dll
+C:\Users\Rutikeyone\source\repos\BookReader\BookReader\bin\Debug\netcoreapp3.1\GalaSoft.MvvmLight.dll
+C:\Users\Rutikeyone\source\repos\BookReader\BookReader\bin\Debug\netcoreapp3.1\System.Windows.Interactivity.dll
+C:\Users\Rutikeyone\source\repos\BookReader\BookReader\obj\Debug\netcoreapp3.1\GeneratedInternalTypeHelper.g.cs
+C:\Users\Rutikeyone\source\repos\BookReader\BookReader\obj\Debug\netcoreapp3.1\BookReader.csproj.CopyComplete
+C:\Users\Rutikeyone\source\repos\BookReader\BookReader\obj\Debug\netcoreapp3.1\View\AddBookWindow.g.cs
+C:\Users\Rutikeyone\source\repos\BookReader\BookReader\obj\Debug\netcoreapp3.1\View\AddBookWindow.baml
