@@ -11,15 +11,13 @@
             <Setter.Value>
                 <ControlTemplate TargetType="Button">
                     <Border
-                        Name="brd"
-                        Height="45"
-                        Width="80"
                         Background="{TemplateBinding Background}"
                         >
                         <ContentPresenter
                             Margin="5"
                             HorizontalAlignment="Center"
-                            VerticalAlignment="Center" />
+                            VerticalAlignment="Center" 
+                            Content="x"/>
                     </Border>
 
                     <ControlTemplate.Triggers>
@@ -40,23 +38,23 @@
             <Setter.Value>
                 <ControlTemplate TargetType="Button">
                     <Border
-                        Height="45"
-                        Width="80"
+                        Height="{TemplateBinding Height}"
+                        Width="{TemplateBinding Width}"
                         Background="{TemplateBinding Background}"
                         >
                         <ContentPresenter
                             Margin="5"
                             HorizontalAlignment="Center"
-                            VerticalAlignment="Center" />
+                            VerticalAlignment="Center"
+                            Content="-"/>
                     </Border>
-                    
+
                     <ControlTemplate.Triggers>
-                        <Trigger Property="IsMouseOver" Value="true">
-                            <Setter Property="Background" Value="{x:Null}" />
-                        </Trigger>
+                        
                         <Trigger Property="IsPressed" Value="True">
                             <Setter Property="Background" Value="{DynamicResource BlueBaseBrush}"/>
                         </Trigger>
+                        
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
             </Setter.Value>

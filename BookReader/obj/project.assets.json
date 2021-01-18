@@ -16,6 +16,19 @@
           "lib/net45/GalaSoft.MvvmLight.dll": {},
           "lib/net45/System.Windows.Interactivity.dll": {}
         }
+      },
+      "BookReaderLibrary/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.1",
+        "compile": {
+          "bin/placeholder/BookReaderLibrary.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/BookReaderLibrary.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.WindowsDesktop.App.WPF"
+        ]
       }
     }
   },
@@ -136,10 +149,16 @@
         "mvvmlightlibs.5.4.1.1.nupkg.sha512",
         "mvvmlightlibs.nuspec"
       ]
+    },
+    "BookReaderLibrary/1.0.0": {
+      "type": "project",
+      "path": "../BookReaderLibrary/BookReaderLibrary.csproj",
+      "msbuildProject": "../BookReaderLibrary/BookReaderLibrary.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.1": [
+      "BookReaderLibrary >= 1.0.0",
       "MvvmLightLibs >= 5.4.1.1"
     ]
   },
@@ -169,7 +188,11 @@
       "frameworks": {
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\Rutikeyone\\source\\repos\\BookReader\\BookReaderLibrary\\BookReaderLibrary.csproj": {
+              "projectPath": "C:\\Users\\Rutikeyone\\source\\repos\\BookReader\\BookReaderLibrary\\BookReaderLibrary.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

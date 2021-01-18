@@ -19,12 +19,17 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Include="ViewModel\AddBookViewModel.cs" />
     <Compile Include="ViewModel\Base\BaseViewModel.cs" />
     <Compile Include="ViewModel\MainViewModel.cs" />
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="MvvmLightLibs" Version="5.4.1.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\BookReaderLibrary\BookReaderLibrary.csproj" />
   </ItemGroup>
 
   <ItemGroup>

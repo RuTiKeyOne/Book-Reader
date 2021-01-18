@@ -1,4 +1,6 @@
-﻿using GalaSoft.MvvmLight.Command;
+﻿using BookReaderLibrary.Model.Commands;
+using BookReaderLibrary.Model.Windows;
+using GalaSoft.MvvmLight.Command;
 using System;
 using System.Windows;
 using System.Windows.Input;
@@ -7,15 +9,20 @@ namespace BookReader.ViewModel.Base
 {
     public class BaseViewModel
     {
-        public RelayCommand<Window> Close { get; set; }
-        public void CloseWindow(Window window)
+        public DisplayRootRegistry DisplayRootRegistry {get; private set; }
+
+        #region Close Command
+
+        public ICommand Close { get; set; }
+        public virtual bool CanCloseExecute(object sender) => true;
+        public void CloseExecute(object sender) 
         {
-            if(window != null)
-            {
-                window.Close();
-            }
+            DisplayRootRegistry.HidePresentation(this);
         }
 
+        #endregion
+
+        #region Minimize Command
         public RelayCommand<Window> Minimize { get; set; }
         public void MinimizeWindow(Window window)
         {
@@ -25,10 +32,13 @@ namespace BookReader.ViewModel.Base
             }
         }
 
+        #endregion
+
         public BaseViewModel()
         {
-            Close = new RelayCommand<Window>(this.CloseWindow);
+            Close = new ActionCommand(CloseExecute, CanCloseExecute);
             Minimize = new RelayCommand<Window>(this.MinimizeWindow);
+            DisplayRootRegistry = (Application.Current as App).DisplayRootRegistry;
         }
     }
 }

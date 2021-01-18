@@ -8,6 +8,7 @@
     ".NETCoreApp,Version=v3.1": {
       "BookReader/1.0.0": {
         "dependencies": {
+          "BookReaderLibrary": "1.0.0",
           "MvvmLightLibs": "5.4.1.1"
         },
         "runtime": {
@@ -33,6 +34,11 @@
             "fileVersion": "3.0.40218.0"
           }
         }
+      },
+      "BookReaderLibrary/1.0.0": {
+        "runtime": {
+          "BookReaderLibrary.dll": {}
+        }
       }
     }
   },
@@ -48,6 +54,11 @@
       "sha512": "sha512-xYpVzOYnIz/M6T0pdc3w5t0vrt2ZKspSS+CZjQ+pZE+5yHv9qXSWkncHJXb6D7Egstalso4ivnIUkA1xEClViw==",
       "path": "mvvmlightlibs/5.4.1.1",
       "hashPath": "mvvmlightlibs.5.4.1.1.nupkg.sha512"
+    },
+    "BookReaderLibrary/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
     }
   }
 }

@@ -6,7 +6,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:BookReader"
         xmlns:MainViewmodel="clr-namespace:BookReader.ViewModel"
-    mc:Ignorable="d"
+        mc:Ignorable="d"
         MinWidth="800"
         MinHeight="560"
         ResizeMode="NoResize"
@@ -22,8 +22,8 @@
     <StackPanel>
         <StackPanel HorizontalAlignment="Right" Orientation="Horizontal" Height="auto">
 
-            <Button Command="{Binding Minimize}" CommandParameter="{Binding ElementName=Main}" Style="{StaticResource Hide}" Content="-"/>
-            <Button Command="{Binding Close}" CommandParameter="{Binding ElementName=Main}" Style="{StaticResource Close}" Content="х"/>
+            <Button Height="45" Width="80" Command="{Binding Minimize}" CommandParameter="{Binding ElementName=Main}" Style="{StaticResource Hide}"/>
+            <Button Height="45" Width="80" Command="{Binding Close}" Style="{StaticResource Close}"/>
 
         </StackPanel>
         
@@ -34,7 +34,7 @@
         <Canvas Height="auto">
             <StackPanel Canvas.Right="20">
                 <TextBlock Text="Start read" Style="{StaticResource BaseTextBlock}" FontSize="{StaticResource H1}"/>
-                <Button Style="{StaticResource ReadButton}">
+                <Button Command="{Binding AddBook}" Style="{StaticResource ReadButton}">
                     <Grid Width="150">
                         <Grid.ColumnDefinitions >
                             <ColumnDefinition Width="30"/>
