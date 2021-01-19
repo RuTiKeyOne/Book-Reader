@@ -16,6 +16,7 @@ namespace BookReader
             MainViewModel = new MainViewModel();
             DisplayRootRegistry.RegistryWindowType<MainViewModel, MainWindow>();
             DisplayRootRegistry.RegistryWindowType<AddBookViewModel, AddBookWindow>();
+            DisplayRootRegistry.RegistryWindowType<AddShelfViewModel, AddShelfWindow>();
         }
 
         protected override async void OnStartup(StartupEventArgs e)

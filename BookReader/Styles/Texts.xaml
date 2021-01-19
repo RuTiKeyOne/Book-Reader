@@ -8,11 +8,10 @@
 
     <Style x:Key="BaseTextBox" TargetType="TextBox">
         <Setter Property="FontSize" Value="{StaticResource Big}"/>
+        <Setter Property="FontWeight" Value="Light"/>
         <Setter Property="BorderThickness" Value="0" />
-        <Setter Property="Background" Value="{DynamicResource WhiteBaseBrush}" />
-        <Setter Property="Foreground" Value="Black" />
-        <Setter Property="CaretBrush" Value="Black" />
-        <Setter Property="MaxWidth" Value="205"/>
+        <Setter Property="Background" Value="{DynamicResource GreyBaseBrush}" />
+        <Setter Property="Foreground" Value="{DynamicResource WhiteBaseBrush}" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="TextBox">

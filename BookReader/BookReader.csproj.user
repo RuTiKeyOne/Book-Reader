@@ -7,7 +7,10 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
-    <Compile Update="View\AddBookWindow.xaml.cs">
+    <Compile Update="View\Add\AddBookWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\Add\AddShelfWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
@@ -30,7 +33,10 @@
     <Page Update="Styles\Texts.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="View\AddBookWindow.xaml">
+    <Page Update="View\Add\AddBookWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\Add\AddShelfWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="View\MainWindow.xaml">

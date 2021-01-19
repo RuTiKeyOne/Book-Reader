@@ -44,7 +44,7 @@
                         <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" Text="Add a book" Grid.Column="1"></TextBlock>
                     </Grid>
                 </Button>
-                <Button Style="{StaticResource ReadButton}">
+                <Button Command="{Binding AddShelf}" Style="{StaticResource ReadButton}">
                     <Grid Width="150">
                         <Grid.ColumnDefinitions >
                             <ColumnDefinition Width="30"/>
@@ -59,14 +59,14 @@
                 <TextBlock Text="Open the last one" Style="{StaticResource BaseTextBlock}" FontSize="{StaticResource Big}"/>
                 <DockPanel Margin="0,10">
                     <ContentControl
-                            Height="35"
+                            Height="37"
                             Background="{StaticResource LightDarkBaseBrush}"
                             Content="{StaticResource SearchIcon}"
                             Style="{StaticResource IconContent}" />
 
                     <TextBox
+                            Width="270"
                             Style="{StaticResource BaseTextBox}"
-                            Tag="Search"
                             />
                 </DockPanel>
                 <UniformGrid Columns="2">

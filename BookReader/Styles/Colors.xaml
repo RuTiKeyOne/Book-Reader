@@ -19,4 +19,10 @@
     <SolidColorBrush x:Key="LightDarkBaseBrush" Color="#333337" />
     <Color x:Key="LightDarkBaseColor">#333337</Color>
 
+    <SolidColorBrush x:Key="GreyBaseBrush" Color="#3F3F46" />
+    <Color x:Key="GreyDarkBaseColor">#3F3F46</Color>
+
+    <SolidColorBrush x:Key="LightGreyBaseBrush" Color="#575761" />
+    <Color x:Key="LightGreyDarkBaseColor">#575761</Color>
+
 </ResourceDictionary>

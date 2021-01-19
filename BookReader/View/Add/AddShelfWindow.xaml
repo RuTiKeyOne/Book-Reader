@@ -1,5 +1,5 @@
-﻿<Window x:Class="BookReader.View.AddBookWindow"
-        x:Name="AddBook"
+﻿<Window x:Class="BookReader.View.AddShelfWindow"
+        x:Name="AddShelf"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -10,19 +10,18 @@
         WindowStyle="None"
         WindowStartupLocation="CenterScreen"
         Background="{StaticResource LightDarkBaseBrush}"
-        Height="500" Width="450">
+        Height="350" Width="450">
     <StackPanel>
-        <StackPanel HorizontalAlignment="Right" Orientation="Horizontal" Height="auto">
-
-            <Button Height="35" Width="60" Command="{Binding Minimize}" CommandParameter="{Binding ElementName=AddBook}" Style="{StaticResource Hide}"/>
-            <Button Height="35" Width="60" Command="{Binding Close}" Style="{StaticResource Close}"/>
-
-        </StackPanel>
         
+        <StackPanel HorizontalAlignment="Right" Orientation="Horizontal" Height="auto">
+            <Button Height="35" Width="60" Command="{Binding Close}" Style="{StaticResource Close}"/>
+        </StackPanel>
+
         <Canvas Height="150">
-            <TextBlock Canvas.Left="35" Canvas.Top="25" Style="{StaticResource BaseTextBlock}" FontSize="{StaticResource TheBiggers}" Text="Add book"/>
+            <TextBlock Canvas.Left="35" Canvas.Top="25" Style="{StaticResource BaseTextBlock}" FontSize="{StaticResource TheBiggers}" Text="Add shelf"/>
         </Canvas>
         
         
+
     </StackPanel>
 </Window>
