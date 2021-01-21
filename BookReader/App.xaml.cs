@@ -2,6 +2,7 @@
 using System.Windows;
 using BookReaderLibrary.Model.Windows;
 using BookReader.View;
+using System;
 
 namespace BookReader
 {
@@ -9,13 +10,12 @@ namespace BookReader
     {
         internal MainViewModel MainViewModel { get; set; }
         public DisplayRootRegistry DisplayRootRegistry { get; set; }
-
+        
         public App()
         {
             DisplayRootRegistry = new DisplayRootRegistry();
             MainViewModel = new MainViewModel();
             DisplayRootRegistry.RegistryWindowType<MainViewModel, MainWindow>();
-            DisplayRootRegistry.RegistryWindowType<AddBookViewModel, AddBookWindow>();
             DisplayRootRegistry.RegistryWindowType<AddShelfViewModel, AddShelfWindow>();
         }
 

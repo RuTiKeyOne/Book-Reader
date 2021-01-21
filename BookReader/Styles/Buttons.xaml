@@ -62,7 +62,7 @@
     </Style>
 
     <Style x:Key="ReadButton" TargetType="Button">
-        <Setter Property="Background" Value="#333337"/>
+        <Setter Property="Background" Value="{DynamicResource LightDarkBaseBrush}"/>
         <Setter Property="Foreground" Value="{DynamicResource WhiteBaseBrush}"/>
         <Setter Property="FontSize" Value="{DynamicResource Big}"/>
         <Setter Property="Margin" Value="2.5"/>
@@ -77,7 +77,7 @@
                     </Border>
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsMouseOver" Value="True">
-                            <Setter Property="Background" Value="#3F3F3F"/>
+                            <Setter Property="Background" Value="{DynamicResource LightBlackBaseBrush}"/>
                         </Trigger>
                         <Trigger Property="IsPressed" Value="True">
                             <Setter Property="Background" Value="{DynamicResource BlueBaseBrush}"/>
@@ -108,7 +108,7 @@
 
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsMouseOver" Value="True">
-                            <Setter Property="Background" Value="#3F3F3F"/>
+                            <Setter Property="Background" Value="{DynamicResource LightBlackBaseBrush}"/>
                         </Trigger>
                         <Trigger Property="IsPressed" Value="True">
                             <Setter Property="Background" Value="{DynamicResource BlueBaseBrush}"/>
@@ -140,6 +140,37 @@
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsPressed" Value="True">
                             <Setter Property="Background" Value="{DynamicResource BlueBaseBrush}"/>
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter Property="Background" Value="{DynamicResource LightBlackBaseBrush}"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="ButtonListItem" TargetType="Button">
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="Width" Value="900"/>
+        <Setter Property="Height" Value="65"/>
+        <Setter Property="HorizontalAlignment" Value="Left"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border
+                        Background="{TemplateBinding Background}">
+                        <ContentPresenter
+                            Margin="5"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center" 
+                            Content="{TemplateBinding Content}"/>
+                    </Border>
+                    
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="{DynamicResource LightDarkBaseBrush}"/>
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>

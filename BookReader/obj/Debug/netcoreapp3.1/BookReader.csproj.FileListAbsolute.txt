@@ -32,7 +32,6 @@ C:\Users\Rutikeyone\source\repos\BookReader\BookReader\obj\Debug\netcoreapp3.1\G
 C:\Users\Rutikeyone\source\repos\BookReader\BookReader\obj\Debug\netcoreapp3.1\BookReader.csproj.CopyComplete
 C:\Users\Rutikeyone\source\repos\BookReader\BookReader\bin\Debug\netcoreapp3.1\BookReaderLibrary.dll
 C:\Users\Rutikeyone\source\repos\BookReader\BookReader\bin\Debug\netcoreapp3.1\BookReaderLibrary.pdb
-C:\Users\Rutikeyone\source\repos\BookReader\BookReader\obj\Debug\netcoreapp3.1\View\Add\AddBookWindow.g.cs
 C:\Users\Rutikeyone\source\repos\BookReader\BookReader\obj\Debug\netcoreapp3.1\View\Add\AddShelfWindow.g.cs
-C:\Users\Rutikeyone\source\repos\BookReader\BookReader\obj\Debug\netcoreapp3.1\View\Add\AddBookWindow.baml
 C:\Users\Rutikeyone\source\repos\BookReader\BookReader\obj\Debug\netcoreapp3.1\View\Add\AddShelfWindow.baml
+C:\Users\Rutikeyone\source\repos\BookReader\BookReader\obj\Debug\netcoreapp3.1\Styles\UserControl.baml

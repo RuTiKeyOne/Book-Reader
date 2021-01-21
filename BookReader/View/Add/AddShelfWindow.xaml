@@ -5,12 +5,17 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:BookReader.View"
+        xmlns:AddShelfViewModel="clr-namespace:BookReader.ViewModel"
         mc:Ignorable="d"
         ResizeMode="NoResize"
         WindowStyle="None"
         WindowStartupLocation="CenterScreen"
         Background="{StaticResource LightDarkBaseBrush}"
         Height="350" Width="450">
+    <Window.DataContext>
+        <AddShelfViewModel:AddShelfViewModel/>
+    </Window.DataContext> 
+    
     <StackPanel>
         
         <StackPanel HorizontalAlignment="Right" Orientation="Horizontal" Height="auto">
@@ -20,8 +25,17 @@
         <Canvas Height="150">
             <TextBlock Canvas.Left="35" Canvas.Top="25" Style="{StaticResource BaseTextBlock}" FontSize="{StaticResource TheBiggers}" Text="Add shelf"/>
         </Canvas>
-        
-        
+
+        <StackPanel Width="375">
+            <TextBox Text="{Binding NameShelf, UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource BaseTextBox}" ></TextBox>
+
+            <Canvas>
+                <UniformGrid Columns="2" Width="275" Canvas.Right="0" Canvas.Top="25">
+                    <Button Command="{Binding Add}" Content="Add" Style="{StaticResource BaseButton}"></Button>
+                    <Button Command="{Binding Close}" Content="Cancel" Style="{StaticResource BaseButton}"></Button>
+                </UniformGrid>
+            </Canvas>
+        </StackPanel>
 
     </StackPanel>
 </Window>

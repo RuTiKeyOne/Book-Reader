@@ -3,6 +3,7 @@ using BookReaderLibrary.Model.Windows;
 using GalaSoft.MvvmLight.Command;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Windows;
 using System.Windows.Input;
@@ -12,7 +13,6 @@ namespace BookReader.ViewModel.Base
     public class BaseViewModel : INotifyPropertyChanged
     {
         protected DisplayRootRegistry DisplayRootRegistry {get; private set; }
-        
         
         #region Close Command
 

@@ -6,7 +6,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Model\Notify\" />
+    <Folder Include="Model\Patterns\" />
   </ItemGroup>
 
 </Project>

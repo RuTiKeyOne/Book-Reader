@@ -15,11 +15,11 @@
 
   <ItemGroup>
     <None Remove="View\LocalResources\BookIcon.png" />
+    <None Remove="View\LocalResources\BookListItem.png" />
     <None Remove="View\LocalResources\ShelfIcon.png" />
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Include="ViewModel\AddBookViewModel.cs" />
     <Compile Include="ViewModel\AddShelfViewModel.cs" />
     <Compile Include="ViewModel\Base\BaseAddViewModel.cs" />
     <Compile Include="ViewModel\Base\BaseViewModel.cs" />
@@ -36,6 +36,9 @@
 
   <ItemGroup>
     <Resource Include="View\LocalResources\BookIcon.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="View\LocalResources\BookListItem.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
     <Resource Include="View\LocalResources\ShelfIcon.png">
