@@ -1,6 +1,7 @@
 ﻿using BookReader.ViewModel.Base;
 using BookReaderLibrary.Model.Commands;
 using BookReaderLibrary.Model.Dialogs;
+using BookReaderLibrary.Model.Json;
 using System.Collections.ObjectModel;
 using System.Text.Json;
 using System.Windows;
@@ -10,9 +11,10 @@ namespace BookReader.ViewModel
 {
     public class MainViewModel : BaseViewModel
     {
+        private CustomJson Json { get; set; }
         private FileDialog Dialog { get; set; }
 
-        private ObservableCollection<string> books = new ObservableCollection<string>() { "Book 1", "Book 2" };
+        private ObservableCollection<string> books;
 
         public ObservableCollection<string> Books
         {
@@ -25,8 +27,7 @@ namespace BookReader.ViewModel
         public ICommand AddBook { get; set; }
         public void AddBookExecute(object sender)
         {
-
-            Books.Add(Dialog.GetFile((sender as string)));         
+            Books.Add(Dialog.GetFile((sender as string)));
         }
         public bool CanAddBookExecute(object sender) => true;
 
@@ -42,12 +43,19 @@ namespace BookReader.ViewModel
         public bool CanAddShelfExecute(object sender) => true;
 
         #endregion
+        public override void CloseExecute(object sender)
+        {
+            Json.Serialize(Books);
+            base.CloseExecute(sender);
+        }
 
         public MainViewModel()
         {
             Dialog = new FileDialog();
             AddBook = new ActionCommand(AddBookExecute, CanAddBookExecute);
             AddShelf = new ActionCommand(AddShelfExecute, CanAddShelfExecute);
+            Json = new CustomJson();
+            books =  Json.Deserialize();
         }
     }
 }
