@@ -1,4 +1,5 @@
 ﻿using BookReader.ViewModel.Base;
+using BookReaderLibrary.Model.Books;
 using BookReaderLibrary.Model.Commands;
 using BookReaderLibrary.Model.Dialogs;
 using BookReaderLibrary.Model.Json;
@@ -13,6 +14,7 @@ namespace BookReader.ViewModel
     {
         private CustomJson Json { get; set; }
         private FileDialog Dialog { get; set; }
+        private Book BookAdd { get; set; }
 
         private ObservableCollection<string> books;
 
@@ -27,7 +29,7 @@ namespace BookReader.ViewModel
         public ICommand AddBook { get; set; }
         public void AddBookExecute(object sender)
         {
-            Books.Add(Dialog.GetFile((sender as string)));
+            BookAdd.AddBook(Dialog, ref books, sender);
         }
         public bool CanAddBookExecute(object sender) => true;
 
@@ -56,6 +58,7 @@ namespace BookReader.ViewModel
             AddShelf = new ActionCommand(AddShelfExecute, CanAddShelfExecute);
             Json = new CustomJson();
             books =  Json.Deserialize();
+            BookAdd = new Book();
         }
     }
 }

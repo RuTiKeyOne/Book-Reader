@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
@@ -6,7 +6,10 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Model\Patterns\" />
+    <Compile Remove="Model\Patterns\**" />
+    <EmbeddedResource Remove="Model\Patterns\**" />
+    <None Remove="Model\Patterns\**" />
+    <Page Remove="Model\Patterns\**" />
   </ItemGroup>
 
 </Project>

@@ -11,10 +11,10 @@ namespace BookReaderLibrary.Model.Json
     {
         public async void Serialize(ObservableCollection<string> books)
         {
-            using(FileStream Writer = new FileStream("Books.json", FileMode.OpenOrCreate))
+            using (FileStream Writer = new FileStream("Books.json", FileMode.OpenOrCreate))
             {
                 await JsonSerializer.SerializeAsync<ObservableCollection<string>>(Writer, books);
-            }   
+            }
         }
 
         public ObservableCollection<string> Deserialize()

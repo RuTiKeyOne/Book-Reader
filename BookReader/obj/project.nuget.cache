@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "0TAFtnvV2abJ3Rt26Zakpl3WR26kjwDc7mDT3m/ZVbwDDfxLQmo0EhcNxB2xxdlXY7JP7DqmOUYFtOo+Ad/U4w==",
+  "dgSpecHash": "e52DUMrWdNV1iTSh8EP2C4+5WjnPwamEX+LrWukVJVQI6yuEBdNyRpf10Yv1w6CWzyXlaQHBtrgS52GUhTP8FQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Dart\\source\\repos\\BookReader\\BookReader\\BookReader.csproj",
+  "projectFilePath": "C:\\Users\\Dart\\Desktop\\BookReader\\BookReader\\BookReader.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Dart\\.nuget\\packages\\mvvmlightlibs\\5.4.1.1\\mvvmlightlibs.5.4.1.1.nupkg.sha512"
   ],
