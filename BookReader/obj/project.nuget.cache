@@ -1,17 +1,17 @@
 {
   "version": 2,
-  "dgSpecHash": "HZeOm6yVyC99VY+3PuCug215RGevGIsMWv6Z5nxxdFqjHTmbaQtkoTpDcMq/RP1NXTONsi3X3mwlC60URJq3Pg==",
+  "dgSpecHash": "0TAFtnvV2abJ3Rt26Zakpl3WR26kjwDc7mDT3m/ZVbwDDfxLQmo0EhcNxB2xxdlXY7JP7DqmOUYFtOo+Ad/U4w==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Rutikeyone\\source\\repos\\BookReader\\BookReader\\BookReader.csproj",
+  "projectFilePath": "C:\\Users\\Dart\\source\\repos\\BookReader\\BookReader\\BookReader.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\Rutikeyone\\.nuget\\packages\\mvvmlightlibs\\5.4.1.1\\mvvmlightlibs.5.4.1.1.nupkg.sha512"
+    "C:\\Users\\Dart\\.nuget\\packages\\mvvmlightlibs\\5.4.1.1\\mvvmlightlibs.5.4.1.1.nupkg.sha512"
   ],
   "logs": [
     {
       "code": "NU1701",
       "level": "Warning",
       "warningLevel": 1,
-      "message": "Пакет \"MvvmLightLibs 5.4.1.1\" был восстановлен с помощью \".NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8\", а не целевой платформы проекта \".NETCoreApp,Version=v3.1\". Этот пакет может быть не полностью совместим с вашим проектом.",
+      "message": "Package 'MvvmLightLibs 5.4.1.1' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework '.NETCoreApp,Version=v3.1'. This package may not be fully compatible with your project.",
       "libraryId": "MvvmLightLibs",
       "targetGraphs": [
         ".NETCoreApp,Version=v3.1"

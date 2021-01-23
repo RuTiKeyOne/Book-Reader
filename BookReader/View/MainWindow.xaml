@@ -9,7 +9,7 @@
         mc:Ignorable="d"
         MinWidth="800"
         MinHeight="760"
-        ResizeMode="NoResize"
+        ResizeMode="CanResize"
         WindowStyle="None"
         Background="{StaticResource DarkBaseBrush}"
         WindowStartupLocation="CenterScreen"
@@ -19,51 +19,72 @@
     </Window.DataContext>
 
 
-    <StackPanel>
-        <StackPanel HorizontalAlignment="Right" Orientation="Horizontal" Height="auto">
+    <Grid>
 
-            <Button Height="45" Width="80" Command="{Binding Minimize}" CommandParameter="{Binding ElementName=Main}" Style="{StaticResource Hide}"/>
-            <Button Height="45" Width="80" Command="{Binding Close}" Style="{StaticResource Close}"/>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="45"/>
+            <RowDefinition Height="100"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        
+        <StackPanel HorizontalAlignment="Right" Orientation="Horizontal" Grid.Row="0">
+
+            <Button Width="80" Command="{Binding Minimize}" CommandParameter="{Binding ElementName=Main}" Style="{StaticResource Hide}"/>
+            <Button Width="80"/>
+            <Button Width="80" Command="{Binding Close}" Style="{StaticResource Close}"/>
 
         </StackPanel>
 
-        <Canvas Height="100">
-            <TextBlock Canvas.Left="75" Text="Book Reader" Style="{StaticResource BaseTextBlock}" FontSize="{StaticResource TheBiggers}"/>
+        <Canvas Grid.Row="1">
+            <TextBlock Canvas.Left="50" 
+                       Text="Book Reader" 
+                       Style="{StaticResource BaseTextBlock}" 
+                       FontSize="{StaticResource TheBiggest}"
+                       />
         </Canvas>
 
-        <Canvas Height="auto">
-            <StackPanel Canvas.Right="20">
-                <TextBlock Text="Start read" Style="{StaticResource BaseTextBlock}" FontSize="{StaticResource H1}"/>
-                <Button Command="{Binding AddBook}" CommandParameter="Book file|*.pdf" Style="{StaticResource ReadButton}">
-                    <Grid Width="150">
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="13*"/>
-                            <RowDefinition Height="17*"/>
-                        </Grid.RowDefinitions>
-                        <Grid.ColumnDefinitions >
-                            <ColumnDefinition Width="30"/>
-                            <ColumnDefinition Width="3*"/>
-                        </Grid.ColumnDefinitions>
-                        <Image Grid.Column="0" Source="LocalResources/BookIcon.png" Grid.RowSpan="2"></Image>
-                        <TextBlock VerticalAlignment="Top" HorizontalAlignment="Center" Text="Add a book" Grid.Column="1" Margin="0,2,0,0" Grid.RowSpan="2"></TextBlock>
-                    </Grid>
-                </Button>
-                <Button Command="{Binding AddShelf}" Style="{StaticResource ReadButton}">
-                    <Grid Width="150">
-                        <Grid.ColumnDefinitions >
-                            <ColumnDefinition Width="30"/>
-                            <ColumnDefinition Width="3*"/>
-                        </Grid.ColumnDefinitions>
-                        <Image Grid.Column="0" Source="LocalResources/ShelfIcon.png"></Image>
-                        <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" Text="Add a shelf" Grid.Column="1"></TextBlock>
-                    </Grid>
-                </Button>
-            </StackPanel>
-            <StackPanel Canvas.Left="75">
-                <TextBlock Text="Open the last one" Style="{StaticResource BaseTextBlock}" FontSize="{StaticResource Big}"/>
-                <DockPanel Margin="0,10">
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0.65*"/>
+                <ColumnDefinition Width="0.35*"/>
+            </Grid.ColumnDefinitions>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="200"/>
+                <RowDefinition Height="0.75*"/>
+            </Grid.RowDefinitions>
+
+            <Grid Margin="50,0"
+                  Grid.Row="0"
+                  Grid.Column="0"
+                  HorizontalAlignment="Left">
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="0.25*"/>
+                    <RowDefinition Height="0.15*"/>
+                    <RowDefinition Height="0.25*"/>
+                </Grid.RowDefinitions>
+
+
+                <TextBlock VerticalAlignment="Center"
+                           Text="Open the last one" 
+                           Style="{StaticResource BaseTextBlock}" 
+                           FontSize="{StaticResource Big}"
+                           Grid.Column="0"
+                           Grid.Row="0"
+                           />
+
+                <DockPanel VerticalAlignment="Top"
+                           Grid.ColumnSpan="2"
+                           Grid.Row="1"
+                           Height="37">
+
                     <ContentControl
-                            Height="37"
                             Background="{StaticResource LightDarkBaseBrush}"
                             Content="{StaticResource SearchIcon}"
                             Style="{StaticResource IconContent}" />
@@ -72,23 +93,94 @@
                             Width="270"
                             Style="{StaticResource BaseTextBox}"
                             />
+
                 </DockPanel>
-                <UniformGrid Columns="2">
+
+                <UniformGrid Columns="2" 
+                             Grid.Row="2"
+                             Grid.ColumnSpan="2">
+
                     <Button Content="Books" Style="{StaticResource ButtonBar}"></Button>
                     <Button Content="Shelfs" Style="{StaticResource ButtonBar}"></Button>
+
                 </UniformGrid>
+
+            </Grid>
+
+            <StackPanel HorizontalAlignment="Center"
+                Grid.Row="0"
+                Grid.Column="1">
+                <TextBlock Width="250"
+                           Text="Start read" 
+                           Style="{StaticResource BaseTextBlock}" 
+                           FontSize="{StaticResource H1}"
+                           />
+
+                <Button Margin="0,5"
+                        Command="{Binding AddBook}" 
+                        CommandParameter="Book file|*.pdf" 
+                        Style="{StaticResource ReadButton}"
+                        >
+
+                    <Grid Width="150">
+
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="13*"/>
+                            <RowDefinition Height="17*"/>
+                        </Grid.RowDefinitions>
+
+                        <Grid.ColumnDefinitions >
+                            <ColumnDefinition Width="30"/>
+                            <ColumnDefinition Width="3*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Image Grid.Column="0" Source="LocalResources/BookIcon.png" Grid.RowSpan="2"></Image>
+
+                        <TextBlock VerticalAlignment="Top" HorizontalAlignment="Center" Text="Add a book" Grid.Column="1" Margin="0,2,0,0" Grid.RowSpan="2"></TextBlock>
+
+                    </Grid>
+
+                </Button>
+
+                <Button Margin="0,5"
+                        Command="{Binding AddShelf}" 
+                        Style="{StaticResource ReadButton}"
+                        >
+
+                    <Grid Width="150">
+
+                        <Grid.ColumnDefinitions >
+                            <ColumnDefinition Width="30"/>
+                            <ColumnDefinition Width="3*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Image Grid.Column="0" Source="LocalResources/ShelfIcon.png"></Image>
+
+                        <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" Text="Add a shelf" Grid.Column="1"></TextBlock>
+
+                    </Grid>
+                </Button>
             </StackPanel>
 
-            <ListBox
+            <Grid 
+                Grid.Row="1"
+                Grid.Column="0">
+
+                <ListBox
+                Margin="50,0,0,25"
                 Style="{StaticResource BooksListBox}"                
                 ItemsSource="{Binding Books, 
                 UpdateSourceTrigger=PropertyChanged}">
-                <ListBox.ItemContainerStyle>
-                    <Style TargetType="ListBoxItem">
-                        <Setter Property="Template" Value="{StaticResource BookListItems}"/>
-                    </Style>
-                </ListBox.ItemContainerStyle>
-            </ListBox>
-        </Canvas>
-    </StackPanel>
+                    <ListBox.ItemContainerStyle>
+                        <Style TargetType="ListBoxItem">
+                            <Setter Property="Template" Value="{StaticResource BookListItems}"/>
+                        </Style>
+                    </ListBox.ItemContainerStyle>
+                </ListBox>
+
+            </Grid>
+
+        </Grid>
+
+    </Grid>
 </Window>

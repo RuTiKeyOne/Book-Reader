@@ -4,54 +4,46 @@
     <Style x:Key="BooksListBox" TargetType="ListBox">
         <Setter Property="Background" Value="{x:Null}"/>
         <Setter Property="BorderThickness" Value="0"/>
-        <Setter Property="Canvas.Left" Value="75"/>
-        <Setter Property="Canvas.Top" Value="150"/>
         <Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Visible"/>
-        <Setter Property="Height" Value="400"/>
     </Style>
-    
-    <ControlTemplate x:Key="BookListItems" TargetType="ListBoxItem">
 
-        <Grid>
-            <Button
-                Style="{StaticResource ButtonListItem}"
+    <ControlTemplate x:Key="BookListItems" TargetType="ListBoxItem">
+        
+        <Button Style="{StaticResource ButtonListItem}"
                 >
 
-                <Grid>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="100"/>
-                        <ColumnDefinition Width="800"/>
-                    </Grid.ColumnDefinitions>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="80"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
 
-                    <Grid.RowDefinitions>
-                        <RowDefinition/>
-                        <RowDefinition/>
-                    </Grid.RowDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
 
-                    <Image Grid.Column="0" 
-                           Grid.RowSpan="2" 
+                <Image Grid.Column="0" 
                            Source="/View/LocalResources/BookIcon.png"
-                           Height="45"
-                           ></Image>
-                    <TextBlock Grid.Column="1" 
-                               Grid.Row="0"
+                           Height="45"></Image>
+                <StackPanel Grid.Column="1">
+                    <TextBlock
                                Text="{TemplateBinding Content}"
                                Foreground="{DynamicResource WhiteBaseBrush}"
                                FontWeight="Light"
                                FontSize="{StaticResource Big}"
                                />
-                    <TextBlock Grid.Row="1" Grid.Column="1"
+                    <TextBlock
                                Text="Path"
                                Foreground="{DynamicResource DarkWhiteBaseBrush}"
                                FontWeight="Light"
                                FontSize="{StaticResource Big}"
                                />
+                </StackPanel>
 
 
-                </Grid>
+            </Grid>
 
-            </Button>
-        </Grid>
+        </Button>
 
     </ControlTemplate>
 </ResourceDictionary>

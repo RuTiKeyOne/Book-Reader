@@ -153,9 +153,6 @@
     <Style x:Key="ButtonListItem" TargetType="Button">
         <Setter Property="Background" Value="Transparent"/>
         <Setter Property="BorderThickness" Value="0"/>
-        <Setter Property="Width" Value="900"/>
-        <Setter Property="Height" Value="65"/>
-        <Setter Property="HorizontalAlignment" Value="Left"/>
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="Button">
@@ -163,7 +160,6 @@
                         Background="{TemplateBinding Background}">
                         <ContentPresenter
                             Margin="5"
-                            HorizontalAlignment="Center"
                             VerticalAlignment="Center" 
                             Content="{TemplateBinding Content}"/>
                     </Border>
