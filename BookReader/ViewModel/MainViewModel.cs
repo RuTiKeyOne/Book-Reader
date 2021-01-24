@@ -3,9 +3,8 @@ using BookReaderLibrary.Model.Books;
 using BookReaderLibrary.Model.Commands;
 using BookReaderLibrary.Model.Dialogs;
 using BookReaderLibrary.Model.Json;
+using BookReaderLibrary.Model.Windows;
 using System.Collections.ObjectModel;
-using System.Text.Json;
-using System.Windows;
 using System.Windows.Input;
 
 namespace BookReader.ViewModel
@@ -16,6 +15,13 @@ namespace BookReader.ViewModel
         private FileDialog Dialog { get; set; }
         private Book BookAdd { get; set; }
 
+        #region Window size
+
+
+        #endregion
+
+        #region Books
+
         private ObservableCollection<string> books;
 
         public ObservableCollection<string> Books
@@ -23,6 +29,8 @@ namespace BookReader.ViewModel
             get => books;
             set => SetProperty(ref books, value);
         }
+
+        #endregion
 
         #region AddBook Command
 
@@ -45,6 +53,16 @@ namespace BookReader.ViewModel
         public bool CanAddShelfExecute(object sender) => true;
 
         #endregion
+
+        public ICommand ModifySize { get; set; }
+
+        public void ModifySizeExecute(object sender)
+        {
+
+        }
+
+        public bool CanModifySizeExecute(object sender) => true;
+
         public override void CloseExecute(object sender)
         {
             Json.Serialize(Books);
@@ -59,6 +77,9 @@ namespace BookReader.ViewModel
             Json = new CustomJson();
             books =  Json.Deserialize();
             BookAdd = new Book();
+            ModifySize = new ActionCommand(ModifySizeExecute, CanModifySizeExecute);
+
+
         }
     }
 }

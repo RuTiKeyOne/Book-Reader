@@ -70,7 +70,7 @@
                         Width="{TemplateBinding Width}"
                         Background="{TemplateBinding Background}"
                         >
-                        <Image></Image>
+                        <Image Height="20" Source="/View/LocalResources/FrameIcon.png"></Image>
                     </Border>
 
                     <ControlTemplate.Triggers>
