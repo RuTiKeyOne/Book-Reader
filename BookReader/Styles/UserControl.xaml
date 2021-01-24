@@ -10,8 +10,7 @@
 
     <ControlTemplate x:Key="BookListItems" TargetType="ListBoxItem">
         
-        <Button Style="{StaticResource ButtonListItem}"
-                >
+        <Button Style="{StaticResource ButtonListItem}">
 
             <Grid>
                 <Grid.ColumnDefinitions>
@@ -24,23 +23,19 @@
                 </Grid.RowDefinitions>
 
                 <Image Grid.Column="0" 
-                           Source="/View/LocalResources/BookIcon.png"
-                           Height="45"></Image>
+                       Source="/View/LocalResources/BookIcon.png"
+                       Height="45">
+                </Image>
+                
                 <StackPanel Grid.Column="1">
-                    <TextBlock
-                               Text="{TemplateBinding Content}"
+                    
+                    <TextBlock Text="{TemplateBinding Content}"
                                Foreground="{DynamicResource WhiteBaseBrush}"
                                FontWeight="Light"
                                FontSize="{StaticResource Big}"
                                />
-                    <TextBlock
-                               Text="Path"
-                               Foreground="{DynamicResource DarkWhiteBaseBrush}"
-                               FontWeight="Light"
-                               FontSize="{StaticResource Big}"
-                               />
+                
                 </StackPanel>
-
 
             </Grid>
 

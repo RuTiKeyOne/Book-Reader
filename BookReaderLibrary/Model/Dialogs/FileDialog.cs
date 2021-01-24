@@ -1,5 +1,6 @@
 ﻿using Microsoft.Win32;
 using System;
+using System.IO;
 
 namespace BookReaderLibrary.Model.Dialogs
 {
@@ -12,7 +13,7 @@ namespace BookReaderLibrary.Model.Dialogs
             switch (Dialog.ShowDialog())
             {
                 case true:
-                    return Dialog.FileName;
+                    return Path.GetFileName(Dialog.FileName);
             };
             return "No file selected";
         }

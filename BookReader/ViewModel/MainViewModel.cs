@@ -15,11 +15,6 @@ namespace BookReader.ViewModel
         private FileDialog Dialog { get; set; }
         private Book BookAdd { get; set; }
 
-        #region Window size
-
-
-        #endregion
-
         #region Books
 
         private ObservableCollection<string> books;
@@ -54,20 +49,27 @@ namespace BookReader.ViewModel
 
         #endregion
 
+        #region Modify Size
         public ICommand ModifySize { get; set; }
 
         public void ModifySizeExecute(object sender)
         {
-
+           
         }
 
         public bool CanModifySizeExecute(object sender) => true;
+
+        #endregion
+
+        #region override close command
 
         public override void CloseExecute(object sender)
         {
             Json.Serialize(Books);
             base.CloseExecute(sender);
         }
+
+        #endregion
 
         public MainViewModel()
         {
