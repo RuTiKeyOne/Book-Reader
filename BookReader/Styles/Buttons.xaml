@@ -61,6 +61,30 @@
         </Setter>
     </Style>
 
+    <Style x:Key="Size" BasedOn="{StaticResource Hide}" TargetType="Button">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border
+                        Height="{TemplateBinding Height}"
+                        Width="{TemplateBinding Width}"
+                        Background="{TemplateBinding Background}"
+                        >
+                        <Image></Image>
+                    </Border>
+
+                    <ControlTemplate.Triggers>
+
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter Property="Background" Value="{DynamicResource BlueBaseBrush}"/>
+                        </Trigger>
+
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
     <Style x:Key="ReadButton" TargetType="Button">
         <Setter Property="Background" Value="{DynamicResource LightDarkBaseBrush}"/>
         <Setter Property="Foreground" Value="{DynamicResource WhiteBaseBrush}"/>

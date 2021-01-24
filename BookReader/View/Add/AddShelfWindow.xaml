@@ -23,7 +23,7 @@
         </StackPanel>
 
         <Canvas Height="150">
-            <TextBlock Canvas.Left="35" Canvas.Top="25" Style="{StaticResource BaseTextBlock}" FontSize="{StaticResource TheBiggers}" Text="Add shelf"/>
+            <TextBlock Canvas.Left="35" Canvas.Top="25" Style="{StaticResource BaseTextBlock}" FontSize="{StaticResource TheBiggest}" Text="Add shelf"/>
         </Canvas>
 
         <StackPanel Width="375">

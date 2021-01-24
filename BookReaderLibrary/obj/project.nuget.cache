@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "EWdt1J1Bl0v3ckuEjCDKTm0ko1X97jlRqTRmNp5kQPik9uCiUzVw029msNGIIGVxIMTUSqjjwVLw3LK7Ev5pVg==",
+  "dgSpecHash": "pDduqCAlu94mVWX7aIWqe5WCVMSLFJU+v8bN9QE8hB8gV7GOBzaauMrWdeCGy2YGdDaEo7wetJy3WhVzCc0eaw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Dart\\Desktop\\BookReader\\BookReaderLibrary\\BookReaderLibrary.csproj",
+  "projectFilePath": "C:\\Users\\Dart\\source\\repos\\BookReader\\BookReaderLibrary\\BookReaderLibrary.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }
