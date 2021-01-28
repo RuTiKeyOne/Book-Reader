@@ -4,10 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BookReaderLibrary.Model.Books
+namespace BookReaderLibrary.Model.Shelfs
 {
-    public class Book
+    public class Shelf
     {
-        public string NameBook { get; set; }
+        public string ShelfName { get; set; }
     }
 }

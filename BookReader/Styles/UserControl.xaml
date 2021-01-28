@@ -1,7 +1,7 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 
-    <Style x:Key="BooksListBox" TargetType="ListBox">
+    <Style x:Key="ListBoxStyle" TargetType="ListBox">
         <Setter Property="Background" Value="{x:Null}"/>
         <Setter Property="BorderThickness" Value="0"/>
         <Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Hidden"/>
@@ -9,7 +9,7 @@
     </Style>
 
     <ControlTemplate x:Key="BookListItems" TargetType="ListBoxItem">
-        
+
         <Button Style="{StaticResource ButtonListItem}">
 
             <Grid>
@@ -19,22 +19,23 @@
                 </Grid.ColumnDefinitions>
 
                 <Grid.RowDefinitions>
-                    <RowDefinition/>
+                    <RowDefinition Height="60"/>
                 </Grid.RowDefinitions>
 
                 <Image Grid.Column="0" 
                        Source="/View/LocalResources/BookIcon.png"
                        Height="45">
                 </Image>
-                
+
                 <StackPanel Grid.Column="1">
-                    
-                    <TextBlock Text="{TemplateBinding Content}"
+
+                    <TextBlock TextWrapping="Wrap"
+                               Text="{Binding NameBook}"
                                Foreground="{DynamicResource WhiteBaseBrush}"
                                FontWeight="Light"
                                FontSize="{StaticResource Big}"
                                />
-                
+
                 </StackPanel>
 
             </Grid>
@@ -42,4 +43,41 @@
         </Button>
 
     </ControlTemplate>
+
+    <ControlTemplate x:Key="ShelfListItems" TargetType="ListBoxItem">
+
+        <Button Style="{StaticResource ButtonListItem}">
+            
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="80"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="60"/>
+                </Grid.RowDefinitions>
+
+                <Image Grid.Column="0" 
+                       Source="/View/LocalResources/ShelfIcon.png"
+                       Height="45">
+                </Image>
+
+                <StackPanel Grid.Column="1">
+
+                    <TextBlock TextWrapping="Wrap"
+                               Text="{Binding ShelfName}"
+                               Foreground="{DynamicResource WhiteBaseBrush}"
+                               FontWeight="Light"
+                               FontSize="{StaticResource Big}"
+                               />
+
+                </StackPanel>
+
+            </Grid>
+            
+        </Button>
+        
+    </ControlTemplate>
+    
 </ResourceDictionary>

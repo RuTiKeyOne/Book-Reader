@@ -1,28 +1,123 @@
 ﻿using BookReader.ViewModel.Base;
+using BookReaderLibrary.Model.Actions;
 using BookReaderLibrary.Model.Books;
+using BookReaderLibrary.Model.BooksAction;
 using BookReaderLibrary.Model.Commands;
 using BookReaderLibrary.Model.Dialogs;
 using BookReaderLibrary.Model.Json;
+using BookReaderLibrary.Model.Shelfs;
 using BookReaderLibrary.Model.Windows;
 using System.Collections.ObjectModel;
+using System.ComponentModel;
+using System.Windows;
+using System.Windows.Data;
 using System.Windows.Input;
 
 namespace BookReader.ViewModel
 {
     public class MainViewModel : BaseViewModel
     {
+        #region Visibility list state
+
+        private Visibility bookListState = default;
+        public Visibility BookListState
+        {
+            get => bookListState;
+            set => SetProperty(ref bookListState, value);
+        }
+
+        private Visibility shelfListState = default;
+        public Visibility ShelfListState
+        {
+            get => shelfListState;
+            set => SetProperty(ref shelfListState, value);
+        }
+
+        #endregion
+
         private CustomJson Json { get; set; }
         private FileDialog Dialog { get; set; }
-        private Book BookAdd { get; set; }
+        private BookAction BookAction { get; set; }
+        private ShelfAction ShelfAction { get; set; }
 
-        #region Books
+        #region Book list command
 
-        private ObservableCollection<string> books;
+        public ICommand BookListCommand { get; set; }
 
-        public ObservableCollection<string> Books
+        public void BookListExecute(object sender) 
+        {
+            BookListState = Visibility.Visible;
+            ShelfListState = Visibility.Hidden;
+        }
+
+        public bool CanBookListExecute(object sender) => true;
+
+        #endregion
+
+        #region Shelf list command
+
+        public ICommand ShelfListCommand { get; set; }
+
+        public void ShelfListExecute(object sender)
+        {
+            BookListState = Visibility.Hidden;
+            ShelfListState = Visibility.Visible;
+        }
+
+        public bool CanShelfListExecute(object sender) => true;
+
+        #endregion
+
+        #region Books view
+        public Book SelectedBook { get; set; }
+
+        public ICollectionView BooksView { get; set; }
+
+        private ObservableCollection<Book> books;
+
+        public ObservableCollection<Book> Books
         {
             get => books;
             set => SetProperty(ref books, value);
+        }
+
+        #endregion
+
+        #region Shelfs view 
+
+        public Shelf SelectedShelf { get; set; }
+
+        public ICollectionView ShelfsView { get; set; }
+
+        private ObservableCollection<Shelf> shelfs;
+
+        public ObservableCollection<Shelf> Shelfs
+        {
+            get => shelfs;
+            set => SetProperty(ref shelfs, value);
+        }
+
+        #endregion
+
+        #region Search value
+
+        private string _searchValue = null;
+        public string SearchValue
+        {
+            get => _searchValue;
+            set
+            {
+                _searchValue = value;
+                switch (BookListState)
+                {
+                    case Visibility.Visible:
+                        BookAction.FindViews(BooksView, SearchValue);
+                        break;
+                    case Visibility.Hidden:
+                        ShelfAction.FindViews(ShelfsView, SearchValue);
+                        break;
+                }
+            }
         }
 
         #endregion
@@ -32,7 +127,7 @@ namespace BookReader.ViewModel
         public ICommand AddBook { get; set; }
         public void AddBookExecute(object sender)
         {
-            BookAdd.AddBook(Dialog, ref books, sender);
+            BookAction.AddBook(Dialog, ref books, sender);
         }
         public bool CanAddBookExecute(object sender) => true;
 
@@ -54,7 +149,7 @@ namespace BookReader.ViewModel
 
         public void ModifySizeExecute(object sender)
         {
-           
+
         }
 
         public bool CanModifySizeExecute(object sender) => true;
@@ -71,17 +166,37 @@ namespace BookReader.ViewModel
 
         #endregion
 
+        #region Constructor
         public MainViewModel()
         {
             Dialog = new FileDialog();
             AddBook = new ActionCommand(AddBookExecute, CanAddBookExecute);
             AddShelf = new ActionCommand(AddShelfExecute, CanAddShelfExecute);
             Json = new CustomJson();
-            books =  Json.Deserialize();
-            BookAdd = new Book();
+
+            books = Json.Deserialize();
+            BookAction = new BookAction();
+            ShelfAction = new ShelfAction();
             ModifySize = new ActionCommand(ModifySizeExecute, CanModifySizeExecute);
 
+            BooksView = CollectionViewSource.GetDefaultView(books);
+
+            shelfs = new ObservableCollection<Shelf>
+            {
+                new Shelf {ShelfName  = "Shelf 1"},
+                new Shelf {ShelfName = "Shelf 2"}
+            };
+
+            ShelfsView = CollectionViewSource.GetDefaultView(shelfs);
+
+            BookListState = Visibility.Visible;
+            ShelfListState = Visibility.Hidden;
+
+            BookListCommand = new ActionCommand(BookListExecute, CanBookListExecute);
+            ShelfListCommand = new ActionCommand(ShelfListExecute, CanShelfListExecute);
 
         }
+
+        #endregion 
     }
 }

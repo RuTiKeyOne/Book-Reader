@@ -89,9 +89,9 @@
                             Content="{StaticResource SearchIcon}"
                             Style="{StaticResource IconContent}" />
 
-                    <TextBox
-                            Width="270"
-                            Style="{StaticResource BaseTextBox}"
+                    <TextBox  Text="{Binding SearchValue, UpdateSourceTrigger=PropertyChanged}"
+                              Width="270"
+                              Style="{StaticResource BaseTextBox}"
                             />
 
                 </DockPanel>
@@ -100,8 +100,8 @@
                              Grid.Row="2"
                              Grid.ColumnSpan="2">
 
-                    <Button Content="Books" Style="{StaticResource ButtonBar}"></Button>
-                    <Button Content="Shelfs" Style="{StaticResource ButtonBar}"></Button>
+                    <Button Command="{Binding BookListCommand}" Content="Books" Style="{StaticResource ButtonBar}"></Button>
+                    <Button Command="{Binding ShelfListCommand}" Content="Shelfs" Style="{StaticResource ButtonBar}"></Button>
 
                 </UniformGrid>
 
@@ -163,14 +163,15 @@
             </StackPanel>
 
             <Grid 
+                Margin="50,0,0,25"
                 Grid.Row="1"
                 Grid.Column="0">
 
                 <ListBox
-                Margin="50,0,0,25"
-                Style="{StaticResource BooksListBox}"                
-                ItemsSource="{Binding Books, 
-                UpdateSourceTrigger=PropertyChanged}">
+                Visibility="{Binding BookListState, Mode=TwoWay}"
+                Style="{StaticResource ListBoxStyle}"                
+                ItemsSource="{Binding BooksView}"
+                SelectedItem="{Binding SelectedBook}">
                     <ListBox.ItemContainerStyle>
                         <Style TargetType="ListBoxItem">
                             <Setter Property="Template" Value="{StaticResource BookListItems}"/>
@@ -178,6 +179,17 @@
                     </ListBox.ItemContainerStyle>
                 </ListBox>
 
+                <ListBox
+                Visibility="{Binding ShelfListState, Mode=TwoWay}"
+                Style="{StaticResource ListBoxStyle}"
+                ItemsSource="{Binding ShelfsView}"
+                SelectedItem="{Binding SelectedShelf}">
+                    <ListBox.ItemContainerStyle>
+                        <Style TargetType="ListBoxItem">
+                            <Setter Property="Template" Value="{StaticResource ShelfListItems}"/>
+                        </Style>
+                    </ListBox.ItemContainerStyle>
+                </ListBox>
             </Grid>
 
         </Grid>
