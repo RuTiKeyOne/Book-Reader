@@ -164,7 +164,8 @@ namespace BookReader.ViewModel
 
         public override void CloseExecute(object sender)
         {
-            Json.SerializeBooks(Books);
+            Json.Serialize(Books);
+            Json.Serialize(Shelfs);
             base.CloseExecute(sender);
         }
 
@@ -179,17 +180,13 @@ namespace BookReader.ViewModel
             Json = new CustomJson();
 
             books = Json.DeserializeBooks();
+            shelfs = Json.DeserializeShelfs();
+
             BookAction = new BookAction();
             ShelfAction = new ShelfAction();
             ModifySize = new ActionCommand(ModifySizeExecute, CanModifySizeExecute);
 
             BooksView = CollectionViewSource.GetDefaultView(books);
-
-            shelfs = new ObservableCollection<Shelf>
-            {
-                new Shelf {ShelfName  = "Shelf 1"},
-                new Shelf {ShelfName = "Shelf 2"}
-            };
 
             ShelfsView = CollectionViewSource.GetDefaultView(shelfs);
 

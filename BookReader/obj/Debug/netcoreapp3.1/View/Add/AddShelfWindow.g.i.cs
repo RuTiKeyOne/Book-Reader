@@ -62,7 +62,7 @@ namespace BookReader.View {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/BookReader;component/view/add/addshelfwindow.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/BookReader;V1.0.0.0;component/view/add/addshelfwindow.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\..\View\Add\AddShelfWindow.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

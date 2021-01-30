@@ -1,4 +1,5 @@
 ﻿using BookReaderLibrary.Model.Books;
+using BookReaderLibrary.Model.Shelfs;
 using System;
 using System.Collections.ObjectModel;
 using System.IO;
@@ -10,7 +11,8 @@ namespace BookReaderLibrary.Model.Json
 {
     public class CustomJson
     {
-        public async void SerializeBooks(ObservableCollection<Book> books)
+        private string JsonResult { get; set; }
+        public async void Serialize(ObservableCollection<Book> books)
         {
             using (FileStream Writer = new FileStream("Books.json", FileMode.OpenOrCreate))
             {
@@ -18,10 +20,17 @@ namespace BookReaderLibrary.Model.Json
             }
         }
 
+        public async void Serialize(ObservableCollection<Shelf> shelfs)
+        {
+            using (FileStream Writer = new FileStream("Shelfs.json", FileMode.OpenOrCreate))
+            {
+                await JsonSerializer.SerializeAsync<ObservableCollection<Shelf>>(Writer, shelfs);
+            }
+        }
+
         public ObservableCollection<Book> DeserializeBooks()
         {
             ObservableCollection<Book> Result;
-            string JsonResult;
             using (StreamReader Reader = new StreamReader("Books.json"))
             {
                 JsonResult = Reader.ReadToEnd();
@@ -33,6 +42,25 @@ namespace BookReaderLibrary.Model.Json
                 else
                 {
                     Result = new ObservableCollection<Book>();
+                }
+            }
+            return Result;
+        }
+
+        public ObservableCollection<Shelf> DeserializeShelfs()
+        {
+            ObservableCollection<Shelf> Result;
+            using (StreamReader Reader = new StreamReader("Shelfs.json"))
+            {
+                JsonResult = Reader.ReadToEnd();
+
+                if (JsonResult != "")
+                {
+                    Result = JsonSerializer.Deserialize<ObservableCollection<Shelf>>(JsonResult);
+                }
+                else
+                {
+                    Result = new ObservableCollection<Shelf>();
                 }
             }
             return Result;
