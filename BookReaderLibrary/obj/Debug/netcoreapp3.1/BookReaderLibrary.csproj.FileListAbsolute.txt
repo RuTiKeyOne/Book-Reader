@@ -25,3 +25,12 @@ C:\Users\Rutikeyone\source\repos\Book-Reader\BookReaderLibrary\obj\Debug\netcore
 C:\Users\Rutikeyone\source\repos\Book-Reader\BookReaderLibrary\obj\Debug\netcoreapp3.1\BookReaderLibrary.csproj.CoreCompileInputs.cache
 C:\Users\Rutikeyone\source\repos\Book-Reader\BookReaderLibrary\obj\Debug\netcoreapp3.1\BookReaderLibrary.dll
 C:\Users\Rutikeyone\source\repos\Book-Reader\BookReaderLibrary\obj\Debug\netcoreapp3.1\BookReaderLibrary.pdb
+C:\Users\Dart\source\repos\Book-Reader\BookReaderLibrary\bin\Debug\netcoreapp3.1\BookReaderLibrary.deps.json
+C:\Users\Dart\source\repos\Book-Reader\BookReaderLibrary\bin\Debug\netcoreapp3.1\BookReaderLibrary.dll
+C:\Users\Dart\source\repos\Book-Reader\BookReaderLibrary\bin\Debug\netcoreapp3.1\BookReaderLibrary.pdb
+C:\Users\Dart\source\repos\Book-Reader\BookReaderLibrary\obj\Debug\netcoreapp3.1\BookReaderLibrary.csprojAssemblyReference.cache
+C:\Users\Dart\source\repos\Book-Reader\BookReaderLibrary\obj\Debug\netcoreapp3.1\BookReaderLibrary.AssemblyInfoInputs.cache
+C:\Users\Dart\source\repos\Book-Reader\BookReaderLibrary\obj\Debug\netcoreapp3.1\BookReaderLibrary.AssemblyInfo.cs
+C:\Users\Dart\source\repos\Book-Reader\BookReaderLibrary\obj\Debug\netcoreapp3.1\BookReaderLibrary.csproj.CoreCompileInputs.cache
+C:\Users\Dart\source\repos\Book-Reader\BookReaderLibrary\obj\Debug\netcoreapp3.1\BookReaderLibrary.dll
+C:\Users\Dart\source\repos\Book-Reader\BookReaderLibrary\obj\Debug\netcoreapp3.1\BookReaderLibrary.pdb

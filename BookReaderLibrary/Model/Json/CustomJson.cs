@@ -10,7 +10,7 @@ namespace BookReaderLibrary.Model.Json
 {
     public class CustomJson
     {
-        public async void Serialize(ObservableCollection<Book> books)
+        public async void SerializeBooks(ObservableCollection<Book> books)
         {
             using (FileStream Writer = new FileStream("Books.json", FileMode.OpenOrCreate))
             {
@@ -18,7 +18,7 @@ namespace BookReaderLibrary.Model.Json
             }
         }
 
-        public ObservableCollection<Book> Deserialize()
+        public ObservableCollection<Book> DeserializeBooks()
         {
             ObservableCollection<Book> Result;
             string JsonResult;

@@ -5,11 +5,4 @@
     <UseWPF>true</UseWPF>
   </PropertyGroup>
 
-  <ItemGroup>
-    <Compile Remove="Model\Patterns\**" />
-    <EmbeddedResource Remove="Model\Patterns\**" />
-    <None Remove="Model\Patterns\**" />
-    <Page Remove="Model\Patterns\**" />
-  </ItemGroup>
-
 </Project>

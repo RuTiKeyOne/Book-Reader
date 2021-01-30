@@ -46,6 +46,8 @@ namespace BookReader.ViewModel
 
         public void BookListExecute(object sender) 
         {
+            BookAction.FindViews(BooksView, SearchValue);
+
             BookListState = Visibility.Visible;
             ShelfListState = Visibility.Hidden;
         }
@@ -60,6 +62,8 @@ namespace BookReader.ViewModel
 
         public void ShelfListExecute(object sender)
         {
+            ShelfAction.FindViews(ShelfsView, SearchValue);
+
             BookListState = Visibility.Hidden;
             ShelfListState = Visibility.Visible;
         }
@@ -156,11 +160,11 @@ namespace BookReader.ViewModel
 
         #endregion
 
-        #region override close command
+        #region override Close command
 
         public override void CloseExecute(object sender)
         {
-            Json.Serialize(Books);
+            Json.SerializeBooks(Books);
             base.CloseExecute(sender);
         }
 
@@ -174,7 +178,7 @@ namespace BookReader.ViewModel
             AddShelf = new ActionCommand(AddShelfExecute, CanAddShelfExecute);
             Json = new CustomJson();
 
-            books = Json.Deserialize();
+            books = Json.DeserializeBooks();
             BookAction = new BookAction();
             ShelfAction = new ShelfAction();
             ModifySize = new ActionCommand(ModifySizeExecute, CanModifySizeExecute);
@@ -195,8 +199,17 @@ namespace BookReader.ViewModel
             BookListCommand = new ActionCommand(BookListExecute, CanBookListExecute);
             ShelfListCommand = new ActionCommand(ShelfListExecute, CanShelfListExecute);
 
+
+            Singleton.Notifier += GetNameShelf;
+
         }
 
-        #endregion 
+        #endregion
+        
+
+        public void GetNameShelf(string nameShelf)
+        {
+            ShelfAction.AddShelf(nameShelf, ref shelfs);
+        }
     }
 }

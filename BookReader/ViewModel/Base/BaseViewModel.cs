@@ -1,9 +1,8 @@
 ﻿using BookReaderLibrary.Model.Commands;
+using BookReaderLibrary.Model.Patterns;
 using BookReaderLibrary.Model.Windows;
 using GalaSoft.MvvmLight.Command;
-using System;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Windows;
 using System.Windows.Input;
@@ -13,6 +12,7 @@ namespace BookReader.ViewModel.Base
     public class BaseViewModel : INotifyPropertyChanged
     {
         protected DisplayRootRegistry DisplayRootRegistry {get; private set; }
+        protected Singleton Singleton { get; set; }
         
         #region Close Command
 
@@ -40,13 +40,14 @@ namespace BookReader.ViewModel.Base
 
         public BaseViewModel()
         {
+            Singleton = Singleton.GetInstance();
             Close = new ActionCommand(CloseExecute, CanCloseExecute);
             Minimize = new RelayCommand<Window>(this.MinimizeWindow);
             DisplayRootRegistry = (Application.Current as App).DisplayRootRegistry;
 
         }
 
-        // Interface INotifyPropertyChanged
+        #region Interface INotifyPropertyChanged
         public event PropertyChangedEventHandler PropertyChanged;
 
         protected void OnPropertyChanged(string propertyName)
@@ -62,5 +63,7 @@ namespace BookReader.ViewModel.Base
             OnPropertyChanged(propertyName);
             return true;
         }
+
+        #endregion
     }
 }

@@ -1,4 +1,5 @@
 ﻿using BookReader.ViewModel.Base;
+using BookReaderLibrary.Model.Patterns;
 using System;
 using System.Windows;
 
@@ -14,5 +15,12 @@ namespace BookReader.ViewModel
         }
 
         public override bool CanAddExecute(object sender) => !string.IsNullOrEmpty(NameShelf);
+
+        public override void AddExecute(object sender)
+        {
+            Singleton.NotifyMainViewModel(nameShelf);
+
+            DisplayRootRegistry.HidePresentation(this);
+        }
     }
 }

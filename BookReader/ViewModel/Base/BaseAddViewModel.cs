@@ -9,10 +9,7 @@ namespace BookReader.ViewModel.Base
         public ICommand Add { get; set; }
         public virtual bool CanAddExecute(object sender) => true;
         
-        public virtual void AddExecute(object sender)
-        {
-
-        }
+        public virtual void AddExecute(object sender) { }
 
         public BaseAddViewModel()
         {
