@@ -5,7 +5,8 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:BookReader"
-        xmlns:MainViewmodel="clr-namespace:BookReader.ViewModel"
+        xmlns:MainViewModel="clr-namespace:BookReader.ViewModel" 
+        xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
         mc:Ignorable="d"
         MinWidth="800"
         MinHeight="760"
@@ -15,7 +16,7 @@
         WindowStartupLocation="CenterScreen"
         WindowState="Maximized">
     <Window.DataContext>
-        <MainViewmodel:MainViewModel/>
+        <MainViewModel:MainViewModel/>
     </Window.DataContext>
 
 
@@ -169,7 +170,7 @@
 
                 <ListBox
                 Visibility="{Binding BookListState, Mode=TwoWay}"
-                Style="{StaticResource ListBoxStyle}"                
+                Style="{StaticResource ListBoxStyle}"
                 ItemsSource="{Binding BooksView}"
                 SelectedItem="{Binding SelectedBook}">
                     <ListBox.ItemContainerStyle>
@@ -189,6 +190,7 @@
                             <Setter Property="Template" Value="{StaticResource ShelfListItems}"/>
                         </Style>
                     </ListBox.ItemContainerStyle>
+
                 </ListBox>
             </Grid>
 

@@ -10,6 +10,7 @@ using BookReaderLibrary.Model.Windows;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Windows;
+using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Input;
 
@@ -73,7 +74,19 @@ namespace BookReader.ViewModel
         #endregion
 
         #region Books view
-        public Book SelectedBook { get; set; }
+        private Book selectedBook;
+        public Book SelectedBook
+        {
+            get
+            {
+                return selectedBook;
+            }
+
+            set
+            {
+                SetProperty(ref selectedBook, value);
+            }
+        }
 
         public ICollectionView BooksView { get; set; }
 
@@ -199,10 +212,25 @@ namespace BookReader.ViewModel
 
             Singleton.Notifier += GetNameShelf;
 
+            BookItem = new ActionCommand(BookItemExecute, CanBookItemExecute);
+
         }
 
         #endregion
-        
+
+        #region List box book item 
+
+        public ICommand BookItem { get; set; }
+        public bool CanBookItemExecute(object sender) => true;
+
+        public void BookItemExecute(object sender)
+        {
+            
+        }
+
+        #endregion
+
+
 
         public void GetNameShelf(string nameShelf)
         {
