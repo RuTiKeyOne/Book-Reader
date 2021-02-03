@@ -183,3 +183,10 @@ C:\Users\Dart\source\repos\Book-Reader\BookReader\obj\Debug\netcoreapp3.1\BookRe
 C:\Users\Dart\source\repos\Book-Reader\BookReader\obj\Debug\netcoreapp3.1\BookReader.dll
 C:\Users\Dart\source\repos\Book-Reader\BookReader\obj\Debug\netcoreapp3.1\BookReader.pdb
 C:\Users\Dart\source\repos\Book-Reader\BookReader\obj\Debug\netcoreapp3.1\BookReader.genruntimeconfig.cache
+C:\Users\Rutikeyone\source\repos\Book-Reader\BookReader\bin\Debug\netcoreapp3.1\Syncfusion.Compression.Base.dll
+C:\Users\Rutikeyone\source\repos\Book-Reader\BookReader\bin\Debug\netcoreapp3.1\Syncfusion.Licensing.dll
+C:\Users\Rutikeyone\source\repos\Book-Reader\BookReader\bin\Debug\netcoreapp3.1\Syncfusion.Pdf.Base.dll
+C:\Users\Rutikeyone\source\repos\Book-Reader\BookReader\bin\Debug\netcoreapp3.1\Syncfusion.PdfViewer.WPF.dll
+C:\Users\Rutikeyone\source\repos\Book-Reader\BookReader\bin\Debug\netcoreapp3.1\Syncfusion.Shared.WPF.dll
+C:\Users\Rutikeyone\source\repos\Book-Reader\BookReader\obj\Debug\netcoreapp3.1\View\PdfReaderWindow.g.cs
+C:\Users\Rutikeyone\source\repos\Book-Reader\BookReader\obj\Debug\netcoreapp3.1\View\PdfReaderWindow.baml

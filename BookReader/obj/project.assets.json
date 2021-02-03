@@ -17,6 +17,64 @@
           "lib/net45/System.Windows.Interactivity.dll": {}
         }
       },
+      "Syncfusion.Compression.Base/18.4.0.41": {
+        "type": "package",
+        "compile": {
+          "lib/netcoreapp3.1/Syncfusion.Compression.Base.dll": {}
+        },
+        "runtime": {
+          "lib/netcoreapp3.1/Syncfusion.Compression.Base.dll": {}
+        }
+      },
+      "Syncfusion.Licensing/18.4.0.41": {
+        "type": "package",
+        "compile": {
+          "lib/netcoreapp3.1/Syncfusion.Licensing.dll": {}
+        },
+        "runtime": {
+          "lib/netcoreapp3.1/Syncfusion.Licensing.dll": {}
+        }
+      },
+      "Syncfusion.Pdf.Wpf/18.4.0.41": {
+        "type": "package",
+        "dependencies": {
+          "Syncfusion.Compression.Base": "18.4.0.41",
+          "Syncfusion.Licensing": "18.4.0.41"
+        },
+        "compile": {
+          "lib/netcoreapp3.1/Syncfusion.Pdf.Base.dll": {}
+        },
+        "runtime": {
+          "lib/netcoreapp3.1/Syncfusion.Pdf.Base.dll": {}
+        }
+      },
+      "Syncfusion.PdfViewer.WPF/18.4.0.41": {
+        "type": "package",
+        "dependencies": {
+          "Syncfusion.Compression.Base": "18.4.0.41",
+          "Syncfusion.Licensing": "18.4.0.41",
+          "Syncfusion.Pdf.Wpf": "18.4.0.41",
+          "Syncfusion.Shared.WPF": "18.4.0.41"
+        },
+        "compile": {
+          "lib/netcoreapp3.1/Syncfusion.PdfViewer.WPF.dll": {}
+        },
+        "runtime": {
+          "lib/netcoreapp3.1/Syncfusion.PdfViewer.WPF.dll": {}
+        }
+      },
+      "Syncfusion.Shared.WPF/18.4.0.41": {
+        "type": "package",
+        "dependencies": {
+          "Syncfusion.Licensing": "18.4.0.41"
+        },
+        "compile": {
+          "lib/netcoreapp3.1/Syncfusion.Shared.WPF.dll": {}
+        },
+        "runtime": {
+          "lib/netcoreapp3.1/Syncfusion.Shared.WPF.dll": {}
+        }
+      },
       "BookReaderLibrary/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v3.1",
@@ -150,6 +208,178 @@
         "mvvmlightlibs.nuspec"
       ]
     },
+    "Syncfusion.Compression.Base/18.4.0.41": {
+      "sha512": "RwVo7nUcuOYmXXy3IkOxZbHX1tTTxxq7jiLXe6BH+C7Bgs46+jhWzjkpxIOVmvkBYZeURxGLM6sYwETZcifzvg==",
+      "type": "package",
+      "path": "syncfusion.compression.base/18.4.0.41",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net20/Syncfusion.Compression.Base.dll",
+        "lib/net20/Syncfusion.Compression.Base.xml",
+        "lib/net35/Syncfusion.Compression.Base.dll",
+        "lib/net35/Syncfusion.Compression.Base.xml",
+        "lib/net40/Syncfusion.Compression.Base.dll",
+        "lib/net40/Syncfusion.Compression.Base.xml",
+        "lib/net45/Syncfusion.Compression.Base.dll",
+        "lib/net45/Syncfusion.Compression.Base.xml",
+        "lib/net451/Syncfusion.Compression.Base.dll",
+        "lib/net451/Syncfusion.Compression.Base.xml",
+        "lib/net46/Syncfusion.Compression.Base.dll",
+        "lib/net46/Syncfusion.Compression.Base.xml",
+        "lib/netcoreapp3.1/Syncfusion.Compression.Base.dll",
+        "lib/netcoreapp3.1/Syncfusion.Compression.Base.xml",
+        "lib/netcoreapp5.0/Syncfusion.Compression.Base.dll",
+        "lib/netcoreapp5.0/Syncfusion.Compression.Base.xml",
+        "syncfusion.compression.base.18.4.0.41.nupkg.sha512",
+        "syncfusion.compression.base.nuspec"
+      ]
+    },
+    "Syncfusion.Licensing/18.4.0.41": {
+      "sha512": "YxRIrICcGoU7a1ABNQoa1qewJYkBZ1NTXa/kftRbr6zkOG0qaGCORBeceN1Y5LQ1r0MFRCO3kxMYTqUmi2O94A==",
+      "type": "package",
+      "path": "syncfusion.licensing/18.4.0.41",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/MonoAndroid10.0/Syncfusion.Licensing.dll",
+        "lib/MonoAndroid90/Syncfusion.Licensing.dll",
+        "lib/Xamarin.Mac/Syncfusion.Licensing.dll",
+        "lib/Xamarin.iOS10/Syncfusion.Licensing.dll",
+        "lib/net20/Syncfusion.Licensing.dll",
+        "lib/net35/Syncfusion.Licensing.dll",
+        "lib/net40/Syncfusion.Licensing.dll",
+        "lib/net45/Syncfusion.Licensing.dll",
+        "lib/net451/Syncfusion.Licensing.dll",
+        "lib/net46/Syncfusion.Licensing.dll",
+        "lib/netcoreapp3.1/Syncfusion.Licensing.dll",
+        "lib/netcoreapp5.0/Syncfusion.Licensing.dll",
+        "lib/netstandard1.0/Syncfusion.Licensing.dll",
+        "lib/netstandard1.2/Syncfusion.Licensing.dll",
+        "lib/netstandard1.4/Syncfusion.Licensing.dll",
+        "lib/netstandard2.0/Syncfusion.Licensing.dll",
+        "lib/portable-win+net45+wp80+win81+wpa81/Syncfusion.Licensing.dll",
+        "lib/uap10.0/Syncfusion.Licensing.dll",
+        "syncfusion.licensing.18.4.0.41.nupkg.sha512",
+        "syncfusion.licensing.nuspec"
+      ]
+    },
+    "Syncfusion.Pdf.Wpf/18.4.0.41": {
+      "sha512": "CkkisOjBQLO3L3JpAVlemnh0UxvBUaqleI5uvwDFf55Hle7tNIXCT4qPwlYaT8ef6tC+27Sqyw8KAkSOKVePYQ==",
+      "type": "package",
+      "path": "syncfusion.pdf.wpf/18.4.0.41",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net35/Syncfusion.Pdf.Base.dll",
+        "lib/net35/Syncfusion.Pdf.Base.xml",
+        "lib/net40/Syncfusion.Pdf.Base.dll",
+        "lib/net40/Syncfusion.Pdf.Base.xml",
+        "lib/net45/Syncfusion.Pdf.Base.dll",
+        "lib/net45/Syncfusion.Pdf.Base.xml",
+        "lib/net451/Syncfusion.Pdf.Base.dll",
+        "lib/net451/Syncfusion.Pdf.Base.xml",
+        "lib/net46/Syncfusion.Pdf.Base.dll",
+        "lib/net46/Syncfusion.Pdf.Base.xml",
+        "lib/netcoreapp3.1/Syncfusion.Pdf.Base.dll",
+        "lib/netcoreapp3.1/Syncfusion.Pdf.Base.xml",
+        "lib/netcoreapp5.0/Syncfusion.Pdf.Base.dll",
+        "lib/netcoreapp5.0/Syncfusion.Pdf.Base.xml",
+        "syncfusion.pdf.wpf.18.4.0.41.nupkg.sha512",
+        "syncfusion.pdf.wpf.nuspec"
+      ]
+    },
+    "Syncfusion.PdfViewer.WPF/18.4.0.41": {
+      "sha512": "4MuGgN1coOz5hHyXTMvTgJyd/bHh6I+QZ1OEIN1soAA3sCwOpbQNdaIiyrt8qF8WfV7Pi/u7oeMMvhUNN+TJAA==",
+      "type": "package",
+      "path": "syncfusion.pdfviewer.wpf/18.4.0.41",
+      "hasTools": true,
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net35/Design/Syncfusion.PdfViewer.Wpf.VisualStudio.Design.dll",
+        "lib/net35/Design/Syncfusion.PdfViewer.Wpf.dll.Design.dll",
+        "lib/net35/Syncfusion.PdfViewer.WPF.dll",
+        "lib/net35/Syncfusion.PdfViewer.WPF.xml",
+        "lib/net40/Design/Syncfusion.PdfViewer.Wpf.VisualStudio.Design.dll",
+        "lib/net40/Design/Syncfusion.PdfViewer.Wpf.dll.Design.dll",
+        "lib/net40/Syncfusion.PdfViewer.WPF.dll",
+        "lib/net40/Syncfusion.PdfViewer.WPF.xml",
+        "lib/net45/Design/Syncfusion.PdfViewer.Wpf.VisualStudio.Design.dll",
+        "lib/net45/Design/Syncfusion.PdfViewer.Wpf.dll.Design.dll",
+        "lib/net45/Syncfusion.PdfViewer.WPF.dll",
+        "lib/net45/Syncfusion.PdfViewer.WPF.xml",
+        "lib/net451/Design/Syncfusion.PdfViewer.Wpf.VisualStudio.Design.dll",
+        "lib/net451/Design/Syncfusion.PdfViewer.Wpf.dll.Design.dll",
+        "lib/net451/Syncfusion.PdfViewer.WPF.dll",
+        "lib/net451/Syncfusion.PdfViewer.WPF.xml",
+        "lib/net46/Design/Syncfusion.PdfViewer.Wpf.VisualStudio.Design.dll",
+        "lib/net46/Design/Syncfusion.PdfViewer.Wpf.dll.Design.dll",
+        "lib/net46/Syncfusion.PdfViewer.WPF.dll",
+        "lib/net46/Syncfusion.PdfViewer.WPF.xml",
+        "lib/netcoreapp3.1/Syncfusion.PdfViewer.WPF.dll",
+        "lib/netcoreapp3.1/Syncfusion.PdfViewer.WPF.xml",
+        "lib/netcoreapp5.0/Syncfusion.PdfViewer.WPF.dll",
+        "lib/netcoreapp5.0/Syncfusion.PdfViewer.WPF.xml",
+        "syncfusion.pdfviewer.wpf.18.4.0.41.nupkg.sha512",
+        "syncfusion.pdfviewer.wpf.nuspec",
+        "tools/VisualStudioToolsManifest.xml"
+      ]
+    },
+    "Syncfusion.Shared.WPF/18.4.0.41": {
+      "sha512": "CpDUtnJtNEmA/W5nin8Hgg0lF6i02K/RtX2sO+/cSKxdbP2ywliO97bUVJGGoIFfGDLWkmPQIHfFyR+sg8OemQ==",
+      "type": "package",
+      "path": "syncfusion.shared.wpf/18.4.0.41",
+      "hasTools": true,
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net35/Design/Syncfusion.Design.Wpf.dll",
+        "lib/net35/Design/Syncfusion.Shared.WPF.DesignTools.dll",
+        "lib/net35/Design/Syncfusion.Shared.Wpf.Expression.Design.dll",
+        "lib/net35/Design/Syncfusion.Shared.Wpf.VisualStudio.Design.dll",
+        "lib/net35/Design/Syncfusion.Shared.Wpf.dll.Design.dll",
+        "lib/net35/Syncfusion.Shared.WPF.dll",
+        "lib/net35/Syncfusion.Shared.WPF.xml",
+        "lib/net40/Design/Syncfusion.Design.Wpf.dll",
+        "lib/net40/Design/Syncfusion.Shared.WPF.DesignTools.dll",
+        "lib/net40/Design/Syncfusion.Shared.Wpf.Expression.Design.dll",
+        "lib/net40/Design/Syncfusion.Shared.Wpf.VisualStudio.Design.dll",
+        "lib/net40/Design/Syncfusion.Shared.Wpf.dll.Design.dll",
+        "lib/net40/Syncfusion.Shared.WPF.dll",
+        "lib/net40/Syncfusion.Shared.WPF.xml",
+        "lib/net45/Design/Syncfusion.Design.Wpf.dll",
+        "lib/net45/Design/Syncfusion.Shared.WPF.DesignTools.dll",
+        "lib/net45/Design/Syncfusion.Shared.Wpf.Expression.Design.dll",
+        "lib/net45/Design/Syncfusion.Shared.Wpf.VisualStudio.Design.dll",
+        "lib/net45/Design/Syncfusion.Shared.Wpf.dll.Design.dll",
+        "lib/net45/Syncfusion.Shared.WPF.dll",
+        "lib/net45/Syncfusion.Shared.WPF.xml",
+        "lib/net451/Design/Syncfusion.Design.Wpf.dll",
+        "lib/net451/Design/Syncfusion.Shared.WPF.DesignTools.dll",
+        "lib/net451/Design/Syncfusion.Shared.Wpf.Expression.Design.dll",
+        "lib/net451/Design/Syncfusion.Shared.Wpf.VisualStudio.Design.dll",
+        "lib/net451/Design/Syncfusion.Shared.Wpf.dll.Design.dll",
+        "lib/net451/Syncfusion.Shared.WPF.dll",
+        "lib/net451/Syncfusion.Shared.WPF.xml",
+        "lib/net46/Design/Syncfusion.Design.Wpf.dll",
+        "lib/net46/Design/Syncfusion.Shared.WPF.DesignTools.dll",
+        "lib/net46/Design/Syncfusion.Shared.Wpf.Expression.Design.dll",
+        "lib/net46/Design/Syncfusion.Shared.Wpf.VisualStudio.Design.dll",
+        "lib/net46/Design/Syncfusion.Shared.Wpf.dll.Design.dll",
+        "lib/net46/Syncfusion.Shared.WPF.dll",
+        "lib/net46/Syncfusion.Shared.WPF.xml",
+        "lib/netcoreapp3.1/Design/Syncfusion.Shared.WPF.DesignTools.dll",
+        "lib/netcoreapp3.1/Syncfusion.Shared.WPF.dll",
+        "lib/netcoreapp3.1/Syncfusion.Shared.WPF.xml",
+        "lib/netcoreapp5.0/Design/Syncfusion.Shared.WPF.DesignTools.dll",
+        "lib/netcoreapp5.0/Syncfusion.Shared.WPF.dll",
+        "lib/netcoreapp5.0/Syncfusion.Shared.WPF.xml",
+        "syncfusion.shared.wpf.18.4.0.41.nupkg.sha512",
+        "syncfusion.shared.wpf.nuspec",
+        "tools/VisualStudioToolsManifest.xml"
+      ]
+    },
     "BookReaderLibrary/1.0.0": {
       "type": "project",
       "path": "../BookReaderLibrary/BookReaderLibrary.csproj",
@@ -159,31 +389,25 @@
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.1": [
       "BookReaderLibrary >= 1.0.0",
-      "MvvmLightLibs >= 5.4.1.1"
+      "MvvmLightLibs >= 5.4.1.1",
+      "Syncfusion.PdfViewer.WPF >= 18.4.0.41"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Dart\\.nuget\\packages\\": {},
-    "C:\\Microsoft\\Xamarin\\NuGet\\": {},
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+    "C:\\Users\\Rutikeyone\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Dart\\source\\repos\\Book-Reader\\BookReader\\BookReader.csproj",
+      "projectUniqueName": "C:\\Users\\Rutikeyone\\source\\repos\\Book-Reader\\BookReader\\BookReader.csproj",
       "projectName": "BookReader",
-      "projectPath": "C:\\Users\\Dart\\source\\repos\\Book-Reader\\BookReader\\BookReader.csproj",
-      "packagesPath": "C:\\Users\\Dart\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Dart\\source\\repos\\Book-Reader\\BookReader\\obj\\",
+      "projectPath": "C:\\Users\\Rutikeyone\\source\\repos\\Book-Reader\\BookReader\\BookReader.csproj",
+      "packagesPath": "C:\\Users\\Rutikeyone\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Rutikeyone\\source\\repos\\Book-Reader\\BookReader\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Microsoft\\Xamarin\\NuGet\\",
-        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-      ],
       "configFilePaths": [
-        "C:\\Users\\Dart\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        "C:\\Users\\Rutikeyone\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp3.1"
@@ -196,8 +420,8 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "projectReferences": {
-            "C:\\Users\\Dart\\source\\repos\\Book-Reader\\BookReaderLibrary\\BookReaderLibrary.csproj": {
-              "projectPath": "C:\\Users\\Dart\\source\\repos\\Book-Reader\\BookReaderLibrary\\BookReaderLibrary.csproj"
+            "C:\\Users\\Rutikeyone\\source\\repos\\Book-Reader\\BookReaderLibrary\\BookReaderLibrary.csproj": {
+              "projectPath": "C:\\Users\\Rutikeyone\\source\\repos\\Book-Reader\\BookReaderLibrary\\BookReaderLibrary.csproj"
             }
           }
         }
@@ -215,6 +439,10 @@
           "MvvmLightLibs": {
             "target": "Package",
             "version": "[5.4.1.1, )"
+          },
+          "Syncfusion.PdfViewer.WPF": {
+            "target": "Package",
+            "version": "[18.4.0.41, )"
           }
         },
         "imports": [
@@ -235,7 +463,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.102\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.101\\RuntimeIdentifierGraph.json"
       }
     }
   },
@@ -244,7 +472,7 @@
       "code": "NU1701",
       "level": "Warning",
       "warningLevel": 1,
-      "message": "Package 'MvvmLightLibs 5.4.1.1' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework '.NETCoreApp,Version=v3.1'. This package may not be fully compatible with your project.",
+      "message": "Пакет \"MvvmLightLibs 5.4.1.1\" был восстановлен с помощью \".NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8\", а не целевой платформы проекта \".NETCoreApp,Version=v3.1\". Этот пакет может быть не полностью совместим с вашим проектом.",
       "libraryId": "MvvmLightLibs",
       "targetGraphs": [
         ".NETCoreApp,Version=v3.1"

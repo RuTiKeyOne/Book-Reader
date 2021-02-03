@@ -9,7 +9,8 @@
       "BookReader/1.0.0": {
         "dependencies": {
           "BookReaderLibrary": "1.0.0",
-          "MvvmLightLibs": "5.4.1.1"
+          "MvvmLightLibs": "5.4.1.1",
+          "Syncfusion.PdfViewer.WPF": "18.4.0.41"
         },
         "runtime": {
           "BookReader.dll": {}
@@ -35,6 +36,59 @@
           }
         }
       },
+      "Syncfusion.Compression.Base/18.4.0.41": {
+        "runtime": {
+          "lib/netcoreapp3.1/Syncfusion.Compression.Base.dll": {
+            "assemblyVersion": "18.4310.0.41",
+            "fileVersion": "18.4310.0.41"
+          }
+        }
+      },
+      "Syncfusion.Licensing/18.4.0.41": {
+        "runtime": {
+          "lib/netcoreapp3.1/Syncfusion.Licensing.dll": {
+            "assemblyVersion": "18.4.0.41",
+            "fileVersion": "18.4.0.41"
+          }
+        }
+      },
+      "Syncfusion.Pdf.Wpf/18.4.0.41": {
+        "dependencies": {
+          "Syncfusion.Compression.Base": "18.4.0.41",
+          "Syncfusion.Licensing": "18.4.0.41"
+        },
+        "runtime": {
+          "lib/netcoreapp3.1/Syncfusion.Pdf.Base.dll": {
+            "assemblyVersion": "18.4310.0.41",
+            "fileVersion": "18.4310.0.41"
+          }
+        }
+      },
+      "Syncfusion.PdfViewer.WPF/18.4.0.41": {
+        "dependencies": {
+          "Syncfusion.Compression.Base": "18.4.0.41",
+          "Syncfusion.Licensing": "18.4.0.41",
+          "Syncfusion.Pdf.Wpf": "18.4.0.41",
+          "Syncfusion.Shared.WPF": "18.4.0.41"
+        },
+        "runtime": {
+          "lib/netcoreapp3.1/Syncfusion.PdfViewer.WPF.dll": {
+            "assemblyVersion": "18.4310.0.41",
+            "fileVersion": "18.4310.0.41"
+          }
+        }
+      },
+      "Syncfusion.Shared.WPF/18.4.0.41": {
+        "dependencies": {
+          "Syncfusion.Licensing": "18.4.0.41"
+        },
+        "runtime": {
+          "lib/netcoreapp3.1/Syncfusion.Shared.WPF.dll": {
+            "assemblyVersion": "18.4310.0.41",
+            "fileVersion": "18.4310.0.41"
+          }
+        }
+      },
       "BookReaderLibrary/1.0.0": {
         "runtime": {
           "BookReaderLibrary.dll": {}
@@ -54,6 +108,41 @@
       "sha512": "sha512-xYpVzOYnIz/M6T0pdc3w5t0vrt2ZKspSS+CZjQ+pZE+5yHv9qXSWkncHJXb6D7Egstalso4ivnIUkA1xEClViw==",
       "path": "mvvmlightlibs/5.4.1.1",
       "hashPath": "mvvmlightlibs.5.4.1.1.nupkg.sha512"
+    },
+    "Syncfusion.Compression.Base/18.4.0.41": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-RwVo7nUcuOYmXXy3IkOxZbHX1tTTxxq7jiLXe6BH+C7Bgs46+jhWzjkpxIOVmvkBYZeURxGLM6sYwETZcifzvg==",
+      "path": "syncfusion.compression.base/18.4.0.41",
+      "hashPath": "syncfusion.compression.base.18.4.0.41.nupkg.sha512"
+    },
+    "Syncfusion.Licensing/18.4.0.41": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-YxRIrICcGoU7a1ABNQoa1qewJYkBZ1NTXa/kftRbr6zkOG0qaGCORBeceN1Y5LQ1r0MFRCO3kxMYTqUmi2O94A==",
+      "path": "syncfusion.licensing/18.4.0.41",
+      "hashPath": "syncfusion.licensing.18.4.0.41.nupkg.sha512"
+    },
+    "Syncfusion.Pdf.Wpf/18.4.0.41": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-CkkisOjBQLO3L3JpAVlemnh0UxvBUaqleI5uvwDFf55Hle7tNIXCT4qPwlYaT8ef6tC+27Sqyw8KAkSOKVePYQ==",
+      "path": "syncfusion.pdf.wpf/18.4.0.41",
+      "hashPath": "syncfusion.pdf.wpf.18.4.0.41.nupkg.sha512"
+    },
+    "Syncfusion.PdfViewer.WPF/18.4.0.41": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-4MuGgN1coOz5hHyXTMvTgJyd/bHh6I+QZ1OEIN1soAA3sCwOpbQNdaIiyrt8qF8WfV7Pi/u7oeMMvhUNN+TJAA==",
+      "path": "syncfusion.pdfviewer.wpf/18.4.0.41",
+      "hashPath": "syncfusion.pdfviewer.wpf.18.4.0.41.nupkg.sha512"
+    },
+    "Syncfusion.Shared.WPF/18.4.0.41": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-CpDUtnJtNEmA/W5nin8Hgg0lF6i02K/RtX2sO+/cSKxdbP2ywliO97bUVJGGoIFfGDLWkmPQIHfFyR+sg8OemQ==",
+      "path": "syncfusion.shared.wpf/18.4.0.41",
+      "hashPath": "syncfusion.shared.wpf.18.4.0.41.nupkg.sha512"
     },
     "BookReaderLibrary/1.0.0": {
       "type": "project",

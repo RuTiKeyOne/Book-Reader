@@ -119,7 +119,6 @@
 
                 <Button Margin="0,5"
                         Command="{Binding AddBook}" 
-                        CommandParameter="Book file|*.pdf" 
                         Style="{StaticResource ReadButton}"
                         >
 

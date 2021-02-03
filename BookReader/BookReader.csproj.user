@@ -12,6 +12,9 @@
     <Compile Update="View\Add\AddShelfWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="View\PdfReaderWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Page Update="Styles\Buttons.xaml">
@@ -39,6 +42,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="View\MainWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\PdfReaderWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>

@@ -9,18 +9,20 @@ namespace BookReaderLibrary.Model.BooksAction
 {
     public class BookAction : BaseAction
     {
-        private string IntermediateResult { get; set; }
-        public override void AddBook(FileDialog dialog, ref ObservableCollection<Book> books, object sender)
+        private string BookFilter { get; set; } = "Book file|*.pdf";
+        private string IntermediateResultNameBook = default;
+        private string InternadiateResultPathBook = default;
+        public override void AddBook(FileDialog dialog, ref ObservableCollection<Book> books)
         {
-            IntermediateResult = dialog.GetFile((sender as string));
+            dialog.GetFile(BookFilter, ref IntermediateResultNameBook, ref InternadiateResultPathBook);
 
-            if (IntermediateResult != "No file selected")
+            if (IntermediateResultNameBook != "No file selected" && InternadiateResultPathBook != "No file selected")
             {
-                IsSame = books.Any(x => x.NameBook == IntermediateResult);
+                IsSame = (books.Any(x => x.NameBook == IntermediateResultNameBook) && (books.Any(x => x.Path == InternadiateResultPathBook)));
 
                 if (!IsSame)
                 {
-                    books.Add(new Book {NameBook = IntermediateResult });
+                    books.Add(new Book {NameBook = IntermediateResultNameBook, Path = InternadiateResultPathBook });
                 }
             }
 

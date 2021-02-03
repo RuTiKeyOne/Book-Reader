@@ -25,10 +25,12 @@
     <Compile Include="ViewModel\Base\BaseAddViewModel.cs" />
     <Compile Include="ViewModel\Base\BaseViewModel.cs" />
     <Compile Include="ViewModel\MainViewModel.cs" />
+    <Compile Include="ViewModel\PdfReaderViewModel.cs" />
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="MvvmLightLibs" Version="5.4.1.1" />
+    <PackageReference Include="Syncfusion.PdfViewer.WPF" Version="18.4.0.41" />
   </ItemGroup>
 
   <ItemGroup>

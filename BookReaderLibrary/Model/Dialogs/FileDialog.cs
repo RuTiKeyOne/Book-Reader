@@ -6,16 +6,20 @@ namespace BookReaderLibrary.Model.Dialogs
 {
     public class FileDialog
     {
-        public string GetFile(string format)
+        public void GetFile(string format, ref string nameBook, ref string pathBook)
         {
             OpenFileDialog Dialog = new OpenFileDialog();
             Dialog.Filter = format;
             switch (Dialog.ShowDialog())
             {
                 case true:
-                    return Path.GetFileName(Dialog.FileName);
+                    nameBook = Path.GetFileName(Dialog.FileName);
+                    pathBook = Dialog.FileName;
+                    return;
             };
-            return "No file selected";
+
+            nameBook = "No file selected";
+            pathBook = "No file selected";
         }
     }
 }

@@ -15,7 +15,7 @@ namespace BookReaderLibrary.Model.Base
     {
         protected bool IsSame { get; set; }
 
-        public virtual void AddBook(FileDialog dialog, ref ObservableCollection<Book> books, object sender) { }
+        public virtual void AddBook(FileDialog dialog, ref ObservableCollection<Book> books) { }
         public virtual void AddShelf(string nameShelf, ref ObservableCollection<Shelf> shelfs) { }
         public abstract void FindViews(ICollectionView view, string searchValue);
     }

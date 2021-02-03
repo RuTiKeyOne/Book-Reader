@@ -9,6 +9,7 @@ using BookReaderLibrary.Model.Shelfs;
 using BookReaderLibrary.Model.Windows;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
+using System.IO;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -85,6 +86,7 @@ namespace BookReader.ViewModel
             set
             {
                 SetProperty(ref selectedBook, value);
+                Test();
             }
         }
 
@@ -144,7 +146,7 @@ namespace BookReader.ViewModel
         public ICommand AddBook { get; set; }
         public void AddBookExecute(object sender)
         {
-            BookAction.AddBook(Dialog, ref books, sender);
+            BookAction.AddBook(Dialog, ref books);
         }
         public bool CanAddBookExecute(object sender) => true;
 
@@ -235,6 +237,11 @@ namespace BookReader.ViewModel
         public void GetNameShelf(string nameShelf)
         {
             ShelfAction.AddShelf(nameShelf, ref shelfs);
+        }
+
+        public void Test()
+        {
+            DisplayRootRegistry.ShowPresentation(new PdfReaderViewModel());
         }
     }
 }
