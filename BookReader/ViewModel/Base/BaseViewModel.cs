@@ -1,4 +1,5 @@
 ﻿using BookReaderLibrary.Model.Commands;
+using BookReaderLibrary.Model.Json;
 using BookReaderLibrary.Model.Patterns;
 using BookReaderLibrary.Model.Windows;
 using GalaSoft.MvvmLight.Command;
@@ -65,5 +66,12 @@ namespace BookReader.ViewModel.Base
         }
 
         #endregion
+
+
+        public void OpenPdfViewer(string path)
+        {
+            DisplayRootRegistry.ShowPresentation(new PdfReaderViewModel(path));
+            DisplayRootRegistry.HidePresentation(this);
+        }
     }
 }

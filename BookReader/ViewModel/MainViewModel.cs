@@ -86,7 +86,7 @@ namespace BookReader.ViewModel
             set
             {
                 SetProperty(ref selectedBook, value);
-                Test();
+                OpenPdfViewer(SelectedBook.Path);
             }
         }
 
@@ -147,6 +147,8 @@ namespace BookReader.ViewModel
         public void AddBookExecute(object sender)
         {
             BookAction.AddBook(Dialog, ref books);
+            Json.Serialize(Books);
+            Json.Serialize(Shelfs);
         }
         public bool CanAddBookExecute(object sender) => true;
 
@@ -172,17 +174,6 @@ namespace BookReader.ViewModel
         }
 
         public bool CanModifySizeExecute(object sender) => true;
-
-        #endregion
-
-        #region override Close command
-
-        public override void CloseExecute(object sender)
-        {
-            Json.Serialize(Books);
-            Json.Serialize(Shelfs);
-            base.CloseExecute(sender);
-        }
 
         #endregion
 
@@ -238,10 +229,6 @@ namespace BookReader.ViewModel
         {
             ShelfAction.AddShelf(nameShelf, ref shelfs);
         }
-
-        public void Test()
-        {
-            DisplayRootRegistry.ShowPresentation(new PdfReaderViewModel());
-        }
     }
 }
+    

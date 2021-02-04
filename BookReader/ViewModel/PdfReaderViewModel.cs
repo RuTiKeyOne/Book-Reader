@@ -1,5 +1,6 @@
 ﻿using BookReader.ViewModel.Base;
 using System;
+using System.Windows;
 
 namespace BookReader.ViewModel
 {
@@ -11,5 +12,12 @@ namespace BookReader.ViewModel
             get => sourceBook;
             set => SetProperty(ref sourceBook, value);
         }
+
+        public PdfReaderViewModel(){}
+        public PdfReaderViewModel(string path)
+        {
+            SourceBook = path;
+        }
+
     }
 }
