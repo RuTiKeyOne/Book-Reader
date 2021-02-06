@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\Rutikeyone\source\repos\Book-Reader\BookReader\obj\Debug\netcoreapp3.1\
+C:\Users\Dart\Downloads\Book-Reader-master\Book-Reader-master\BookReader\obj\Debug\netcoreapp3.1\
 BookReader
 none
 false
 TRACE;DEBUG;NETCOREAPP;NETCOREAPP3_1;
-C:\Users\Rutikeyone\source\repos\Book-Reader\BookReader\App.xaml
-102114316050
+C:\Users\Dart\Downloads\Book-Reader-master\Book-Reader-master\BookReader\App.xaml
+11-256265154
 
-10-1578138534
-202666404414
-Styles\Buttons.xaml;Styles\Colors.xaml;Styles\ContentControl.xaml;Styles\Fonts.xaml;Styles\Icons.xaml;Styles\Texts.xaml;Styles\UserControl.xaml;View\Add\AddShelfWindow.xaml;View\MainWindow.xaml;View\PdfReaderWindow.xaml;
+11-1087957606
+202787492696
+Styles\Buttons.xaml;Styles\Colors.xaml;Styles\ContentControl.xaml;Styles\Fonts.xaml;Styles\Icons.xaml;Styles\Texts.xaml;Styles\UserControl.xaml;View\Add\AddShelfWindow.xaml;View\MainWindow.xaml;View\PdfReaderWindow.xaml;View\ShelfWindow.xaml;
 
 False
 

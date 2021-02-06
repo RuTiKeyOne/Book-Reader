@@ -47,7 +47,7 @@ namespace BookReaderLibrary.Model.Json
             return Result;
         }
 
-        public ObservableCollection<Shelf> DeserializeShelfs()
+        public ObservableCollection<Shelf> DeserializeShelves()
         {
             ObservableCollection<Shelf> Result;
             using (StreamReader Reader = new StreamReader("Shelfs.json"))

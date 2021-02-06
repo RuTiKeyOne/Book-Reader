@@ -9,9 +9,7 @@ using BookReaderLibrary.Model.Shelfs;
 using BookReaderLibrary.Model.Windows;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
-using System.IO;
 using System.Windows;
-using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Input;
 
@@ -102,18 +100,18 @@ namespace BookReader.ViewModel
 
         #endregion
 
-        #region Shelfs view 
+        #region Shelfves view 
 
         public Shelf SelectedShelf { get; set; }
 
         public ICollectionView ShelfsView { get; set; }
 
-        private ObservableCollection<Shelf> shelfs;
+        private ObservableCollection<Shelf> shelves;
 
-        public ObservableCollection<Shelf> Shelfs
+        public ObservableCollection<Shelf> Shelves
         {
-            get => shelfs;
-            set => SetProperty(ref shelfs, value);
+            get => shelves;
+            set => SetProperty(ref shelves, value);
         }
 
         #endregion
@@ -148,7 +146,7 @@ namespace BookReader.ViewModel
         {
             BookAction.AddBook(Dialog, ref books);
             Json.Serialize(Books);
-            Json.Serialize(Shelfs);
+            Json.Serialize(Shelves);
         }
         public bool CanAddBookExecute(object sender) => true;
 
@@ -186,7 +184,7 @@ namespace BookReader.ViewModel
             Json = new CustomJson();
 
             books = Json.DeserializeBooks();
-            shelfs = Json.DeserializeShelfs();
+            shelves = Json.DeserializeShelves();
 
             BookAction = new BookAction();
             ShelfAction = new ShelfAction();
@@ -194,7 +192,7 @@ namespace BookReader.ViewModel
 
             BooksView = CollectionViewSource.GetDefaultView(books);
 
-            ShelfsView = CollectionViewSource.GetDefaultView(shelfs);
+            ShelfsView = CollectionViewSource.GetDefaultView(shelves);
 
             BookListState = Visibility.Visible;
             ShelfListState = Visibility.Hidden;
@@ -227,7 +225,7 @@ namespace BookReader.ViewModel
 
         public void GetNameShelf(string nameShelf)
         {
-            ShelfAction.AddShelf(nameShelf, ref shelfs);
+            ShelfAction.AddShelf(nameShelf, ref shelves);
         }
     }
 }

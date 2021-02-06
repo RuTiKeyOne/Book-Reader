@@ -102,7 +102,7 @@
                              Grid.ColumnSpan="2">
 
                     <Button Command="{Binding BookListCommand}" Content="Books" Style="{StaticResource ButtonBar}"></Button>
-                    <Button Command="{Binding ShelfListCommand}" Content="Shelfs" Style="{StaticResource ButtonBar}"></Button>
+                    <Button Command="{Binding ShelfListCommand}" Content="Shelves" Style="{StaticResource ButtonBar}"></Button>
 
                 </UniformGrid>
 
