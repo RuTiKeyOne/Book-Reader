@@ -9,6 +9,7 @@ using BookReaderLibrary.Model.Shelfs;
 using BookReaderLibrary.Model.Windows;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
+using System.Timers;
 using System.Windows;
 using System.Windows.Data;
 using System.Windows.Input;
@@ -108,7 +109,7 @@ namespace BookReader.ViewModel
             get => selectedShelf;
             set {
                 SetProperty(ref selectedShelf, value);
-                Test();
+                DisplayRootRegistry.ShowPresentation(new ShelfViewModel());
             }
         }
 
@@ -219,11 +220,6 @@ namespace BookReader.ViewModel
         {
             ShelfAction.AddShelf(nameShelf, ref shelves);
             Json.Serialize(Shelves);
-        }
-
-        public void Test()
-        {
-           DisplayRootRegistry.ShowPresentation(new ShelfViewModel());
         }
     }
 }

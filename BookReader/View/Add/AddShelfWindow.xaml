@@ -19,7 +19,7 @@
     <StackPanel>
         
         <StackPanel HorizontalAlignment="Right" Orientation="Horizontal" Height="auto">
-            <Button Height="35" Width="60" Command="{Binding Close}" Style="{StaticResource Close}"/>
+            <Button Height="35" Width="60" Command="{Binding Close}" Style="{StaticResource CloseLightDark}"/>
         </StackPanel>
 
         <Canvas Height="150">

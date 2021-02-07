@@ -394,27 +394,20 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Dart\\.nuget\\packages\\": {},
-    "C:\\Microsoft\\Xamarin\\NuGet\\": {},
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+    "C:\\Users\\Rutikeyone\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Dart\\source\\repos\\Book-Reader\\BookReader\\BookReader.csproj",
+      "projectUniqueName": "C:\\Users\\Rutikeyone\\source\\repos\\Book-Reader\\BookReader\\BookReader.csproj",
       "projectName": "BookReader",
-      "projectPath": "C:\\Users\\Dart\\source\\repos\\Book-Reader\\BookReader\\BookReader.csproj",
-      "packagesPath": "C:\\Users\\Dart\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Dart\\source\\repos\\Book-Reader\\BookReader\\obj\\",
+      "projectPath": "C:\\Users\\Rutikeyone\\source\\repos\\Book-Reader\\BookReader\\BookReader.csproj",
+      "packagesPath": "C:\\Users\\Rutikeyone\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Rutikeyone\\source\\repos\\Book-Reader\\BookReader\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Microsoft\\Xamarin\\NuGet\\",
-        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-      ],
       "configFilePaths": [
-        "C:\\Users\\Dart\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        "C:\\Users\\Rutikeyone\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp3.1"
@@ -427,8 +420,8 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "projectReferences": {
-            "C:\\Users\\Dart\\source\\repos\\Book-Reader\\BookReaderLibrary\\BookReaderLibrary.csproj": {
-              "projectPath": "C:\\Users\\Dart\\source\\repos\\Book-Reader\\BookReaderLibrary\\BookReaderLibrary.csproj"
+            "C:\\Users\\Rutikeyone\\source\\repos\\Book-Reader\\BookReaderLibrary\\BookReaderLibrary.csproj": {
+              "projectPath": "C:\\Users\\Rutikeyone\\source\\repos\\Book-Reader\\BookReaderLibrary\\BookReaderLibrary.csproj"
             }
           }
         }
@@ -470,7 +463,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.102\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.101\\RuntimeIdentifierGraph.json"
       }
     }
   },
@@ -479,7 +472,7 @@
       "code": "NU1701",
       "level": "Warning",
       "warningLevel": 1,
-      "message": "Package 'MvvmLightLibs 5.4.1.1' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework '.NETCoreApp,Version=v3.1'. This package may not be fully compatible with your project.",
+      "message": "Пакет \"MvvmLightLibs 5.4.1.1\" был восстановлен с помощью \".NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8\", а не целевой платформы проекта \".NETCoreApp,Version=v3.1\". Этот пакет может быть не полностью совместим с вашим проектом.",
       "libraryId": "MvvmLightLibs",
       "targetGraphs": [
         ".NETCoreApp,Version=v3.1"

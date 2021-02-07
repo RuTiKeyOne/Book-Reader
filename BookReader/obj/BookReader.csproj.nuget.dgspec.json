@@ -1,26 +1,21 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Dart\\source\\repos\\Book-Reader\\BookReader\\BookReader.csproj": {}
+    "C:\\Users\\Rutikeyone\\source\\repos\\Book-Reader\\BookReader\\BookReader.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Dart\\source\\repos\\Book-Reader\\BookReaderLibrary\\BookReaderLibrary.csproj": {
+    "C:\\Users\\Rutikeyone\\source\\repos\\Book-Reader\\BookReaderLibrary\\BookReaderLibrary.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Dart\\source\\repos\\Book-Reader\\BookReaderLibrary\\BookReaderLibrary.csproj",
+        "projectUniqueName": "C:\\Users\\Rutikeyone\\source\\repos\\Book-Reader\\BookReaderLibrary\\BookReaderLibrary.csproj",
         "projectName": "BookReaderLibrary",
-        "projectPath": "C:\\Users\\Dart\\source\\repos\\Book-Reader\\BookReaderLibrary\\BookReaderLibrary.csproj",
-        "packagesPath": "C:\\Users\\Dart\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Dart\\source\\repos\\Book-Reader\\BookReaderLibrary\\obj\\",
+        "projectPath": "C:\\Users\\Rutikeyone\\source\\repos\\Book-Reader\\BookReaderLibrary\\BookReaderLibrary.csproj",
+        "packagesPath": "C:\\Users\\Rutikeyone\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Rutikeyone\\source\\repos\\Book-Reader\\BookReaderLibrary\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Microsoft\\Xamarin\\NuGet\\",
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Dart\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "C:\\Users\\Rutikeyone\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
@@ -62,27 +57,22 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.102\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.101\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\Dart\\source\\repos\\Book-Reader\\BookReader\\BookReader.csproj": {
+    "C:\\Users\\Rutikeyone\\source\\repos\\Book-Reader\\BookReader\\BookReader.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Dart\\source\\repos\\Book-Reader\\BookReader\\BookReader.csproj",
+        "projectUniqueName": "C:\\Users\\Rutikeyone\\source\\repos\\Book-Reader\\BookReader\\BookReader.csproj",
         "projectName": "BookReader",
-        "projectPath": "C:\\Users\\Dart\\source\\repos\\Book-Reader\\BookReader\\BookReader.csproj",
-        "packagesPath": "C:\\Users\\Dart\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Dart\\source\\repos\\Book-Reader\\BookReader\\obj\\",
+        "projectPath": "C:\\Users\\Rutikeyone\\source\\repos\\Book-Reader\\BookReader\\BookReader.csproj",
+        "packagesPath": "C:\\Users\\Rutikeyone\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Rutikeyone\\source\\repos\\Book-Reader\\BookReader\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Microsoft\\Xamarin\\NuGet\\",
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Dart\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "C:\\Users\\Rutikeyone\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
@@ -95,8 +85,8 @@
           "netcoreapp3.1": {
             "targetAlias": "netcoreapp3.1",
             "projectReferences": {
-              "C:\\Users\\Dart\\source\\repos\\Book-Reader\\BookReaderLibrary\\BookReaderLibrary.csproj": {
-                "projectPath": "C:\\Users\\Dart\\source\\repos\\Book-Reader\\BookReaderLibrary\\BookReaderLibrary.csproj"
+              "C:\\Users\\Rutikeyone\\source\\repos\\Book-Reader\\BookReaderLibrary\\BookReaderLibrary.csproj": {
+                "projectPath": "C:\\Users\\Rutikeyone\\source\\repos\\Book-Reader\\BookReaderLibrary\\BookReaderLibrary.csproj"
               }
             }
           }
@@ -138,7 +128,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.102\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.101\\RuntimeIdentifierGraph.json"
         }
       }
     }

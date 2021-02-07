@@ -33,7 +33,7 @@
             </Setter.Value>
         </Setter>
     </Style>
-
+    
     <Style x:Key="Hide" BasedOn="{StaticResource Close}" TargetType="Button">
         <Setter Property="Template">
             <Setter.Value>

@@ -245,3 +245,5 @@ C:\Users\Dart\source\repos\Book-Reader\BookReader\obj\Debug\netcoreapp3.1\View\P
 C:\Users\Dart\source\repos\Book-Reader\BookReader\obj\Debug\netcoreapp3.1\View\ShelfWindow.g.cs
 C:\Users\Dart\source\repos\Book-Reader\BookReader\obj\Debug\netcoreapp3.1\View\PdfReaderWindow.baml
 C:\Users\Dart\source\repos\Book-Reader\BookReader\obj\Debug\netcoreapp3.1\View\ShelfWindow.baml
+C:\Users\Rutikeyone\source\repos\Book-Reader\BookReader\obj\Debug\netcoreapp3.1\View\ShelfWindow.g.cs
+C:\Users\Rutikeyone\source\repos\Book-Reader\BookReader\obj\Debug\netcoreapp3.1\View\ShelfWindow.baml

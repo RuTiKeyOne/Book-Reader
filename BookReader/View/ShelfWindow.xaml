@@ -6,12 +6,13 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:BookReader.View"
         mc:Ignorable="d"
-        Width="600"
+        Width="800"
         Height="500"
+        WindowState="Maximized"
         ResizeMode="NoResize"
         WindowStyle="None"
         WindowStartupLocation="CenterScreen"
-        Background="{StaticResource LightDarkBaseBrush}">
+        Background="{StaticResource DarkBaseBrush}">
     <Grid>
 
         <Grid.RowDefinitions>
@@ -23,6 +24,7 @@
         <StackPanel HorizontalAlignment="Right" Orientation="Horizontal" Grid.Row="0">
 
             <Button Width="80" Command="{Binding Minimize}" CommandParameter="{Binding ElementName=Shelf}" Style="{StaticResource Hide}"/>
+            <Button Width="80" Command="{Binding ModifySize}" CommandParameter="{Binding ElementName=Shelf}" Style="{StaticResource Size}"/>
             <Button Width="80" Command="{Binding Close}" Style="{StaticResource Close}"/>
 
         </StackPanel>
@@ -35,14 +37,51 @@
                        />
         </Canvas>
 
-        <ListBox
-                Grid.Row="2"
+        <Grid 
+            Grid.Row="2">
+            
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0.65*"/>
+                <ColumnDefinition Width="0.45*"/>
+            </Grid.ColumnDefinitions>
+
+            <ListBox
+                Grid.Column="0"
                 Style="{StaticResource ListBoxStyle}">
-            <ListBox.ItemContainerStyle>
-                <Style TargetType="ListBoxItem">
-                    <Setter Property="Template" Value="{StaticResource BookListItems}"/>
-                </Style>
-            </ListBox.ItemContainerStyle>
-        </ListBox>
+                <ListBox.ItemContainerStyle>
+                    <Style TargetType="ListBoxItem">
+                        <Setter Property="Template" Value="{StaticResource BookListItems}"/>
+                    </Style>
+                </ListBox.ItemContainerStyle>
+            </ListBox>
+
+            <StackPanel Grid.Column="1">
+
+                <Button Margin="0,5" Style="{StaticResource ReadButton}">
+                    
+                    <Grid Width="150">
+
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="13*"/>
+                            <RowDefinition Height="17*"/>
+                        </Grid.RowDefinitions>
+
+                        <Grid.ColumnDefinitions >
+                            <ColumnDefinition Width="30"/>
+                            <ColumnDefinition Width="3*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Image Grid.Column="0" Source="LocalResources/BookIcon.png" Grid.RowSpan="2"></Image>
+
+                        <TextBlock VerticalAlignment="Top" HorizontalAlignment="Center" Text="Add a book" Grid.Column="1" Margin="0,2,0,0" Grid.RowSpan="2"></TextBlock>
+
+                    </Grid>
+                    
+                </Button>
+
+            </StackPanel>
+
+        </Grid>
+
     </Grid>
 </Window>
