@@ -7,8 +7,9 @@ namespace BookReaderLibrary.Model.Windows
 {
     public class DisplayRootRegistry
     {
-        Dictionary<Type, Type> ViewModelWindowsMapping;
-        Dictionary<object, Window> OpenWindows;
+        private Dictionary<Type, Type> ViewModelWindowsMapping { get;set; }
+        private Dictionary<object, Window> OpenWindows { get; set; }
+        private Window window;
 
         public DisplayRootRegistry()
         {
@@ -70,12 +71,20 @@ namespace BookReaderLibrary.Model.Windows
         }
         public void HidePresentation(object viewModel)
         {
-            Window window;
             if (!OpenWindows.TryGetValue(viewModel, out window))
                 throw new InvalidOperationException("UI for this VM is not displayed");
             window.Close();
             OpenWindows.Remove(viewModel);
 
+        }
+
+        public void HidePresentation(object viewModel, EventArgs e)
+        {
+            MessageBox.Show($"Hi, I am method, it is your viewModel : {viewModel}");
+            if (!OpenWindows.TryGetValue(viewModel, out window))
+                throw new InvalidOperationException("UI for this VM is not displayed");
+            window.Close();
+            OpenWindows.Remove(viewModel); 
         }
     }
 }

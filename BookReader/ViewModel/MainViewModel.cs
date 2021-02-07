@@ -7,12 +7,14 @@ using BookReaderLibrary.Model.Dialogs;
 using BookReaderLibrary.Model.Json;
 using BookReaderLibrary.Model.Shelfs;
 using BookReaderLibrary.Model.Windows;
+using System;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Timers;
 using System.Windows;
 using System.Windows.Data;
 using System.Windows.Input;
+using System.Windows.Threading;
 
 namespace BookReader.ViewModel
 {
@@ -110,6 +112,7 @@ namespace BookReader.ViewModel
             set {
                 SetProperty(ref selectedShelf, value);
                 DisplayRootRegistry.ShowPresentation(new ShelfViewModel());
+                DisplayRootRegistry.HidePresentation(this);
             }
         }
 
