@@ -26,6 +26,7 @@
     <Compile Include="ViewModel\Base\BaseViewModel.cs" />
     <Compile Include="ViewModel\MainViewModel.cs" />
     <Compile Include="ViewModel\PdfReaderViewModel.cs" />
+    <Compile Include="ViewModel\ShelfViewModel.cs" />
   </ItemGroup>
 
   <ItemGroup>

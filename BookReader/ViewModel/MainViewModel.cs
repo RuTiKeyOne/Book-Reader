@@ -102,7 +102,15 @@ namespace BookReader.ViewModel
 
         #region Shelfves view 
 
-        public Shelf SelectedShelf { get; set; }
+        private Shelf selectedShelf;
+        public Shelf SelectedShelf
+        {
+            get => selectedShelf;
+            set {
+                SetProperty(ref selectedShelf, value);
+                Test();
+            }
+        }
 
         public ICollectionView ShelfsView { get; set; }
 
@@ -211,6 +219,11 @@ namespace BookReader.ViewModel
         {
             ShelfAction.AddShelf(nameShelf, ref shelves);
             Json.Serialize(Shelves);
+        }
+
+        public void Test()
+        {
+           DisplayRootRegistry.ShowPresentation(new ShelfViewModel());
         }
     }
 }

@@ -14,7 +14,7 @@ namespace BookReaderLibrary.Model.Json
         private string JsonResult { get; set; }
         public async void Serialize(ObservableCollection<Book> books)
         {
-            using (FileStream Writer = new FileStream("Books.json", FileMode.OpenOrCreate,FileAccess.Write, FileShare.Read))
+            using (FileStream Writer = new FileStream("Books.json", FileMode.OpenOrCreate, FileAccess.Write, FileShare.ReadWrite))
             {
                 await JsonSerializer.SerializeAsync<ObservableCollection<Book>>(Writer, books);
             }
@@ -22,7 +22,7 @@ namespace BookReaderLibrary.Model.Json
 
         public async void Serialize(ObservableCollection<Shelf> shelfs)
         {
-            using (FileStream Writer = new FileStream("Shelves.json", FileMode.OpenOrCreate, FileAccess.Write, FileShare.Read))
+            using (FileStream Writer = new FileStream("Shelves.json", FileMode.OpenOrCreate, FileAccess.Write, FileShare.ReadWrite))
             {
                 await JsonSerializer.SerializeAsync<ObservableCollection<Shelf>>(Writer, shelfs);
             }
