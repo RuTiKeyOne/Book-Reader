@@ -8,10 +8,10 @@
         mc:Ignorable="d"
         Width="600"
         Height="500"
-        ResizeMode="CanResize"
+        ResizeMode="NoResize"
         WindowStyle="None"
         WindowStartupLocation="CenterScreen"
-        Background="{StaticResource DarkBaseBrush}">
+        Background="{StaticResource LightDarkBaseBrush}">
     <Grid>
 
         <Grid.RowDefinitions>
@@ -23,7 +23,6 @@
         <StackPanel HorizontalAlignment="Right" Orientation="Horizontal" Grid.Row="0">
 
             <Button Width="80" Command="{Binding Minimize}" CommandParameter="{Binding ElementName=Shelf}" Style="{StaticResource Hide}"/>
-            <Button Width="80" Command="{Binding ModifySize}" CommandParameter="{Binding ElementName=Shelf}" Style="{StaticResource Size}"/>
             <Button Width="80" Command="{Binding Close}" Style="{StaticResource Close}"/>
 
         </StackPanel>
