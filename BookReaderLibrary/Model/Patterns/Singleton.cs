@@ -10,7 +10,7 @@ namespace BookReaderLibrary.Model.Patterns
         private Singleton() { }
 
         private static Singleton _Singleton;
-        public event Action<string> Notifier;
+        public event Action<string> NotifierAddShelf;
 
         public static Singleton GetInstance() { 
             if (_Singleton == null)
@@ -23,9 +23,10 @@ namespace BookReaderLibrary.Model.Patterns
 
 
 
-        public void NotifyMainViewModel(string message)
+        public void NotifyAddShelfMainViewModel(string message)
         {
-            Notifier?.Invoke(message);
+            NotifierAddShelf?.Invoke(message);        
         }
+
     }
 }

@@ -30,14 +30,20 @@
 
         <Canvas Grid.Row="1">
             <TextBlock Canvas.Left="50" 
-                       Text="Book Reader" 
+                       Text="Shelf" 
                        Style="{StaticResource BaseTextBlock}" 
                        FontSize="{StaticResource TheBiggest}"
                        />
         </Canvas>
 
-        <ListBox Grid.Row="2">
-            
+        <ListBox
+                Grid.Row="2"
+                Style="{StaticResource ListBoxStyle}">
+            <ListBox.ItemContainerStyle>
+                <Style TargetType="ListBoxItem">
+                    <Setter Property="Template" Value="{StaticResource BookListItems}"/>
+                </Style>
+            </ListBox.ItemContainerStyle>
         </ListBox>
     </Grid>
 </Window>

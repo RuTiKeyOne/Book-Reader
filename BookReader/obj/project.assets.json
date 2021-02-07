@@ -401,11 +401,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Dart\\Downloads\\Book-Reader-master\\Book-Reader-master\\BookReader\\BookReader.csproj",
+      "projectUniqueName": "C:\\Users\\Dart\\source\\repos\\Book-Reader\\BookReader\\BookReader.csproj",
       "projectName": "BookReader",
-      "projectPath": "C:\\Users\\Dart\\Downloads\\Book-Reader-master\\Book-Reader-master\\BookReader\\BookReader.csproj",
+      "projectPath": "C:\\Users\\Dart\\source\\repos\\Book-Reader\\BookReader\\BookReader.csproj",
       "packagesPath": "C:\\Users\\Dart\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Dart\\Downloads\\Book-Reader-master\\Book-Reader-master\\BookReader\\obj\\",
+      "outputPath": "C:\\Users\\Dart\\source\\repos\\Book-Reader\\BookReader\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\",
@@ -427,8 +427,8 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "projectReferences": {
-            "C:\\Users\\Dart\\Downloads\\Book-Reader-master\\Book-Reader-master\\BookReaderLibrary\\BookReaderLibrary.csproj": {
-              "projectPath": "C:\\Users\\Dart\\Downloads\\Book-Reader-master\\Book-Reader-master\\BookReaderLibrary\\BookReaderLibrary.csproj"
+            "C:\\Users\\Dart\\source\\repos\\Book-Reader\\BookReaderLibrary\\BookReaderLibrary.csproj": {
+              "projectPath": "C:\\Users\\Dart\\source\\repos\\Book-Reader\\BookReaderLibrary\\BookReaderLibrary.csproj"
             }
           }
         }

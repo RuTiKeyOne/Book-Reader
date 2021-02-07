@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Dart\\Downloads\\Book-Reader-master\\Book-Reader-master\\BookReaderLibrary\\BookReaderLibrary.csproj": {}
+    "C:\\Users\\Dart\\source\\repos\\Book-Reader\\BookReaderLibrary\\BookReaderLibrary.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Dart\\Downloads\\Book-Reader-master\\Book-Reader-master\\BookReaderLibrary\\BookReaderLibrary.csproj": {
+    "C:\\Users\\Dart\\source\\repos\\Book-Reader\\BookReaderLibrary\\BookReaderLibrary.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Dart\\Downloads\\Book-Reader-master\\Book-Reader-master\\BookReaderLibrary\\BookReaderLibrary.csproj",
+        "projectUniqueName": "C:\\Users\\Dart\\source\\repos\\Book-Reader\\BookReaderLibrary\\BookReaderLibrary.csproj",
         "projectName": "BookReaderLibrary",
-        "projectPath": "C:\\Users\\Dart\\Downloads\\Book-Reader-master\\Book-Reader-master\\BookReaderLibrary\\BookReaderLibrary.csproj",
+        "projectPath": "C:\\Users\\Dart\\source\\repos\\Book-Reader\\BookReaderLibrary\\BookReaderLibrary.csproj",
         "packagesPath": "C:\\Users\\Dart\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Dart\\Downloads\\Book-Reader-master\\Book-Reader-master\\BookReaderLibrary\\obj\\",
+        "outputPath": "C:\\Users\\Dart\\source\\repos\\Book-Reader\\BookReaderLibrary\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\",

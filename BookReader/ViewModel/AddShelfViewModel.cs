@@ -18,7 +18,7 @@ namespace BookReader.ViewModel
 
         public override void AddExecute(object sender)
         {
-            Singleton.NotifyMainViewModel(nameShelf);
+            Singleton.NotifyAddShelfMainViewModel(nameShelf);
 
             DisplayRootRegistry.HidePresentation(this);
         }

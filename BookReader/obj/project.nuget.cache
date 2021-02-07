@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "jOG7Lrv136jZQlTV9lTcFtpD6xpRSoh77AqoD4fTCpe2DkwIySZEWybafpibDGWB56y//kAUnhaAK2VZFwYOcw==",
+  "dgSpecHash": "GgmNxlnFZZdE1JYoBBUu14jM+4zzFiR7ldbQ20SMud42oBnB6jRbUD/3w9Cz4/1ik2XgK7+wxVNcNw9liGWmDA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Dart\\Downloads\\Book-Reader-master\\Book-Reader-master\\BookReader\\BookReader.csproj",
+  "projectFilePath": "C:\\Users\\Dart\\source\\repos\\Book-Reader\\BookReader\\BookReader.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Dart\\.nuget\\packages\\mvvmlightlibs\\5.4.1.1\\mvvmlightlibs.5.4.1.1.nupkg.sha512",
     "C:\\Users\\Dart\\.nuget\\packages\\syncfusion.compression.base\\18.4.0.41\\syncfusion.compression.base.18.4.0.41.nupkg.sha512",

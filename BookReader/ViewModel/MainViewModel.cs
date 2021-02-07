@@ -146,7 +146,6 @@ namespace BookReader.ViewModel
         {
             BookAction.AddBook(Dialog, ref books);
             Json.Serialize(Books);
-            Json.Serialize(Shelves);
         }
         public bool CanAddBookExecute(object sender) => true;
 
@@ -200,32 +199,18 @@ namespace BookReader.ViewModel
             BookListCommand = new ActionCommand(BookListExecute, CanBookListExecute);
             ShelfListCommand = new ActionCommand(ShelfListExecute, CanShelfListExecute);
 
-
-            Singleton.Notifier += GetNameShelf;
-
-            BookItem = new ActionCommand(BookItemExecute, CanBookItemExecute);
+            Singleton.NotifierAddShelf += GetMessageAddShelf;
 
         }
 
         #endregion
 
-        #region List box book item 
-
-        public ICommand BookItem { get; set; }
-        public bool CanBookItemExecute(object sender) => true;
-
-        public void BookItemExecute(object sender)
-        {
-            
-        }
-
-        #endregion
 
 
-
-        public void GetNameShelf(string nameShelf)
+        public void GetMessageAddShelf(string nameShelf)
         {
             ShelfAction.AddShelf(nameShelf, ref shelves);
+            Json.Serialize(Shelves);
         }
     }
 }
