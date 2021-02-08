@@ -7,14 +7,12 @@ using BookReaderLibrary.Model.Dialogs;
 using BookReaderLibrary.Model.Json;
 using BookReaderLibrary.Model.Shelfs;
 using BookReaderLibrary.Model.Windows;
-using System;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Timers;
 using System.Windows;
 using System.Windows.Data;
 using System.Windows.Input;
-using System.Windows.Threading;
 
 namespace BookReader.ViewModel
 {
@@ -39,8 +37,6 @@ namespace BookReader.ViewModel
         #endregion
 
         private CustomJson Json { get; set; }
-        private FileDialog Dialog { get; set; }
-        private BookAction BookAction { get; set; }
         private ShelfAction ShelfAction { get; set; }
 
         #region Book list command
@@ -189,7 +185,6 @@ namespace BookReader.ViewModel
         #region Constructor
         public MainViewModel()
         {
-            Dialog = new FileDialog();
             AddBook = new ActionCommand(AddBookExecute, CanAddBookExecute);
             AddShelf = new ActionCommand(AddShelfExecute, CanAddShelfExecute);
             Json = new CustomJson();
@@ -197,7 +192,6 @@ namespace BookReader.ViewModel
             books = Json.DeserializeBooks();
             shelves = Json.DeserializeShelves();
 
-            BookAction = new BookAction();
             ShelfAction = new ShelfAction();
             ModifySize = new ActionCommand(ModifySizeExecute, CanModifySizeExecute);
 

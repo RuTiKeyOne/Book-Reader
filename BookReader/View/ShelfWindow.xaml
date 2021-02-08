@@ -4,7 +4,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:BookReader.View"
+        xmlns:ViewModels="clr-namespace:BookReader.ViewModel"
         mc:Ignorable="d"
         Width="800"
         Height="500"
@@ -13,6 +13,11 @@
         WindowStyle="None"
         WindowStartupLocation="CenterScreen"
         Background="{StaticResource DarkBaseBrush}">
+
+    <Window.DataContext>
+        <ViewModels:ShelfViewModel/>
+    </Window.DataContext>
+    
     <Grid>
 
         <Grid.RowDefinitions>
@@ -46,6 +51,7 @@
             </Grid.ColumnDefinitions>
 
             <ListBox
+                ItemsSource="{Binding ListBooks}"
                 Grid.Column="0"
                 Style="{StaticResource ListBoxStyle}">
                 <ListBox.ItemContainerStyle>
@@ -57,7 +63,10 @@
 
             <StackPanel Grid.Column="1">
 
-                <Button Margin="0,5" Style="{StaticResource ReadButton}">
+                <Button
+                    Command="{Binding Add}"
+                    Margin="0,5" 
+                    Style="{StaticResource ReadButton}">
                     
                     <Grid Width="150">
 

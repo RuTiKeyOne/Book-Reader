@@ -1,5 +1,6 @@
-﻿using BookReaderLibrary.Model.Commands;
-using BookReaderLibrary.Model.Json;
+﻿using BookReaderLibrary.Model.BooksAction;
+using BookReaderLibrary.Model.Commands;
+using BookReaderLibrary.Model.Dialogs;
 using BookReaderLibrary.Model.Patterns;
 using BookReaderLibrary.Model.Windows;
 using GalaSoft.MvvmLight.Command;
@@ -12,6 +13,8 @@ namespace BookReader.ViewModel.Base
 {
     public class BaseViewModel : INotifyPropertyChanged
     {
+        protected FileDialog Dialog { get; set; }
+        protected BookAction BookAction { get; set; }
         protected DisplayRootRegistry DisplayRootRegistry {get; private set; }
         protected Singleton Singleton { get; set; }
         
@@ -45,6 +48,8 @@ namespace BookReader.ViewModel.Base
             Close = new ActionCommand(CloseExecute, CanCloseExecute);
             Minimize = new RelayCommand<Window>(this.MinimizeWindow);
             DisplayRootRegistry = (Application.Current as App).DisplayRootRegistry;
+            BookAction = new BookAction();
+            Dialog = new FileDialog();
 
         }
 
