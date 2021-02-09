@@ -9,6 +9,15 @@ namespace BookReader.ViewModel
 {
     class ShelfViewModel : AddShelfViewModel
     {
+        private string nameOpenedShelf;
+        public string NameOpenedShelf
+        {
+            get => nameOpenedShelf;
+            set => SetProperty(ref nameOpenedShelf, value);
+        }
+
+
+
         private ShelfListBook book;
         public ShelfListBook Books
         {
@@ -24,15 +33,18 @@ namespace BookReader.ViewModel
             base.CloseExecute(sender);
         }
 
-        public ShelfViewModel()
+        public ShelfViewModel(){}
+
+        public ShelfViewModel(string nameShelf)
         {
             ListBooks = CollectionViewSource.GetDefaultView(Books);
+            NameOpenedShelf = nameShelf;
         }
 
         #region Add execute shelf view model
         public override void AddExecute(object sender)
         {
-
+            
         }
 
         public override bool CanAddExecute(object sender) => true;
