@@ -83,7 +83,7 @@ namespace BookReader.ViewModel
             set
             {
                 SetProperty(ref selectedBook, value);
-                OpenPdfViewer(SelectedBook.Path);
+                DisplayRootRegistry.ShowPresentation(new PdfReaderViewModel(SelectedBook.Path));
             }
         }
 
@@ -108,7 +108,6 @@ namespace BookReader.ViewModel
             set {
                 SetProperty(ref selectedShelf, value);
                 DisplayRootRegistry.ShowPresentation(new ShelfViewModel(SelectedShelf.ShelfName));
-                DisplayRootRegistry.HidePresentation(this);
             }
         }
 

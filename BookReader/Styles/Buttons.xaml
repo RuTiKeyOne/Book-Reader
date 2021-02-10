@@ -207,4 +207,31 @@
         </Setter>
     </Style>
 
+    <Style x:Key="ReadButtonLightDark" TargetType="Button">
+        <Setter Property="Background" Value="{DynamicResource LightGreyBaseBrush}"/>
+        <Setter Property="Foreground" Value="{DynamicResource WhiteBaseBrush}"/>
+        <Setter Property="FontSize" Value="{DynamicResource Big}"/>
+        <Setter Property="Margin" Value="2.5"/>
+        <Setter Property="FontWeight" Value="Light"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border Background="{TemplateBinding Background}"
+                            Height="60"
+                            Width="250">
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter Property="Background" Value="{DynamicResource BlueBaseBrush}"/>
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter Property="Background" Value="{DynamicResource LightBlackBaseBrush}"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
 </ResourceDictionary>

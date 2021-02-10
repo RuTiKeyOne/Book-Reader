@@ -77,14 +77,5 @@ namespace BookReaderLibrary.Model.Windows
             OpenWindows.Remove(viewModel);
 
         }
-
-        public void HidePresentation(object viewModel, EventArgs e)
-        {
-            MessageBox.Show($"Hi, I am method, it is your viewModel : {viewModel}");
-            if (!OpenWindows.TryGetValue(viewModel, out window))
-                throw new InvalidOperationException("UI for this VM is not displayed");
-            window.Close();
-            OpenWindows.Remove(viewModel); 
-        }
     }
 }

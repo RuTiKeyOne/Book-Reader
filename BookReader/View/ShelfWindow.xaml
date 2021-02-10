@@ -7,12 +7,11 @@
         xmlns:ViewModels="clr-namespace:BookReader.ViewModel"
         mc:Ignorable="d"
         Width="800"
-        Height="500"
-        WindowState="Maximized"
+        Height="400"
         ResizeMode="NoResize"
         WindowStyle="None"
         WindowStartupLocation="CenterScreen"
-        Background="{StaticResource DarkBaseBrush}">
+        Background="{StaticResource LightDarkBaseBrush}">
 
     <Window.DataContext>
         <ViewModels:ShelfViewModel/>
@@ -27,10 +26,8 @@
         </Grid.RowDefinitions>
 
         <StackPanel HorizontalAlignment="Right" Orientation="Horizontal" Grid.Row="0">
-
-            <Button Width="80" Command="{Binding Minimize}" CommandParameter="{Binding ElementName=Shelf}" Style="{StaticResource Hide}"/>
-            <Button Width="80" Command="{Binding ModifySize}" CommandParameter="{Binding ElementName=Shelf}" Style="{StaticResource Size}"/>
-            <Button Width="80" Command="{Binding Close}" Style="{StaticResource Close}"/>
+            
+            <Button Width="80" Command="{Binding Close}" Style="{StaticResource CloseLightDark}"/>
 
         </StackPanel>
 
@@ -66,7 +63,7 @@
                 <Button
                     Command="{Binding Add}"
                     Margin="0,5" 
-                    Style="{StaticResource ReadButton}">
+                    Style="{StaticResource ReadButtonLightDark}">
                     
                     <Grid Width="150">
 

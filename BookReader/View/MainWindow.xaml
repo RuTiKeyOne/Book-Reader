@@ -178,7 +178,7 @@
                         </Style>
                     </ListBox.ItemContainerStyle>
                 </ListBox>
-
+    
                 <ListBox
                 Visibility="{Binding ShelfListState, Mode=TwoWay}"
                 Style="{StaticResource ListBoxStyle}"

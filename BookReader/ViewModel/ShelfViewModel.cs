@@ -27,12 +27,6 @@ namespace BookReader.ViewModel
 
         public ICollectionView ListBooks { get; set; }
 
-        public override void CloseExecute(object sender)
-        {
-            DisplayRootRegistry.ShowPresentation(new MainViewModel());
-            base.CloseExecute(sender);
-        }
-
         public ShelfViewModel(){}
 
         public ShelfViewModel(string nameShelf)

@@ -72,11 +72,5 @@ namespace BookReader.ViewModel.Base
 
         #endregion
 
-
-        public void OpenPdfViewer(string path)
-        {
-            DisplayRootRegistry.ShowPresentation(new PdfReaderViewModel(path));
-            DisplayRootRegistry.HidePresentation(this);
-        }
     }
 }
