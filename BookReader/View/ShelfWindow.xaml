@@ -33,7 +33,7 @@
 
         <Canvas Grid.Row="1">
             <TextBlock Canvas.Left="50" 
-                       Text="{Binding NameOpenedShelf}" 
+                       Text="{Binding ListBook.NameShelf}" 
                        Style="{StaticResource BaseTextBlock}" 
                        FontSize="{StaticResource TheBiggest}"
                        />
@@ -48,12 +48,14 @@
             </Grid.ColumnDefinitions>
 
             <ListBox
-                ItemsSource="{Binding ListBooks}"
+                Margin="15"
+                SelectedItem="{Binding SelectedBook}"
+                ItemsSource="{Binding ListBooksView}"
                 Grid.Column="0"
                 Style="{StaticResource ListBoxStyle}">
                 <ListBox.ItemContainerStyle>
                     <Style TargetType="ListBoxItem">
-                        <Setter Property="Template" Value="{StaticResource BookListItems}"/>
+                        <Setter Property="Template" Value="{StaticResource ShelfListBookItems}"/>
                     </Style>
                 </ListBox.ItemContainerStyle>
             </ListBox>

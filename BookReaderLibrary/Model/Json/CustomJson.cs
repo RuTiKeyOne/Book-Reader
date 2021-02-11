@@ -1,4 +1,5 @@
 ﻿using BookReaderLibrary.Model.Books;
+using BookReaderLibrary.Model.Lists;
 using BookReaderLibrary.Model.Shelfs;
 using System;
 using System.Collections.ObjectModel;
@@ -26,6 +27,16 @@ namespace BookReaderLibrary.Model.Json
             {
                 await JsonSerializer.SerializeAsync<ObservableCollection<Shelf>>(Writer, shelfs);
             }
+        }
+
+        public async void Serialize(ShelfListBook listBook)
+        {
+            using (FileStream Writer = new FileStream("ShelfListBook.json", FileMode.OpenOrCreate, FileAccess.Write, FileShare.ReadWrite))
+            {
+                await JsonSerializer.SerializeAsync<ShelfListBook>(Writer, listBook);
+
+            }
+
         }
 
         public ObservableCollection<Book> DeserializeBooks()

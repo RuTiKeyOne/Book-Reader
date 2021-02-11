@@ -6,7 +6,14 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Model\Elements\Books\" />
+    <Compile Remove="Model\Elements\Books\**" />
+    <EmbeddedResource Remove="Model\Elements\Books\**" />
+    <None Remove="Model\Elements\Books\**" />
+    <Page Remove="Model\Elements\Books\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Include="Model\Elements\Books\Book.cs" />
   </ItemGroup>
 
 </Project>

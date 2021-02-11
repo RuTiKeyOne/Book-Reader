@@ -82,5 +82,41 @@
         </Border>
         
     </ControlTemplate>
-    
+
+    <ControlTemplate x:Key="ShelfListBookItems" TargetType="ListBoxItem">
+
+        <Border
+            Padding="10"
+            Style="{StaticResource BorderShelfListItem}">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="80"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="60"/>
+                </Grid.RowDefinitions>
+
+                <Image Grid.Column="0" 
+                       Source="/View/LocalResources/BookIcon.png"
+                       Height="45">
+                </Image>
+
+                <StackPanel Grid.Column="1">
+
+                    <TextBlock TextWrapping="Wrap"
+                               Text="{Binding NameBook}"
+                               Foreground="{DynamicResource WhiteBaseBrush}"
+                               FontWeight="Light"
+                               FontSize="{StaticResource Big}"
+                               />
+
+                </StackPanel>
+
+            </Grid>
+        </Border>
+
+    </ControlTemplate>
+
 </ResourceDictionary>

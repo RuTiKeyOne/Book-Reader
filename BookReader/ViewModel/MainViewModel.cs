@@ -36,7 +36,6 @@ namespace BookReader.ViewModel
 
         #endregion
 
-        private CustomJson Json { get; set; }
         private ShelfAction ShelfAction { get; set; }
 
         #region Book list command
@@ -72,20 +71,6 @@ namespace BookReader.ViewModel
         #endregion
 
         #region Books view
-        private Book selectedBook;
-        public Book SelectedBook
-        {
-            get
-            {
-                return selectedBook;
-            }
-
-            set
-            {
-                SetProperty(ref selectedBook, value);
-                DisplayRootRegistry.ShowPresentation(new PdfReaderViewModel(SelectedBook.Path));
-            }
-        }
 
         public ICollectionView BooksView { get; set; }
 
@@ -186,7 +171,6 @@ namespace BookReader.ViewModel
         {
             AddBook = new ActionCommand(AddBookExecute, CanAddBookExecute);
             AddShelf = new ActionCommand(AddShelfExecute, CanAddShelfExecute);
-            Json = new CustomJson();
 
             books = Json.DeserializeBooks();
             shelves = Json.DeserializeShelves();
@@ -209,7 +193,6 @@ namespace BookReader.ViewModel
         }
 
         #endregion
-
 
 
         public void GetMessageAddShelf(string nameShelf)

@@ -28,6 +28,27 @@ namespace BookReaderLibrary.Model.BooksAction
 
         }
 
+        //No repeat code !!!!!
+        public override ObservableCollection<Book> AddBook(FileDialog dialog, ObservableCollection<Book> books)
+        {
+            dialog.GetFile(BookFilter, ref IntermediateResultNameBook, ref InternadiateResultPathBook);
+
+            if (IntermediateResultNameBook != "No file selected" && InternadiateResultPathBook != "No file selected")
+            {
+                IsSame = (books.Any(x => x.NameBook == IntermediateResultNameBook) && (books.Any(x => x.Path == InternadiateResultPathBook)));
+
+                if (!IsSame)
+                {
+                    books.Add(new Book { NameBook = IntermediateResultNameBook, Path = InternadiateResultPathBook });
+
+                    return books;
+                }
+            }
+
+            return books;
+
+        }
+
         public override void FindViews(ICollectionView view, string searchValue)
         {
                 view.Filter = (obj) =>

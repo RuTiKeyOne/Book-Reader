@@ -1,6 +1,8 @@
-﻿using BookReaderLibrary.Model.BooksAction;
+﻿using BookReaderLibrary.Model.Books;
+using BookReaderLibrary.Model.BooksAction;
 using BookReaderLibrary.Model.Commands;
 using BookReaderLibrary.Model.Dialogs;
+using BookReaderLibrary.Model.Json;
 using BookReaderLibrary.Model.Patterns;
 using BookReaderLibrary.Model.Windows;
 using GalaSoft.MvvmLight.Command;
@@ -13,6 +15,7 @@ namespace BookReader.ViewModel.Base
 {
     public class BaseViewModel : INotifyPropertyChanged
     {
+        protected CustomJson Json { get; set; }
         protected FileDialog Dialog { get; set; }
         protected BookAction BookAction { get; set; }
         protected DisplayRootRegistry DisplayRootRegistry {get; private set; }
@@ -51,6 +54,8 @@ namespace BookReader.ViewModel.Base
             BookAction = new BookAction();
             Dialog = new FileDialog();
 
+            Json = new CustomJson();
+
         }
 
         #region Interface INotifyPropertyChanged
@@ -71,6 +76,21 @@ namespace BookReader.ViewModel.Base
         }
 
         #endregion
+
+        private Book selectedBook;
+        public Book SelectedBook
+        {
+            get
+            {
+                return selectedBook;
+            }
+
+            set
+            {
+                SetProperty(ref selectedBook, value);
+                DisplayRootRegistry.ShowPresentation(new PdfReaderViewModel(SelectedBook.Path));
+            }
+        }
 
     }
 }

@@ -38,6 +38,6 @@
 
         </StackPanel>
         
-        <PdfViewer:PdfViewerControl Grid.Row="1" ItemSource="{Binding SourceBook}"/>
+        <PdfViewer:PdfViewerControl  Grid.Row="1" ItemSource="{Binding SourceBook}"/>
     </Grid>
 </Window>
