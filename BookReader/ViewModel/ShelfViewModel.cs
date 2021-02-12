@@ -18,7 +18,7 @@ namespace BookReader.ViewModel
 
         public ShelfViewModel(string nameShelf)
         {
-            ListBook = new ShelfListBook();
+            ListBook = Json.DeserializeShelfListBook(nameShelf);
             ListBook.NameShelf = nameShelf;
             ListBooksView = CollectionViewSource.GetDefaultView(ListBook.Books);
         }
@@ -28,7 +28,7 @@ namespace BookReader.ViewModel
         public override void AddExecute(object sender)
         {
             ListBook.Books = BookAction.AddBook(Dialog, ListBook.Books);
-            Json.Serialize(ListBook);
+            //Json.Serialize(ListBook);
         }
 
         public override bool CanAddExecute(object sender) => true;

@@ -14,35 +14,21 @@ namespace BookReaderLibrary.Model.BooksAction
         private string InternadiateResultPathBook = default;
         public override void AddBook(FileDialog dialog, ref ObservableCollection<Book> books)
         {
-            dialog.GetFile(BookFilter, ref IntermediateResultNameBook, ref InternadiateResultPathBook);
-
-            if (IntermediateResultNameBook != "No file selected" && InternadiateResultPathBook != "No file selected")
+            IsSame = AddBookHelper(dialog, books);
+            if (IsSame)
             {
-                IsSame = (books.Any(x => x.NameBook == IntermediateResultNameBook) && (books.Any(x => x.Path == InternadiateResultPathBook)));
-
-                if (!IsSame)
-                {
-                    books.Add(new Book {NameBook = IntermediateResultNameBook, Path = InternadiateResultPathBook });
-                }
+               books.Add(new Book {NameBook = IntermediateResultNameBook, Path = InternadiateResultPathBook });
             }
-
         }
 
-        //No repeat code !!!!!
         public override ObservableCollection<Book> AddBook(FileDialog dialog, ObservableCollection<Book> books)
         {
-            dialog.GetFile(BookFilter, ref IntermediateResultNameBook, ref InternadiateResultPathBook);
-
-            if (IntermediateResultNameBook != "No file selected" && InternadiateResultPathBook != "No file selected")
+            IsSame = AddBookHelper(dialog, books);
+            if (IsSame)
             {
-                IsSame = (books.Any(x => x.NameBook == IntermediateResultNameBook) && (books.Any(x => x.Path == InternadiateResultPathBook)));
+               books.Add(new Book { NameBook = IntermediateResultNameBook, Path = InternadiateResultPathBook });
 
-                if (!IsSame)
-                {
-                    books.Add(new Book { NameBook = IntermediateResultNameBook, Path = InternadiateResultPathBook });
-
-                    return books;
-                }
+               return books;
             }
 
             return books;
@@ -68,5 +54,19 @@ namespace BookReaderLibrary.Model.BooksAction
 
                 view.Refresh();
             }
+
+        public bool AddBookHelper(FileDialog dialog, ObservableCollection<Book> books)
+        {
+            dialog.GetFile(BookFilter, ref IntermediateResultNameBook, ref InternadiateResultPathBook);
+
+            if (IntermediateResultNameBook != "No file selected" && InternadiateResultPathBook != "No file selected")
+            {
+                IsSame = !(books.Any(x => x.NameBook == IntermediateResultNameBook) && (books.Any(x => x.Path == InternadiateResultPathBook)));
+
+                return IsSame;
+            }
+
+            return IsSame;
         }
     }
+}

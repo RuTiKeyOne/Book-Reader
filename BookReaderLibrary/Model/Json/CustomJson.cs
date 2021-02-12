@@ -4,15 +4,18 @@ using BookReaderLibrary.Model.Shelfs;
 using System;
 using System.Collections.ObjectModel;
 using System.IO;
+using System.Linq;
 using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace BookReaderLibrary.Model.Json
 {
     public class CustomJson
     {
         private string JsonResult { get; set; }
+
         public async void Serialize(ObservableCollection<Book> books)
         {
             using (FileStream Writer = new FileStream("Books.json", FileMode.OpenOrCreate, FileAccess.Write, FileShare.ReadWrite))
@@ -27,16 +30,6 @@ namespace BookReaderLibrary.Model.Json
             {
                 await JsonSerializer.SerializeAsync<ObservableCollection<Shelf>>(Writer, shelfs);
             }
-        }
-
-        public async void Serialize(ShelfListBook listBook)
-        {
-            using (FileStream Writer = new FileStream("ShelfListBook.json", FileMode.OpenOrCreate, FileAccess.Write, FileShare.ReadWrite))
-            {
-                await JsonSerializer.SerializeAsync<ShelfListBook>(Writer, listBook);
-
-            }
-
         }
 
         public ObservableCollection<Book> DeserializeBooks()
@@ -75,6 +68,33 @@ namespace BookReaderLibrary.Model.Json
                 }
             }
             return Result;
+        }
+
+        //I will fix it later
+        public async void Serialize()
+        {
+
+
+        }
+
+        public ShelfListBook DeserializeShelfListBook(string nameShelf)
+        {
+            ObservableCollection<ShelfListBook> IntermediateShelfListBookResult;
+            ShelfListBook ShelfListBookResult;
+
+            using (StreamReader Reader = new StreamReader("ShelfListBook.json"))
+            {
+                JsonResult = Reader.ReadToEnd();
+
+                if (!string.IsNullOrWhiteSpace(JsonResult))
+                {
+                    
+                }
+            }
+
+            ShelfListBookResult = new ShelfListBook();
+            return ShelfListBookResult;
+
         }
     }
 }
