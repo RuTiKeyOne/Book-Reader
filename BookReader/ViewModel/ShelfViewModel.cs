@@ -18,17 +18,17 @@ namespace BookReader.ViewModel
 
         public ShelfViewModel(string nameShelf)
         {
-            ListBook = Json.DeserializeShelfListBook(nameShelf);
+            ListBook = Json.DeserializeShelfListBook(nameShelf).Result;
             ListBook.NameShelf = nameShelf;
             ListBooksView = CollectionViewSource.GetDefaultView(ListBook.Books);
-        }
+        }   
 
         #region Add execute shelf view model    
 
         public override void AddExecute(object sender)
         {
             ListBook.Books = BookAction.AddBook(Dialog, ListBook.Books);
-            //Json.Serialize(ListBook);
+            Json.Serialize(ListBook.NameShelf, ListBook);
         }
 
         public override bool CanAddExecute(object sender) => true;

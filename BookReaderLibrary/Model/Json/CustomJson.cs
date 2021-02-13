@@ -18,24 +18,15 @@ namespace BookReaderLibrary.Model.Json
 
         public async void Serialize(ObservableCollection<Book> books)
         {
-            using (FileStream Writer = new FileStream("Books.json", FileMode.OpenOrCreate, FileAccess.Write, FileShare.ReadWrite))
+            using (FileStream Writer = new FileStream("LocalResources/Books.json", FileMode.OpenOrCreate, FileAccess.Write, FileShare.ReadWrite))
             {
                 await JsonSerializer.SerializeAsync<ObservableCollection<Book>>(Writer, books);
             }
         }
-
-        public async void Serialize(ObservableCollection<Shelf> shelfs)
-        {
-            using (FileStream Writer = new FileStream("Shelves.json", FileMode.OpenOrCreate, FileAccess.Write, FileShare.ReadWrite))
-            {
-                await JsonSerializer.SerializeAsync<ObservableCollection<Shelf>>(Writer, shelfs);
-            }
-        }
-
         public ObservableCollection<Book> DeserializeBooks()
         {
             ObservableCollection<Book> Result;
-            using (StreamReader Reader = new StreamReader("Books.json"))
+            using (StreamReader Reader = new StreamReader("LocalResources/Books.json"))
             {
                 JsonResult = Reader.ReadToEnd();
 
@@ -51,10 +42,17 @@ namespace BookReaderLibrary.Model.Json
             return Result;
         }
 
+        public async void Serialize(ObservableCollection<Shelf> shelfs)
+        {
+            using (FileStream Writer = new FileStream("LocalResources/Shelves.json", FileMode.OpenOrCreate, FileAccess.Write, FileShare.ReadWrite))
+            {
+                await JsonSerializer.SerializeAsync<ObservableCollection<Shelf>>(Writer, shelfs);
+            }
+        }
         public ObservableCollection<Shelf> DeserializeShelves()
         {
             ObservableCollection<Shelf> Result;
-            using (StreamReader Reader = new StreamReader("Shelves.json"))
+            using (StreamReader Reader = new StreamReader("LocalResources/Shelves.json"))
             {
                 JsonResult = Reader.ReadToEnd();
 
@@ -70,31 +68,18 @@ namespace BookReaderLibrary.Model.Json
             return Result;
         }
 
-        //I will fix it later
-        public async void Serialize()
+
+        public async void Serialize(string nameShelf, ShelfListBook listBook)
         {
-
-
+            using (FileStream Writer = new FileStream($"LocalResources/ShelfData/{nameShelf}.json", FileMode.OpenOrCreate, FileAccess.Write, FileShare.ReadWrite))
+            {
+                await JsonSerializer.SerializeAsync<ShelfListBook>(Writer, listBook);
+            }
         }
 
-        public ShelfListBook DeserializeShelfListBook(string nameShelf)
+        public async Task<ShelfListBook> DeserializeShelfListBook(string nameShelf)
         {
-            ObservableCollection<ShelfListBook> IntermediateShelfListBookResult;
-            ShelfListBook ShelfListBookResult;
-
-            using (StreamReader Reader = new StreamReader("ShelfListBook.json"))
-            {
-                JsonResult = Reader.ReadToEnd();
-
-                if (!string.IsNullOrWhiteSpace(JsonResult))
-                {
-                    
-                }
-            }
-
-            ShelfListBookResult = new ShelfListBook();
-            return ShelfListBookResult;
-
+            return new ShelfListBook();
         }
     }
 }

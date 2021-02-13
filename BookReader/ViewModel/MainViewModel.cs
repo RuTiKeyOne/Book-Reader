@@ -197,7 +197,7 @@ namespace BookReader.ViewModel
 
         public void GetMessageAddShelf(string nameShelf)
         {
-            ShelfAction.AddShelf(nameShelf, ref shelves);
+            ShelfAction.AddShelf(nameShelf, ref shelves, Dialog);
             Json.Serialize(Shelves);
         }
     }

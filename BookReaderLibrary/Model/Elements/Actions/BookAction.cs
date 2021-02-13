@@ -9,12 +9,9 @@ namespace BookReaderLibrary.Model.BooksAction
 {
     public class BookAction : BaseAction
     {
-        private string BookFilter { get; set; } = "Book file|*.pdf";
-        private string IntermediateResultNameBook = default;
-        private string InternadiateResultPathBook = default;
         public override void AddBook(FileDialog dialog, ref ObservableCollection<Book> books)
         {
-            IsSame = AddBookHelper(dialog, books);
+            IsSame = AddHelper(dialog, books);
             if (IsSame)
             {
                books.Add(new Book {NameBook = IntermediateResultNameBook, Path = InternadiateResultPathBook });
@@ -23,7 +20,7 @@ namespace BookReaderLibrary.Model.BooksAction
 
         public override ObservableCollection<Book> AddBook(FileDialog dialog, ObservableCollection<Book> books)
         {
-            IsSame = AddBookHelper(dialog, books);
+            IsSame = AddHelper(dialog, books);
             if (IsSame)
             {
                books.Add(new Book { NameBook = IntermediateResultNameBook, Path = InternadiateResultPathBook });
@@ -55,7 +52,7 @@ namespace BookReaderLibrary.Model.BooksAction
                 view.Refresh();
             }
 
-        public bool AddBookHelper(FileDialog dialog, ObservableCollection<Book> books)
+        public bool AddHelper(FileDialog dialog, ObservableCollection<Book> books)
         {
             dialog.GetFile(BookFilter, ref IntermediateResultNameBook, ref InternadiateResultPathBook);
 
