@@ -18,7 +18,7 @@ namespace BookReader.ViewModel
 
         public ShelfViewModel(string nameShelf)
         {
-            ListBook = Json.DeserializeShelfListBook(nameShelf).Result;
+            ListBook = Json.DeserializeShelfListBook(nameShelf);
             ListBook.NameShelf = nameShelf;
             ListBooksView = CollectionViewSource.GetDefaultView(ListBook.Books);
         }   

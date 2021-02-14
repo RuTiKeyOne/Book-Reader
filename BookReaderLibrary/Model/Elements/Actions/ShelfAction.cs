@@ -13,15 +13,9 @@ namespace BookReaderLibrary.Model.Actions
     {
         public override void AddShelf(string nameShelf, ref ObservableCollection<Shelf> shelfs, FileDialog dialog)
         {
-            if (!string.IsNullOrEmpty(nameShelf))
+            if (!string.IsNullOrEmpty(nameShelf) && !(shelfs.Any(x => x.ShelfName == nameShelf)))
             {
-                IsSame = AddHelper(dialog, shelfs);
-
-                if (!IsSame)
-                {
-                    shelfs.Add(new Shelf { ShelfName = nameShelf });
-
-                }
+               shelfs.Add(new Shelf { ShelfName = nameShelf });
             }
         }
 

@@ -15,6 +15,7 @@ namespace BookReaderLibrary.Model.Json
     public class CustomJson
     {
         private string JsonResult { get; set; }
+        private ShelfListBook ListBook;
 
         public async void Serialize(ObservableCollection<Book> books)
         {
@@ -77,9 +78,22 @@ namespace BookReaderLibrary.Model.Json
             }
         }
 
-        public async Task<ShelfListBook> DeserializeShelfListBook(string nameShelf)
+        public ShelfListBook DeserializeShelfListBook(string nameShelf)
         {
-            return new ShelfListBook();
+            if (File.Exists($"LocalResources/ShelfData/{nameShelf}.json"))
+            {
+                using (StreamReader Reader = new StreamReader($"LocalResources/ShelfData/{nameShelf}.json"))
+                {
+                    JsonResult = Reader.ReadToEnd();
+                    ListBook = JsonSerializer.Deserialize<ShelfListBook>(JsonResult);
+                }
+            }
+            else
+            {
+                ListBook = new ShelfListBook();
+            }
+
+            return ListBook;
         }
     }
 }

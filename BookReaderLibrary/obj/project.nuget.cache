@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "qktIml3Geasw40qRvN4zxGDDZqcTPuQoRpglewhv6D/e1CfIw6SZu5aqRYo0FXD8UWP21fyjeHQD/sHsOGo5GA==",
+  "dgSpecHash": "/tmkCHFO0cS5qWcT3anvNyunMaGqVbTkvP6TlxQGankJFpdboz44NfGXAak5PMKYeYGt5+vtQwcIVCl+xP/vrw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Rutikeyone\\source\\repos\\Book-Reader\\BookReaderLibrary\\BookReaderLibrary.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "C:\\Users\\Dart\\source\\repos\\Book-Reader\\BookReaderLibrary\\BookReaderLibrary.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Dart\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512"
+  ],
   "logs": []
 }
