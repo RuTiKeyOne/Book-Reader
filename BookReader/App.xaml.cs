@@ -19,6 +19,7 @@ namespace BookReader
             DisplayRootRegistry.RegistryWindowType<AddShelfViewModel, AddShelfWindow>();
             DisplayRootRegistry.RegistryWindowType<PdfReaderViewModel, PdfReaderWindow>();
             DisplayRootRegistry.RegistryWindowType<ShelfViewModel, ShelfWindow>();
+            DisplayRootRegistry.RegistryWindowType<MessageShowingViewModel, MessageShowingWindow>();
         }
 
         protected override async void OnStartup(StartupEventArgs e)

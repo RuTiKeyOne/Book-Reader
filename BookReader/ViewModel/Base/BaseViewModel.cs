@@ -8,6 +8,7 @@ using BookReaderLibrary.Model.Windows;
 using GalaSoft.MvvmLight.Command;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.IO;
 using System.Windows;
 using System.Windows.Input;
 
@@ -88,9 +89,22 @@ namespace BookReader.ViewModel.Base
             set
             {
                 SetProperty(ref selectedBook, value);
-                DisplayRootRegistry.ShowPresentation(new PdfReaderViewModel(SelectedBook.Path));
+                ShowPdfReaderHelper(SelectedBook.Path);
             }
         }
 
+
+
+        public void ShowPdfReaderHelper(string path)
+        {
+            if (File.Exists(path))
+            {
+                DisplayRootRegistry.ShowPresentation(new PdfReaderViewModel(SelectedBook.Path));
+            }
+            else
+            {
+                DisplayRootRegistry.ShowPresentation(new MessageShowingViewModel("File not found"));
+            }
+        }
     }
 }
