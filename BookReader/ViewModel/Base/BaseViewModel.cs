@@ -89,7 +89,11 @@ namespace BookReader.ViewModel.Base
             set
             {
                 SetProperty(ref selectedBook, value);
-                ShowPdfReaderHelper(SelectedBook.Path);
+
+                if (!(SelectedBook is null))
+                {
+                    ShowPdfReaderHelper(SelectedBook.Path);
+                }
             }
         }
 

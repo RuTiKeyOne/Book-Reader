@@ -92,7 +92,11 @@ namespace BookReader.ViewModel
             get => selectedShelf;
             set {
                 SetProperty(ref selectedShelf, value);
-                DisplayRootRegistry.ShowPresentation(new ShelfViewModel(SelectedShelf.ShelfName));
+
+                if(!(selectedShelf is null))
+                {
+                    DisplayRootRegistry.ShowPresentation(new ShelfViewModel(SelectedShelf.ShelfName));
+                }
             }
         }
 
