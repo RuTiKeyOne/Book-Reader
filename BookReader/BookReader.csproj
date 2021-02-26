@@ -25,6 +25,7 @@
     <Compile Include="ViewModel\AddShelfViewModel.cs" />
     <Compile Include="ViewModel\Base\BaseAddViewModel.cs" />
     <Compile Include="ViewModel\Base\BaseViewModel.cs" />
+    <Compile Include="ViewModel\DeleteMessageShowingViewModel.cs" />
     <Compile Include="ViewModel\MainViewModel.cs" />
     <Compile Include="ViewModel\MessageShowingViewModel.cs" />
     <Compile Include="ViewModel\PdfReaderViewModel.cs" />

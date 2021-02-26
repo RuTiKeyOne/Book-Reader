@@ -251,3 +251,5 @@ C:\Users\Dart\source\repos\Book-Reader\BookReader\bin\Debug\netcoreapp3.1\Newton
 C:\Users\Rutikeyone\source\repos\Book-Reader\BookReader\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
 C:\Users\Rutikeyone\source\repos\Book-Reader\BookReader\obj\Debug\netcoreapp3.1\View\MessageShowingWindow.g.cs
 C:\Users\Rutikeyone\source\repos\Book-Reader\BookReader\obj\Debug\netcoreapp3.1\View\MessageShowingWindow.baml
+C:\Users\Rutikeyone\source\repos\Book-Reader\BookReader\obj\Debug\netcoreapp3.1\View\DeleteMessageShowingWindow.g.cs
+C:\Users\Rutikeyone\source\repos\Book-Reader\BookReader\obj\Debug\netcoreapp3.1\View\DeleteMessageShowingWindow.baml

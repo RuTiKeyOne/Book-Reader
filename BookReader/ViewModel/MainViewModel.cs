@@ -19,33 +19,7 @@ namespace BookReader.ViewModel
     public class MainViewModel : BaseViewModel
     {
 
-        public override Book SelectedBook 
-        {
-            get
-            {
-                return selectedBook;
-            }
-
-            set
-            {
-                SetProperty(ref selectedBook, value);
-
-                switch (Mode)
-                {
-                    case SelectionMode.Selection when !(SelectedBook is null) :
-                        ShowPdfReaderHelper(SelectedBook.Path);
-                        break;
-                    case SelectionMode.Removal:
-
-                        Books.Remove(SelectedBook);
-                        Mode = SelectionMode.Selection;
-
-                        SelectedBook = null;    
-                        break;
-                }
-
-            }
-        }
+        
 
         #region Visibility list state
 
@@ -246,11 +220,6 @@ namespace BookReader.ViewModel
         {
             ShelfAction.AddShelf(nameShelf, ref shelves, Dialog);
             Json.Serialize(Shelves);
-        }
-
-        public void Test()
-        {
-            MessageBox.Show("Delete");
         }
     }
 }

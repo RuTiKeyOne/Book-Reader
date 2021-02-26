@@ -171,7 +171,7 @@
                 Visibility="{Binding BookListState, Mode=TwoWay}"
                 Style="{StaticResource ListBoxStyle}"
                 ItemsSource="{Binding BooksView}"
-                SelectedItem="{Binding SelectedBook}">
+                SelectedItem="{Binding SelectedBook, UpdateSourceTrigger=PropertyChanged}">
                     <ListBox.ItemContainerStyle>
                         <Style TargetType="ListBoxItem">
                             <Setter Property="Template" Value="{StaticResource BookListItems}"/>

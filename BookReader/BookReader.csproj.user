@@ -12,6 +12,9 @@
     <Compile Update="View\Add\AddShelfWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="View\DeleteMessageShowingWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="View\MessageShowingWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -45,6 +48,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="View\Add\AddShelfWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\DeleteMessageShowingWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="View\MainWindow.xaml">

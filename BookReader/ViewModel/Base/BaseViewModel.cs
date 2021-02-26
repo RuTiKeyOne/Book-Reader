@@ -3,6 +3,7 @@ using BookReaderLibrary.Model.BooksAction;
 using BookReaderLibrary.Model.Commands;
 using BookReaderLibrary.Model.Dialogs;
 using BookReaderLibrary.Model.Json;
+using BookReaderLibrary.Model.Notify;
 using BookReaderLibrary.Model.Patterns;
 using BookReaderLibrary.Model.Windows;
 using GalaSoft.MvvmLight.Command;
@@ -87,8 +88,32 @@ namespace BookReader.ViewModel.Base
 
         #endregion
 
-        protected Book selectedBook;
-        public virtual Book SelectedBook { get; set; }
+        private Book selectedBook;
+        public Book SelectedBook
+        {
+            get
+            {
+                return selectedBook;
+            }
+
+            set
+            {
+                SetProperty(ref selectedBook, value);
+
+                switch (Mode)
+                {
+                    case SelectionMode.Selection when !(SelectedBook is null):
+                        ShowPdfReaderHelper(SelectedBook.Path);
+                        break;
+                    case SelectionMode.Removal:
+                        DisplayRootRegistry.ShowPresentation(new DeleteMessageShowingViewModel());
+                        Mode = SelectionMode.Selection;
+                        break;
+                }
+
+            }
+        }
+
 
         protected SelectionMode Mode { get; set; }
 
@@ -105,6 +130,5 @@ namespace BookReader.ViewModel.Base
                 DisplayRootRegistry.ShowPresentation(new MessageShowingViewModel("File not found"));
             }
         }
-
     }
 }
