@@ -9,15 +9,44 @@ using BookReaderLibrary.Model.Shelfs;
 using BookReaderLibrary.Model.Windows;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
-using System.Timers;
 using System.Windows;
 using System.Windows.Data;
 using System.Windows.Input;
 
 namespace BookReader.ViewModel
 {
+
     public class MainViewModel : BaseViewModel
     {
+
+        public override Book SelectedBook 
+        {
+            get
+            {
+                return selectedBook;
+            }
+
+            set
+            {
+                SetProperty(ref selectedBook, value);
+
+                switch (Mode)
+                {
+                    case SelectionMode.Selection when !(SelectedBook is null) :
+                        ShowPdfReaderHelper(SelectedBook.Path);
+                        break;
+                    case SelectionMode.Removal:
+
+                        Books.Remove(SelectedBook);
+                        Mode = SelectionMode.Selection;
+
+                        SelectedBook = null;    
+                        break;
+                }
+
+            }
+        }
+
         #region Visibility list state
 
         private Visibility bookListState = default;
@@ -135,6 +164,16 @@ namespace BookReader.ViewModel
 
         #endregion
 
+        public ICommand Delete { get; set; }
+
+        public bool CanDeleteExecute(object sender) => true;
+        public void DeleteExecute(object sender)
+        {
+            SelectedBook = null;
+
+            Mode = SelectionMode.Removal;
+        }
+
         #region AddBook Command
 
         public ICommand AddBook { get; set; }
@@ -192,6 +231,10 @@ namespace BookReader.ViewModel
             BookListCommand = new ActionCommand(BookListExecute, CanBookListExecute);
             ShelfListCommand = new ActionCommand(ShelfListExecute, CanShelfListExecute);
 
+            Delete = new ActionCommand(DeleteExecute, CanDeleteExecute);
+
+            Mode = SelectionMode.Selection;
+
             Singleton.NotifierAddShelf += GetMessageAddShelf;
 
         }
@@ -203,6 +246,11 @@ namespace BookReader.ViewModel
         {
             ShelfAction.AddShelf(nameShelf, ref shelves, Dialog);
             Json.Serialize(Shelves);
+        }
+
+        public void Test()
+        {
+            MessageBox.Show("Delete");
         }
     }
 }

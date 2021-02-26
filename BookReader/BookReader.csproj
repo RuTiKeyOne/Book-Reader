@@ -17,6 +17,7 @@
     <None Remove="View\LocalResources\BookIcon.png" />
     <None Remove="View\LocalResources\BookListItem.png" />
     <None Remove="View\LocalResources\FrameIcon.png" />
+    <None Remove="View\LocalResources\RedCross.png" />
     <None Remove="View\LocalResources\ShelfIcon.png" />
   </ItemGroup>
 
@@ -47,6 +48,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
     <Resource Include="View\LocalResources\FrameIcon.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="View\LocalResources\RedCross.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
     <Resource Include="View\LocalResources\ShelfIcon.png">
