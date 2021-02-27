@@ -3,12 +3,11 @@ using BookReaderLibrary.Model.Actions;
 using BookReaderLibrary.Model.Books;
 using BookReaderLibrary.Model.BooksAction;
 using BookReaderLibrary.Model.Commands;
-using BookReaderLibrary.Model.Dialogs;
-using BookReaderLibrary.Model.Json;
 using BookReaderLibrary.Model.Shelfs;
 using BookReaderLibrary.Model.Windows;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
+using System.Diagnostics;
 using System.Windows;
 using System.Windows.Data;
 using System.Windows.Input;
@@ -18,8 +17,6 @@ namespace BookReader.ViewModel
 
     public class MainViewModel : BaseViewModel
     {
-
-        
 
         #region Visibility list state
 
@@ -70,48 +67,6 @@ namespace BookReader.ViewModel
         }
 
         public bool CanShelfListExecute(object sender) => true;
-
-        #endregion
-
-        #region Books view
-
-        public ICollectionView BooksView { get; set; }
-
-        private ObservableCollection<Book> books;
-
-        public ObservableCollection<Book> Books
-        {
-            get => books;
-            set => SetProperty(ref books, value);
-        }
-
-        #endregion
-
-        #region Shelfves view 
-
-        private Shelf selectedShelf;
-        public Shelf SelectedShelf
-        {
-            get => selectedShelf;
-            set {
-                SetProperty(ref selectedShelf, value);
-
-                if(!(selectedShelf is null))
-                {
-                    DisplayRootRegistry.ShowPresentation(new ShelfViewModel(SelectedShelf.ShelfName));
-                }
-            }
-        }
-
-        public ICollectionView ShelfsView { get; set; }
-
-        private ObservableCollection<Shelf> shelves;
-
-        public ObservableCollection<Shelf> Shelves
-        {
-            get => shelves;
-            set => SetProperty(ref shelves, value);
-        }
 
         #endregion
 
@@ -210,7 +165,6 @@ namespace BookReader.ViewModel
             Mode = SelectionMode.Selection;
 
             Singleton.NotifierAddShelf += GetMessageAddShelf;
-
         }
 
         #endregion

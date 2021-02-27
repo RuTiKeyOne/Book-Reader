@@ -5,10 +5,12 @@ using BookReaderLibrary.Model.Dialogs;
 using BookReaderLibrary.Model.Json;
 using BookReaderLibrary.Model.Notify;
 using BookReaderLibrary.Model.Patterns;
+using BookReaderLibrary.Model.Shelfs;
 using BookReaderLibrary.Model.Windows;
 using GalaSoft.MvvmLight.Command;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.IO;
 using System.Windows;
@@ -24,7 +26,54 @@ namespace BookReader.ViewModel.Base
 
     public class BaseViewModel : INotifyPropertyChanged
     {
-        protected Action<string> MainViewModelHandler { get; set; }
+        #region Shelfves view 
+
+        private Shelf selectedShelf;
+        public Shelf SelectedShelf
+        {
+            get => selectedShelf;
+            set
+            {
+                SetProperty(ref selectedShelf, value);
+
+                switch (Mode)
+                {
+                    case SelectionMode.Selection when (!(selectedShelf is null)):
+                        DisplayRootRegistry.ShowPresentation(new ShelfViewModel(SelectedShelf.ShelfName));
+                        break;
+                    case SelectionMode.Removal:
+                        DisplayRootRegistry.ShowPresentation(new DeleteMessageShowingViewModel(ModifyShelf));
+                        Mode = SelectionMode.Selection;
+                        break;
+                }
+            }
+        }
+
+        public ICollectionView ShelfsView { get; set; }
+
+        protected ObservableCollection<Shelf> shelves;
+
+        public ObservableCollection<Shelf> Shelves
+        {
+            get => shelves;
+            set => SetProperty(ref shelves, value);
+        }
+
+        #endregion
+
+        #region Books view
+
+        public ICollectionView BooksView { get; set; }
+
+        protected ObservableCollection<Book> books;
+
+        public ObservableCollection<Book> Books
+        {
+            get => books;
+            set => SetProperty(ref books, value);
+        }
+
+        #endregion
         protected CustomJson Json { get; set; }
         protected FileDialog Dialog { get; set; }
         protected BookAction BookAction { get; set; }
@@ -106,7 +155,7 @@ namespace BookReader.ViewModel.Base
                         ShowPdfReaderHelper(SelectedBook.Path);
                         break;
                     case SelectionMode.Removal:
-                        DisplayRootRegistry.ShowPresentation(new DeleteMessageShowingViewModel());
+                        DisplayRootRegistry.ShowPresentation(new DeleteMessageShowingViewModel(ModifyBooks));
                         Mode = SelectionMode.Selection;
                         break;
                 }
@@ -129,6 +178,16 @@ namespace BookReader.ViewModel.Base
             {
                 DisplayRootRegistry.ShowPresentation(new MessageShowingViewModel("File not found"));
             }
+        }
+
+        private void ModifyBooks()
+        {
+            Books.Remove(SelectedBook);
+        }
+
+        private void ModifyShelf()
+        {
+            Shelves.Remove(SelectedShelf);
         }
     }
 }
