@@ -19,5 +19,11 @@ namespace BookReader.ViewModel
             SourceBook = path;
         }
 
+        public override void CloseExecute(object sender)
+        {
+            DisplayRootRegistry.ShowPresentation(new MainViewModel());
+            base.CloseExecute(sender);
+        }
+
     }
 }

@@ -40,9 +40,10 @@ namespace BookReader.ViewModel.Base
                 {
                     case SelectionMode.Selection when (!(selectedShelf is null)):
                         DisplayRootRegistry.ShowPresentation(new ShelfViewModel(SelectedShelf.ShelfName));
+                        DisplayRootRegistry.HidePresentation(this);
                         break;
                     case SelectionMode.Removal:
-                        DisplayRootRegistry.ShowPresentation(new DeleteMessageShowingViewModel(ModifyShelf));
+                        DisplayRootRegistry.ShowPresentation(new DeleteMessageShowingViewModel(ModifyShelf, RezeroShelf));
                         Mode = SelectionMode.Selection;
                         break;
                 }
@@ -153,9 +154,10 @@ namespace BookReader.ViewModel.Base
                 {
                     case SelectionMode.Selection when !(SelectedBook is null):
                         ShowPdfReaderHelper(SelectedBook.Path);
+                        DisplayRootRegistry.HidePresentation(this);
                         break;
                     case SelectionMode.Removal:
-                        DisplayRootRegistry.ShowPresentation(new DeleteMessageShowingViewModel(ModifyBooks));
+                        DisplayRootRegistry.ShowPresentation(new DeleteMessageShowingViewModel(ModifyBooks, RezeroBook));
                         Mode = SelectionMode.Selection;
                         break;
                 }
@@ -188,6 +190,16 @@ namespace BookReader.ViewModel.Base
         private void ModifyShelf()
         {
             Shelves.Remove(SelectedShelf);
+        }
+
+        private void RezeroBook()
+        {
+            SelectedBook = null;
+        }
+
+        private void RezeroShelf()
+        {
+            SelectedShelf = null;
         }
     }
 }

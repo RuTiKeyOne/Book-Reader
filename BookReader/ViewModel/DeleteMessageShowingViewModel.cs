@@ -19,14 +19,23 @@ namespace BookReader.ViewModel
             DisplayRootRegistry.HidePresentation(this);
         }
 
+        public event Action DeleteCloseEvent;
+
         public bool CanDeleteSelectedItemExecute(object sender) => true;
+
+        public override void CloseExecute(object sender)
+        {
+            DeleteCloseEvent?.Invoke();
+            base.CloseExecute(sender);
+        }
 
 
         public DeleteMessageShowingViewModel() { }
-        public DeleteMessageShowingViewModel(Action SelectedItemHandler)
+        public DeleteMessageShowingViewModel(Action SelectedItemHandler, Action DeleteCloseHandler)
         {
             DeleteSelectedItem = new ActionCommand(DeleteSelectedItemExecute, CanDeleteSelectedItemExecute);
             DeleteSelectedItemEvent += SelectedItemHandler;
+            DeleteCloseEvent += DeleteCloseHandler;
         }
     }
 }

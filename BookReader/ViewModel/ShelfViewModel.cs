@@ -33,5 +33,11 @@ namespace BookReader.ViewModel
 
         public override bool CanAddExecute(object sender) => true;
         #endregion
+
+        public override void CloseExecute(object sender)
+        {
+            DisplayRootRegistry.ShowPresentation(new MainViewModel());
+            base.CloseExecute(sender);
+        }
     }
 }
