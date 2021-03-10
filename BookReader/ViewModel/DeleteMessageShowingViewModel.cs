@@ -10,6 +10,7 @@ namespace BookReader.ViewModel
     public class DeleteMessageShowingViewModel : MainViewModel
     {
         public event Action DeleteSelectedItemEvent;
+        public event Action DeleteCloseEvent;
         public ICommand DeleteSelectedItem { get; set; }
 
         public void DeleteSelectedItemExecute(object sender) 
@@ -18,8 +19,6 @@ namespace BookReader.ViewModel
 
             DisplayRootRegistry.HidePresentation(this);
         }
-
-        public event Action DeleteCloseEvent;
 
         public bool CanDeleteSelectedItemExecute(object sender) => true;
 

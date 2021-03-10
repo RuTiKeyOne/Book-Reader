@@ -1,6 +1,6 @@
 ﻿using BookReaderLibrary.Model.Books;
 using BookReaderLibrary.Model.Dialogs;
-using BookReaderLibrary.Model.Shelfs;
+using BookReaderLibrary.Model.Shelves;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;

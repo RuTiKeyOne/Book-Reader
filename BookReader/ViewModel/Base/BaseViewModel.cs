@@ -5,7 +5,7 @@ using BookReaderLibrary.Model.Dialogs;
 using BookReaderLibrary.Model.Json;
 using BookReaderLibrary.Model.Notify;
 using BookReaderLibrary.Model.Patterns;
-using BookReaderLibrary.Model.Shelfs;
+using BookReaderLibrary.Model.Shelves;
 using BookReaderLibrary.Model.Windows;
 using GalaSoft.MvvmLight.Command;
 using System;
@@ -26,6 +26,8 @@ namespace BookReader.ViewModel.Base
 
     public class BaseViewModel : INotifyPropertyChanged
     {
+        private Shelf IntermediateSelectedShelf { get; set; }
+
         #region Shelfves view 
 
         private Shelf selectedShelf;
@@ -185,11 +187,15 @@ namespace BookReader.ViewModel.Base
         private void ModifyBooks()
         {
             Books.Remove(SelectedBook);
+            Json.Delete(Books); 
         }
 
         private void ModifyShelf()
         {
+            IntermediateSelectedShelf = SelectedShelf;
             Shelves.Remove(SelectedShelf);
+            Json.Delete(Shelves, IntermediateSelectedShelf);
+            IntermediateSelectedShelf = null;
         }
 
         private void RezeroBook()

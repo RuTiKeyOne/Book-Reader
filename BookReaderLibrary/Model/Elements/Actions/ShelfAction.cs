@@ -1,7 +1,7 @@
 ﻿using BookReaderLibrary.Model.Base;
 using BookReaderLibrary.Model.Dialogs;
 using BookReaderLibrary.Model.Lists;
-using BookReaderLibrary.Model.Shelfs;
+using BookReaderLibrary.Model.Shelves;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;

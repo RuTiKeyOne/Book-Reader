@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BookReaderLibrary.Model.Shelfs
+namespace BookReaderLibrary.Model.Shelves
 {
     public class Shelf
     {

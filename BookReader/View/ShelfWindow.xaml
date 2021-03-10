@@ -85,6 +85,30 @@
                         <Image Grid.Column="0" Source="LocalResources/BookIcon.png" Grid.RowSpan="2"></Image>
 
                         <TextBlock VerticalAlignment="Top" HorizontalAlignment="Center" Text="Add a book" Grid.Column="1" Margin="0,2,0,0" Grid.RowSpan="2"></TextBlock>
+                    
+                    </Grid>
+
+                </Button>
+
+                <Button
+                    Margin="0,5" 
+                    Style="{StaticResource ReadButton}">
+
+                    <Grid Width="150">
+
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="13*"/>
+                            <RowDefinition Height="17*"/>
+                        </Grid.RowDefinitions>
+
+                        <Grid.ColumnDefinitions >
+                            <ColumnDefinition Width="35"/>
+                            <ColumnDefinition Width="3*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Image Source="LocalResources/RedCross.png" Grid.Column="0" Grid.RowSpan="2"></Image>
+
+                        <TextBlock VerticalAlignment="Top" HorizontalAlignment="Center" Text="Delete a item" Grid.Column="1" Margin="0,2,0,0" Grid.RowSpan="2"></TextBlock>
 
                     </Grid>
 

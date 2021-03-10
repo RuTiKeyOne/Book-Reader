@@ -1,6 +1,6 @@
 ﻿using BookReaderLibrary.Model.Books;
 using BookReaderLibrary.Model.Lists;
-using BookReaderLibrary.Model.Shelfs;
+using BookReaderLibrary.Model.Shelves;
 using System;
 using System.Collections.ObjectModel;
 using System.IO;
@@ -43,11 +43,30 @@ namespace BookReaderLibrary.Model.Json
             return Result;
         }
 
-        public async void Serialize(ObservableCollection<Shelf> shelfs)
+        public async void Delete(ObservableCollection<Book> books)
+        {
+            File.Delete("LocalResources/Books.json");
+            using (FileStream Writer = new FileStream("LocalResources/Books.json", FileMode.OpenOrCreate, FileAccess.Write, FileShare.ReadWrite))
+            {
+                await JsonSerializer.SerializeAsync<ObservableCollection<Book>>(Writer, books);
+            }
+        }
+
+        public async void Delete(ObservableCollection<Shelf> shelves, Shelf selectedShelf)
+        {
+            File.Delete("LocalResources/Shelves.json");
+            File.Delete($"LocalResources/ShelfData/{selectedShelf.ShelfName}.json");
+            using (FileStream Writer = new FileStream("LocalResources/Shelves.json", FileMode.OpenOrCreate, FileAccess.Write, FileShare.ReadWrite))
+            {
+                await JsonSerializer.SerializeAsync<ObservableCollection<Shelf>>(Writer, shelves);
+            }
+        }
+
+        public async void Serialize(ObservableCollection<Shelf> shelfves)
         {
             using (FileStream Writer = new FileStream("LocalResources/Shelves.json", FileMode.OpenOrCreate, FileAccess.Write, FileShare.ReadWrite))
             {
-                await JsonSerializer.SerializeAsync<ObservableCollection<Shelf>>(Writer, shelfs);
+                await JsonSerializer.SerializeAsync<ObservableCollection<Shelf>>(Writer, shelfves);
             }
         }
         public ObservableCollection<Shelf> DeserializeShelves()

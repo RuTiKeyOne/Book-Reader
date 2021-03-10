@@ -3,11 +3,13 @@ using BookReaderLibrary.Model.Actions;
 using BookReaderLibrary.Model.Books;
 using BookReaderLibrary.Model.BooksAction;
 using BookReaderLibrary.Model.Commands;
-using BookReaderLibrary.Model.Shelfs;
+using BookReaderLibrary.Model.Shelves;
 using BookReaderLibrary.Model.Windows;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Diagnostics;
+using System.IO;
+using System.Text;
 using System.Windows;
 using System.Windows.Data;
 using System.Windows.Input;
@@ -165,7 +167,8 @@ namespace BookReader.ViewModel
             Mode = SelectionMode.Selection;
 
             Singleton.NotifierAddShelf += GetMessageAddShelf;
-        }
+
+            }
 
         #endregion
 
