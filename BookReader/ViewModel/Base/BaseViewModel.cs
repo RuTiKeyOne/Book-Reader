@@ -168,7 +168,6 @@ namespace BookReader.ViewModel.Base
                 {
                     case SelectionMode.Selection when !(SelectedBook is null):
                         ShowPdfReaderHelper(SelectedBook.Path);
-                        DisplayRootRegistry.HidePresentation(this);
                         break;
                     case SelectionMode.Removal:
                         DisplayRootRegistry.ShowPresentation(new DeleteMessageShowingViewModel(ModifyBooks, RezeroBook));
@@ -189,6 +188,8 @@ namespace BookReader.ViewModel.Base
             if (File.Exists(path))
             {
                 DisplayRootRegistry.ShowPresentation(new PdfReaderViewModel(SelectedBook.Path));
+                DisplayRootRegistry.HidePresentation(this);
+
             }
             else
             {
