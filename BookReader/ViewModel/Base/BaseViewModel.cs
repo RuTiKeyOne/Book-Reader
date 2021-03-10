@@ -26,6 +26,16 @@ namespace BookReader.ViewModel.Base
 
     public class BaseViewModel : INotifyPropertyChanged
     {
+        public ICommand Delete { get; set; }
+
+        public bool CanDeleteExecute(object sender) => true;
+        public void DeleteExecute(object sender)
+        {
+            SelectedBook = null;
+
+            Mode = SelectionMode.Removal;
+        }
+
         private Shelf IntermediateSelectedShelf { get; set; }
 
         #region Shelfves view 
@@ -119,6 +129,8 @@ namespace BookReader.ViewModel.Base
 
             Json = new CustomJson();
 
+            Delete = new ActionCommand(DeleteExecute, CanDeleteExecute);
+
         }
 
         #region Interface INotifyPropertyChanged
@@ -184,7 +196,7 @@ namespace BookReader.ViewModel.Base
             }
         }
 
-        private void ModifyBooks()
+        protected virtual void ModifyBooks()
         {
             Books.Remove(SelectedBook);
             Json.Delete(Books); 

@@ -52,6 +52,12 @@ namespace BookReaderLibrary.Model.Json
             }
         }
 
+        public async void Delete(string nameShelf, ShelfListBook listBook)
+        {
+            File.Delete($"LocalResources/ShelfData/{nameShelf}.json");
+            Serialize(nameShelf, listBook);
+        }
+
         public async void Delete(ObservableCollection<Shelf> shelves, Shelf selectedShelf)
         {
             File.Delete("LocalResources/Shelves.json");

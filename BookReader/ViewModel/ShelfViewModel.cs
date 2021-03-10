@@ -21,7 +21,13 @@ namespace BookReader.ViewModel
             ListBook = Json.DeserializeShelfListBook(nameShelf);
             ListBook.NameShelf = nameShelf;
             ListBooksView = CollectionViewSource.GetDefaultView(ListBook.Books);
-        }   
+        }
+
+        protected override void ModifyBooks()
+        {
+            ListBook.Books.Remove(SelectedBook);
+            Json.Delete(ListBook.NameShelf, ListBook);
+        }
 
         #region Add execute shelf view model    
 

@@ -95,16 +95,6 @@ namespace BookReader.ViewModel
 
         #endregion
 
-        public ICommand Delete { get; set; }
-
-        public bool CanDeleteExecute(object sender) => true;
-        public void DeleteExecute(object sender)
-        {
-            SelectedBook = null;
-
-            Mode = SelectionMode.Removal;
-        }
-
         #region AddBook Command
 
         public ICommand AddBook { get; set; }
@@ -161,8 +151,6 @@ namespace BookReader.ViewModel
 
             BookListCommand = new ActionCommand(BookListExecute, CanBookListExecute);
             ShelfListCommand = new ActionCommand(ShelfListExecute, CanShelfListExecute);
-
-            Delete = new ActionCommand(DeleteExecute, CanDeleteExecute);
 
             Mode = SelectionMode.Selection;
 

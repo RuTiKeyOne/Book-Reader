@@ -91,6 +91,7 @@
                 </Button>
 
                 <Button
+                    Command="{Binding Delete}"
                     Margin="0,5" 
                     Style="{StaticResource ReadButton}">
 
