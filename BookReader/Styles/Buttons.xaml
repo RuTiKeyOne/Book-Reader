@@ -115,30 +115,6 @@
                     </Border>
 
                     <ControlTemplate.Triggers>
-                        
-                        <Trigger Property="IsPressed" Value="True">
-                            <Setter Property="Background" Value="{DynamicResource BlueBaseBrush}"/>
-                        </Trigger>
-                        
-                    </ControlTemplate.Triggers>
-                </ControlTemplate>
-            </Setter.Value>
-        </Setter>
-    </Style>
-
-    <Style x:Key="Size" BasedOn="{StaticResource Hide}" TargetType="Button">
-        <Setter Property="Template">
-            <Setter.Value>
-                <ControlTemplate TargetType="Button">
-                    <Border
-                        Height="{TemplateBinding Height}"
-                        Width="{TemplateBinding Width}"
-                        Background="{TemplateBinding Background}"
-                        >
-                        <Image Height="20" Source="/View/LocalResources/FrameIcon.png"></Image>
-                    </Border>
-
-                    <ControlTemplate.Triggers>
 
                         <Trigger Property="IsPressed" Value="True">
                             <Setter Property="Background" Value="{DynamicResource BlueBaseBrush}"/>

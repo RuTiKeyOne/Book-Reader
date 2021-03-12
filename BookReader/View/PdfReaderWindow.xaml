@@ -33,7 +33,6 @@
         Grid.Row="0">
 
             <Button Width="80" Command="{Binding Minimize}" CommandParameter="{Binding ElementName=PdfReader}" Style="{StaticResource Hide}"/>
-            <Button Width="80" Command="{Binding ModifySize}" CommandParameter="{Binding ElementName=Main}" Style="{StaticResource Size}"/>
             <Button Width="80" Command="{Binding Close}" Style="{StaticResource Close}"/>
 
         </StackPanel>

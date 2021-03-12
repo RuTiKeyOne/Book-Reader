@@ -8,13 +8,13 @@
         xmlns:MainViewModel="clr-namespace:BookReader.ViewModel" 
         xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
         mc:Ignorable="d"
-        MinWidth="800"
-        MinHeight="760"
+        Width="800"
+        Height="560"
         ResizeMode="CanResize"
         WindowStyle="None"
+        WindowState="{Binding State, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
         Background="{StaticResource DarkBaseBrush}"
-        WindowStartupLocation="CenterScreen"
-        WindowState="Maximized">
+        WindowStartupLocation="CenterScreen">
     <Window.DataContext>
         <MainViewModel:MainViewModel/>
     </Window.DataContext>
@@ -31,7 +31,6 @@
         <StackPanel HorizontalAlignment="Right" Orientation="Horizontal" Grid.Row="0">
 
             <Button Width="80" Command="{Binding Minimize}" CommandParameter="{Binding ElementName=Main}" Style="{StaticResource Hide}"/>
-            <Button Width="80" Command="{Binding ModifySize}" CommandParameter="{Binding ElementName=Main}" Style="{StaticResource Size}"/>
             <Button Width="80" Command="{Binding Close}" Style="{StaticResource Close}"/>
 
         </StackPanel>

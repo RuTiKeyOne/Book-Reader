@@ -5,6 +5,7 @@ using BookReaderLibrary.Model.BooksAction;
 using BookReaderLibrary.Model.Commands;
 using BookReaderLibrary.Model.Shelves;
 using BookReaderLibrary.Model.Windows;
+using System;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Diagnostics;
@@ -16,9 +17,19 @@ using System.Windows.Input;
 
 namespace BookReader.ViewModel
 {
-
     public class MainViewModel : BaseViewModel
     {
+        private WindowState state;
+
+        public WindowState State
+        {
+            get => state;
+            set
+            {
+                SetProperty(ref state, value);
+            }
+        }
+
 
         #region Visibility list state
 
@@ -123,10 +134,11 @@ namespace BookReader.ViewModel
 
         public void ModifySizeExecute(object sender)
         {
-
+            State = WindowState.Minimized;
         }
 
         public bool CanModifySizeExecute(object sender) => true;
+
 
         #endregion
 
@@ -155,6 +167,8 @@ namespace BookReader.ViewModel
             Mode = SelectionMode.Selection;
 
             Singleton.NotifierAddShelf += GetMessageAddShelf;
+
+            State = WindowState.Maximized;
 
             }
 

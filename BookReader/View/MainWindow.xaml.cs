@@ -24,5 +24,9 @@ namespace BookReader
         {
             InitializeComponent();
         }
+        public void Window_MouseDoubleClick(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show(WindowState.ToString());
+        }
     }
 }
