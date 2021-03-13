@@ -9,6 +9,7 @@ namespace BookReaderLibrary.Model.DependencyProperties
         public static readonly DependencyProperty BindableSourceProperty =
         DependencyProperty.RegisterAttached("BindableSource", typeof(string), typeof(WebBrowserUtility), new UIPropertyMetadata(null, BindableSourcePropertyChanged));
 
+
         public static string GetBindableSource(DependencyObject obj)
         {
             return (string)obj.GetValue(BindableSourceProperty);
@@ -28,5 +29,6 @@ namespace BookReaderLibrary.Model.DependencyProperties
                 browser.Source = !String.IsNullOrEmpty(uri) ? new Uri(uri) : null;
             }
         }
+
     }
 }

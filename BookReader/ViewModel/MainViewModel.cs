@@ -11,6 +11,8 @@ namespace BookReader.ViewModel
 {
     public class MainViewModel : BaseViewModel
     {
+        private ShelfAction ShelfAction { get; set; }
+
         #region Visibility list state
 
         private Visibility bookListState = default;
@@ -29,7 +31,29 @@ namespace BookReader.ViewModel
 
         #endregion
 
-        private ShelfAction ShelfAction { get; set; }
+        #region Search value
+
+        private string _searchValue = null;
+        public string SearchValue
+        {
+            get => _searchValue;
+            set
+            {
+                _searchValue = value;
+                switch (BookListState)
+                {
+                    case Visibility.Visible:
+                        BookAction.FindViews(BooksView, SearchValue);
+                        break;
+                    case Visibility.Hidden:
+                        ShelfAction.FindViews(ShelfsView, SearchValue);
+                        break;
+                }
+            }
+        }
+
+        #endregion
+
 
         #region Book list command
 
@@ -63,29 +87,6 @@ namespace BookReader.ViewModel
 
         #endregion
 
-        #region Search value
-
-        private string _searchValue = null;
-        public string SearchValue
-        {
-            get => _searchValue;
-            set
-            {
-                _searchValue = value;
-                switch (BookListState)
-                {
-                    case Visibility.Visible:
-                        BookAction.FindViews(BooksView, SearchValue);
-                        break;
-                    case Visibility.Hidden:
-                        ShelfAction.FindViews(ShelfsView, SearchValue);
-                        break;
-                }
-            }
-        }
-
-        #endregion
-
         #region AddBook Command
 
         public ICommand AddBook { get; set; }
@@ -109,6 +110,7 @@ namespace BookReader.ViewModel
 
         #endregion
 
+        
         #region Constructor
         public MainViewModel()
         {
@@ -137,6 +139,7 @@ namespace BookReader.ViewModel
             }
 
         #endregion
+
 
         #region Methods 
 

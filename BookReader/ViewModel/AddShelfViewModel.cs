@@ -5,23 +5,15 @@ namespace BookReader.ViewModel
 {
     public class AddShelfViewModel : BaseAddViewModel
     {
-        #region Fields
-
         private string nameShelf = null;
-
-        #endregion
-
-        #region Properties
-
         public string NameShelf
         {
             get => nameShelf;
             set => SetProperty(ref nameShelf, value);
         }
 
-        #endregion
 
-        #region Methods
+        #region Add methods
 
         public override bool CanAddExecute(object sender) => !string.IsNullOrEmpty(NameShelf);
 

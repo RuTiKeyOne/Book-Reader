@@ -6,12 +6,9 @@ namespace BookReader.ViewModel
 {
     public class DeleteMessageShowingViewModel : MainViewModel
     {
-        #region Events
-
         public event Action DeleteSelectedItemEvent;
         public event Action DeleteCloseEvent;
 
-        #endregion
 
         #region Methods
 

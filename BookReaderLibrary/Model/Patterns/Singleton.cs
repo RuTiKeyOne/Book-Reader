@@ -4,20 +4,12 @@ namespace BookReaderLibrary.Model.Patterns
 {
     public class Singleton
     {
-        #region Field and event
-
         private static Singleton _Singleton;
         public event Action<string> NotifierAddShelf;
 
-        #endregion
-
-        #region Constructor
 
         private Singleton() { }
 
-        #endregion
-
-        #region Methods
 
         public static Singleton GetInstance() { 
             if (_Singleton == null)
@@ -32,8 +24,6 @@ namespace BookReaderLibrary.Model.Patterns
         {
             NotifierAddShelf?.Invoke(message);        
         }
-
-        #endregion
 
     }
 }

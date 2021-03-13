@@ -9,7 +9,7 @@ namespace BookReaderLibrary.Model.BooksAction
 {
     public class BookAction : BaseAction
     {
-        #region Methods
+        #region Add
 
         public override void AddBook(FileDialog dialog, ref ObservableCollection<Book> books)
         {
@@ -34,26 +34,6 @@ namespace BookReaderLibrary.Model.BooksAction
 
         }
 
-        public override void FindViews(ICollectionView view, string searchValue)
-        {
-                view.Filter = (obj) =>
-                {
-                    if (obj is Book book && !string.IsNullOrWhiteSpace(searchValue))
-                    {
-                        return book.NameBook.ToLower().Contains(searchValue.ToLower());
-                    }
-
-                    if (string.IsNullOrWhiteSpace(searchValue))
-                    {
-                        return true;
-                    }
-
-                    return false;
-                };
-
-                view.Refresh();
-            }
-
         public bool AddHelper(FileDialog dialog, ObservableCollection<Book> books)
         {
             dialog.GetFile(BookFilter, ref IntermediateResultNameBook, ref InternadiateResultPathBook);
@@ -69,5 +49,26 @@ namespace BookReaderLibrary.Model.BooksAction
         }
 
         #endregion
+
+        public override void FindViews(ICollectionView view, string searchValue)
+        {
+            view.Filter = (obj) =>
+            {
+                if (obj is Book book && !string.IsNullOrWhiteSpace(searchValue))
+                {
+                    return book.NameBook.ToLower().Contains(searchValue.ToLower());
+                }
+
+                if (string.IsNullOrWhiteSpace(searchValue))
+                {
+                    return true;
+                }
+
+                return false;
+            };
+
+            view.Refresh();
+        }
+
     }
 }

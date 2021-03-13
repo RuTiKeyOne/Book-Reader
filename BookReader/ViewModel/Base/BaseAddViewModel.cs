@@ -14,13 +14,11 @@ namespace BookReader.ViewModel.Base
 
         #endregion
 
-        #region Constructor
 
         public BaseAddViewModel()
         {
             Add = new ActionCommand(AddExecute, CanAddExecute);
         }
 
-        #endregion
     }
 }

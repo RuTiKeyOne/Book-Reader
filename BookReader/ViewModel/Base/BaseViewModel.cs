@@ -59,24 +59,8 @@ namespace BookReader.ViewModel.Base
 
         #endregion
 
-        #region Fields
-
         private Book selectedBook;
 
-        #endregion
-
-        #region Delete command
-
-        public ICommand Delete { get; set; }
-        public bool CanDeleteExecute(object sender) => true;
-        public void DeleteExecute(object sender)
-        {
-            SelectedBook = null;
-
-            Mode = SelectionMode.Removal;
-        }
-
-        #endregion
 
         #region Shelfves view 
 
@@ -127,6 +111,20 @@ namespace BookReader.ViewModel.Base
         }
 
         #endregion
+
+
+        #region Delete command
+
+        public ICommand Delete { get; set; }
+        public bool CanDeleteExecute(object sender) => true;
+        public void DeleteExecute(object sender)
+        {
+            SelectedBook = null;
+
+            Mode = SelectionMode.Removal;
+        }
+
+        #endregion
         
         #region Close Command
 
@@ -152,6 +150,7 @@ namespace BookReader.ViewModel.Base
 
         #endregion
 
+
         #region Constructor
 
         public BaseViewModel()
@@ -171,6 +170,7 @@ namespace BookReader.ViewModel.Base
 
         #endregion
 
+
         #region Interface INotifyPropertyChanged
         public event PropertyChangedEventHandler PropertyChanged;
 
@@ -189,6 +189,7 @@ namespace BookReader.ViewModel.Base
         }
 
         #endregion
+
 
         #region Methods
 

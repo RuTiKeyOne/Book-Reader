@@ -6,14 +6,9 @@ namespace BookReader.ViewModel
 {
     class ShelfViewModel : AddShelfViewModel
     {
-        #region Properties
-
         public ShelfListBook ListBook { get; set; }
         public ICollectionView ListBooksView { get; set; }
 
-        #endregion
-
-        #region Constructor
 
         public ShelfViewModel(){}
 
@@ -24,9 +19,6 @@ namespace BookReader.ViewModel
             ListBooksView = CollectionViewSource.GetDefaultView(ListBook.Books);
         }
 
-        #endregion
-
-        #region Methods
 
         protected override void ModifyBooks()
         {
@@ -51,6 +43,5 @@ namespace BookReader.ViewModel
             base.CloseExecute(sender);
         }
 
-        #endregion
     }
 }

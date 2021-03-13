@@ -9,12 +9,9 @@ namespace BookReaderLibrary.Model.Json
 {
     public class CustomJson
     {
-        #region Properties 
-
         private string JsonResult { get; set; }
         private ShelfListBook ListBook { get; set; }
 
-        #endregion
 
         #region Serialize methods
 
@@ -132,5 +129,6 @@ namespace BookReaderLibrary.Model.Json
         }
 
         #endregion
+
     }
 }

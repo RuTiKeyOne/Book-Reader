@@ -4,13 +4,7 @@ namespace BookReader.ViewModel
 {
     public class MessageShowingViewModel : BaseViewModel
     {
-        #region Fields
-
         private string message = null;
-
-        #endregion
-
-        #region Properties
 
         public string Message
         {
@@ -21,9 +15,6 @@ namespace BookReader.ViewModel
             }
         }
 
-        #endregion
-
-        #region Constructor
 
         public MessageShowingViewModel() { }
         public MessageShowingViewModel(string message)
@@ -31,6 +22,5 @@ namespace BookReader.ViewModel
             Message = message;
         }
 
-        #endregion 
     }
 }

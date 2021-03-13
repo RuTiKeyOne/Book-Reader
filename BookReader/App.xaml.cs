@@ -11,6 +11,7 @@ namespace BookReader
         internal MainViewModel MainViewModel { get; set; }
         public DisplayRootRegistry DisplayRootRegistry { get; set; }
         
+
         public App()
         {
             DisplayRootRegistry = new DisplayRootRegistry();
@@ -23,10 +24,12 @@ namespace BookReader
             DisplayRootRegistry.RegistryWindowType<DeleteMessageShowingViewModel, DeleteMessageShowingWindow>();
         }
 
+
         protected override async void OnStartup(StartupEventArgs e)
         {
             base.OnStartup(e);
             await DisplayRootRegistry.ShowModalPresendation(MainViewModel);
         }
+
     }
 }
