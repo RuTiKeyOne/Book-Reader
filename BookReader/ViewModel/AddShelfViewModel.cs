@@ -1,18 +1,27 @@
 ﻿using BookReader.ViewModel.Base;
 using BookReaderLibrary.Model.Patterns;
-using System;
-using System.Windows;
 
 namespace BookReader.ViewModel
 {
     public class AddShelfViewModel : BaseAddViewModel
     {
+        #region Fields
+
         private string nameShelf = null;
+
+        #endregion
+
+        #region Properties
+
         public string NameShelf
         {
             get => nameShelf;
             set => SetProperty(ref nameShelf, value);
         }
+
+        #endregion
+
+        #region Methods
 
         public override bool CanAddExecute(object sender) => !string.IsNullOrEmpty(NameShelf);
 
@@ -22,5 +31,7 @@ namespace BookReader.ViewModel
 
             DisplayRootRegistry.HidePresentation(this);
         }
+
+        #endregion
     }
 }

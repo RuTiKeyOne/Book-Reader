@@ -1,16 +1,8 @@
 ﻿using BookReader.ViewModel.Base;
 using BookReaderLibrary.Model.Actions;
-using BookReaderLibrary.Model.Books;
 using BookReaderLibrary.Model.BooksAction;
 using BookReaderLibrary.Model.Commands;
-using BookReaderLibrary.Model.Shelves;
 using BookReaderLibrary.Model.Windows;
-using System;
-using System.Collections.ObjectModel;
-using System.ComponentModel;
-using System.Diagnostics;
-using System.IO;
-using System.Text;
 using System.Windows;
 using System.Windows.Data;
 using System.Windows.Input;
@@ -19,18 +11,6 @@ namespace BookReader.ViewModel
 {
     public class MainViewModel : BaseViewModel
     {
-        private WindowState state;
-
-        public WindowState State
-        {
-            get => state;
-            set
-            {
-                SetProperty(ref state, value);
-            }
-        }
-
-
         #region Visibility list state
 
         private Visibility bookListState = default;
@@ -129,19 +109,6 @@ namespace BookReader.ViewModel
 
         #endregion
 
-        #region Modify Size
-        public ICommand ModifySize { get; set; }
-
-        public void ModifySizeExecute(object sender)
-        {
-            State = WindowState.Minimized;
-        }
-
-        public bool CanModifySizeExecute(object sender) => true;
-
-
-        #endregion
-
         #region Constructor
         public MainViewModel()
         {
@@ -152,7 +119,6 @@ namespace BookReader.ViewModel
             shelves = Json.DeserializeShelves();
 
             ShelfAction = new ShelfAction();
-            ModifySize = new ActionCommand(ModifySizeExecute, CanModifySizeExecute);
 
             BooksView = CollectionViewSource.GetDefaultView(books);
 
@@ -168,18 +134,19 @@ namespace BookReader.ViewModel
 
             Singleton.NotifierAddShelf += GetMessageAddShelf;
 
-            State = WindowState.Maximized;
-
             }
 
         #endregion
 
+        #region Methods 
 
         public void GetMessageAddShelf(string nameShelf)
         {
             ShelfAction.AddShelf(nameShelf, ref shelves, Dialog);
             Json.Serialize(Shelves);
         }
+
+        #endregion
     }
 }
     

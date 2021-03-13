@@ -1,16 +1,23 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace BookReaderLibrary.Model.Patterns
 {
-    //Меня терзают смутные сомнения 
     public class Singleton
     {
-        private Singleton() { }
+        #region Field and event
 
         private static Singleton _Singleton;
         public event Action<string> NotifierAddShelf;
+
+        #endregion
+
+        #region Constructor
+
+        private Singleton() { }
+
+        #endregion
+
+        #region Methods
 
         public static Singleton GetInstance() { 
             if (_Singleton == null)
@@ -21,12 +28,12 @@ namespace BookReaderLibrary.Model.Patterns
             return _Singleton;
         }
 
-
-
         public void NotifyAddShelfMainViewModel(string message)
         {
             NotifierAddShelf?.Invoke(message);        
         }
+
+        #endregion
 
     }
 }

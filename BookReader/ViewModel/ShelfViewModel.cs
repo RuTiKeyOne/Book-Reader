@@ -1,18 +1,19 @@
-﻿using BookReaderLibrary.Model.Books;
-using BookReaderLibrary.Model.Lists;
-using System;
-using System.Collections.ObjectModel;
+﻿using BookReaderLibrary.Model.Lists;
 using System.ComponentModel;
-using System.Windows;
 using System.Windows.Data;
 
 namespace BookReader.ViewModel
 {
     class ShelfViewModel : AddShelfViewModel
     {
-        public ShelfListBook ListBook { get; set; }
+        #region Properties
 
+        public ShelfListBook ListBook { get; set; }
         public ICollectionView ListBooksView { get; set; }
+
+        #endregion
+
+        #region Constructor
 
         public ShelfViewModel(){}
 
@@ -22,6 +23,10 @@ namespace BookReader.ViewModel
             ListBook.NameShelf = nameShelf;
             ListBooksView = CollectionViewSource.GetDefaultView(ListBook.Books);
         }
+
+        #endregion
+
+        #region Methods
 
         protected override void ModifyBooks()
         {
@@ -45,5 +50,7 @@ namespace BookReader.ViewModel
             DisplayRootRegistry.ShowPresentation(new MainViewModel());
             base.CloseExecute(sender);
         }
+
+        #endregion
     }
 }

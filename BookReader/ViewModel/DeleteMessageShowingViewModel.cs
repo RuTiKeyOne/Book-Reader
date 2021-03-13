@@ -1,16 +1,22 @@
-﻿using BookReader.ViewModel.Base;
-using BookReaderLibrary.Model.Books;
-using BookReaderLibrary.Model.Commands;
+﻿using BookReaderLibrary.Model.Commands;
 using System;
-using System.Windows;
 using System.Windows.Input;
 
 namespace BookReader.ViewModel
 {
     public class DeleteMessageShowingViewModel : MainViewModel
     {
+        #region Events
+
         public event Action DeleteSelectedItemEvent;
         public event Action DeleteCloseEvent;
+
+        #endregion
+
+        #region Methods
+
+        #region DeleteSelectedItem command
+
         public ICommand DeleteSelectedItem { get; set; }
 
         public void DeleteSelectedItemExecute(object sender) 
@@ -22,12 +28,17 @@ namespace BookReader.ViewModel
 
         public bool CanDeleteSelectedItemExecute(object sender) => true;
 
+        #endregion
+
         public override void CloseExecute(object sender)
         {
             DeleteCloseEvent?.Invoke();
             base.CloseExecute(sender);
         }
 
+        #endregion
+
+        #region Constructor
 
         public DeleteMessageShowingViewModel() { }
         public DeleteMessageShowingViewModel(Action SelectedItemHandler, Action DeleteCloseHandler)
@@ -36,5 +47,7 @@ namespace BookReader.ViewModel
             DeleteSelectedItemEvent += SelectedItemHandler;
             DeleteCloseEvent += DeleteCloseHandler;
         }
+
+        #endregion 
     }
 }

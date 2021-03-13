@@ -5,12 +5,13 @@ using BookReaderLibrary.Model.Shelves;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
-using System.Windows;
 
 namespace BookReaderLibrary.Model.Actions
 {
     public class ShelfAction : BaseAction
     {
+        #region Methods
+
         public override void AddShelf(string nameShelf, ref ObservableCollection<Shelf> shelfs, FileDialog dialog)
         {
             if (!string.IsNullOrEmpty(nameShelf) && !(shelfs.Any(x => x.ShelfName == nameShelf)))
@@ -18,7 +19,6 @@ namespace BookReaderLibrary.Model.Actions
                shelfs.Add(new Shelf { ShelfName = nameShelf });
             }
         }
-
 
         public override void FindViews(ICollectionView view, string searchValue)
         {
@@ -53,6 +53,8 @@ namespace BookReaderLibrary.Model.Actions
 
             return IsSame;
         }
+
+        #endregion
 
     }
 }

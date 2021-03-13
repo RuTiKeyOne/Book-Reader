@@ -12,9 +12,9 @@
         Height="560"
         ResizeMode="CanResize"
         WindowStyle="None"
-        WindowState="{Binding State, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
         Background="{StaticResource DarkBaseBrush}"
-        WindowStartupLocation="CenterScreen">
+        WindowStartupLocation="CenterScreen"
+        WindowState="Maximized">
     <Window.DataContext>
         <MainViewModel:MainViewModel/>
     </Window.DataContext>

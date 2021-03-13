@@ -9,6 +9,8 @@ namespace BookReaderLibrary.Model.BooksAction
 {
     public class BookAction : BaseAction
     {
+        #region Methods
+
         public override void AddBook(FileDialog dialog, ref ObservableCollection<Book> books)
         {
             IsSame = AddHelper(dialog, books);
@@ -65,5 +67,7 @@ namespace BookReaderLibrary.Model.BooksAction
 
             return IsSame;
         }
+
+        #endregion
     }
 }

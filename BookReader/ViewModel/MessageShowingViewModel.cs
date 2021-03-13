@@ -1,11 +1,17 @@
 ﻿using BookReader.ViewModel.Base;
-using System;
 
 namespace BookReader.ViewModel
 {
     public class MessageShowingViewModel : BaseViewModel
     {
+        #region Fields
+
         private string message = null;
+
+        #endregion
+
+        #region Properties
+
         public string Message
         {
             get => message;
@@ -15,10 +21,16 @@ namespace BookReader.ViewModel
             }
         }
 
+        #endregion
+
+        #region Constructor
+
         public MessageShowingViewModel() { }
         public MessageShowingViewModel(string message)
         {
             Message = message;
         }
+
+        #endregion 
     }
 }

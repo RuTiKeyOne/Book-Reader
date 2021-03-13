@@ -7,15 +7,25 @@ namespace BookReaderLibrary.Model.Windows
 {
     public class DisplayRootRegistry
     {
+        #region Properties
+
         private Dictionary<Type, Type> ViewModelWindowsMapping { get;set; }
         private Dictionary<object, Window> OpenWindows { get; set; }
         private Window window;
+
+        #endregion
+
+        #region Constructor
 
         public DisplayRootRegistry()
         {
             ViewModelWindowsMapping = new Dictionary<Type, Type>();
             OpenWindows = new Dictionary<object, Window>();
         }
+
+        #endregion
+
+        #region Methods
 
         public void RegistryWindowType<ViewModel, Win>() where ViewModel : class where Win : Window, new()
         {
@@ -77,5 +87,7 @@ namespace BookReaderLibrary.Model.Windows
             OpenWindows.Remove(viewModel);
 
         }
+
+        #endregion
     }
 }

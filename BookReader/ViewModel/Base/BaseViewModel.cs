@@ -3,12 +3,10 @@ using BookReaderLibrary.Model.BooksAction;
 using BookReaderLibrary.Model.Commands;
 using BookReaderLibrary.Model.Dialogs;
 using BookReaderLibrary.Model.Json;
-using BookReaderLibrary.Model.Notify;
 using BookReaderLibrary.Model.Patterns;
 using BookReaderLibrary.Model.Shelves;
 using BookReaderLibrary.Model.Windows;
 using GalaSoft.MvvmLight.Command;
-using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
@@ -26,8 +24,50 @@ namespace BookReader.ViewModel.Base
 
     public class BaseViewModel : INotifyPropertyChanged
     {
-        public ICommand Delete { get; set; }
+        #region Properties
+        protected SelectionMode Mode { get; set; }
+        private Shelf IntermediateSelectedShelf { get; set; }
+        protected CustomJson Json { get; set; }
+        protected FileDialog Dialog { get; set; }
+        protected BookAction BookAction { get; set; }
+        protected DisplayRootRegistry DisplayRootRegistry { get; private set; }
+        protected Singleton Singleton { get; set; }
+        public Book SelectedBook
+        {
+            get
+            {
+                return selectedBook;
+            }
 
+            set
+            {
+                SetProperty(ref selectedBook, value);
+
+                switch (Mode)
+                {
+                    case SelectionMode.Selection when !(SelectedBook is null):
+                        ShowPdfReaderHelper(SelectedBook.Path);
+                        break;
+                    case SelectionMode.Removal:
+                        DisplayRootRegistry.ShowPresentation(new DeleteMessageShowingViewModel(ModifyBooks, RezeroBook));
+                        Mode = SelectionMode.Selection;
+                        break;
+                }
+
+            }
+        }
+
+        #endregion
+
+        #region Fields
+
+        private Book selectedBook;
+
+        #endregion
+
+        #region Delete command
+
+        public ICommand Delete { get; set; }
         public bool CanDeleteExecute(object sender) => true;
         public void DeleteExecute(object sender)
         {
@@ -36,7 +76,7 @@ namespace BookReader.ViewModel.Base
             Mode = SelectionMode.Removal;
         }
 
-        private Shelf IntermediateSelectedShelf { get; set; }
+        #endregion
 
         #region Shelfves view 
 
@@ -87,12 +127,6 @@ namespace BookReader.ViewModel.Base
         }
 
         #endregion
-        protected CustomJson Json { get; set; }
-        protected FileDialog Dialog { get; set; }
-        protected BookAction BookAction { get; set; }
-        protected DisplayRootRegistry DisplayRootRegistry {get; private set; }
-
-        protected Singleton Singleton { get; set; }
         
         #region Close Command
 
@@ -118,6 +152,8 @@ namespace BookReader.ViewModel.Base
 
         #endregion
 
+        #region Constructor
+
         public BaseViewModel()
         {
             Singleton = Singleton.GetInstance();
@@ -132,6 +168,8 @@ namespace BookReader.ViewModel.Base
             Delete = new ActionCommand(DeleteExecute, CanDeleteExecute);
 
         }
+
+        #endregion
 
         #region Interface INotifyPropertyChanged
         public event PropertyChangedEventHandler PropertyChanged;
@@ -152,36 +190,7 @@ namespace BookReader.ViewModel.Base
 
         #endregion
 
-        private Book selectedBook;
-        public Book SelectedBook
-        {
-            get
-            {
-                return selectedBook;
-            }
-
-            set
-            {
-                SetProperty(ref selectedBook, value);
-
-                switch (Mode)
-                {
-                    case SelectionMode.Selection when !(SelectedBook is null):
-                        ShowPdfReaderHelper(SelectedBook.Path);
-                        break;
-                    case SelectionMode.Removal:
-                        DisplayRootRegistry.ShowPresentation(new DeleteMessageShowingViewModel(ModifyBooks, RezeroBook));
-                        Mode = SelectionMode.Selection;
-                        break;
-                }
-
-            }
-        }
-
-
-        protected SelectionMode Mode { get; set; }
-
-
+        #region Methods
 
         public void ShowPdfReaderHelper(string path)
         {
@@ -220,5 +229,7 @@ namespace BookReader.ViewModel.Base
         {
             SelectedShelf = null;
         }
+
+        #endregion
     }
 }
